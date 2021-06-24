@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+
+.mt-80{
+    margin-top: 80px;
+}
+
+/* old style*/
+
+.titre-perso{
+    color: rgb(63, 61, 175);
+}
+
+.center{
+    text-align: center;
+}
+
+.my-font-family{
+    font-family: 'Noto Serif';
+}
+
+.mt-120{
+    margin-top: 120px;
+}
+.mt-60{
+    margin-top: 60px;
+}
+
+.zone-saisie{
+    width: 20%;
+    padding: 10px;
+    font-size: large;
+}
+
+.zone-group{
+    padding: 4px;
+}
+
+.bt-perso{
+    background-color: slateblue;
+    color: white;
+    font-size: large;
+    padding: 6px;
+    border-color: aliceblue;
+    border-radius: 5px;
+}
+.bt-perso:hover {
+    background-color: rgb(57, 34, 160);
+}
+
+.color-red{
+    color: red;
+}
+
+.label-perso{
+    font-family: 'Noto Serif';
+    color: rgb(124, 124, 124);
+}
+
+.card-shadow {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30) !important;
+}
+
+.ml-50{
+    margin-left: 10px;
+}
+
+.route-active{
+    color: green !important;
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
