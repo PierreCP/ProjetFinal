@@ -6,6 +6,35 @@
 
 /* old style*/
 
+.flip-horizontally {
+    transform: scaleX(-1);
+  }
+
+.myFont-head{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    color: rgb(57, 180, 113);
+  }
+
+.myFont-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+    color: rgb(57, 180, 113);
+  }
+
+  .myFont-subtitle{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: rgb(57, 180, 113);
+  }
+
+  .myFont-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    color: rgb(57, 180, 113);
+  }
+
+
 .titre-perso{
     color: rgb(25, 85, 17);
 }
