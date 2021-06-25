@@ -12,16 +12,16 @@ import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
-  {component: MenuProducteurComponent, path: 'menu-prod', children: [
-      { component: EtalComponent, path: 'etal' },
-      { component: ProdVinsComponent, path: 'prod-vins' },
-      { component: ProdAutresComponent, path: 'prod-autres' },
-      { component: ProdFruitsComponent, path: 'prod-fruits' },
-      { component: ProdLegumesComponent, path: 'prod-legumes' },
-      { component: ProdBieresComponent, path: 'prod-bières' },
-      { component: ProdFromagesComponent, path: 'prod-fromages' }
-    ]
-  },
+  { component: MenuProducteurComponent, path: 'menu-prod' },
+  { component: EtalComponent, path: 'etal', children: [
+    { component: ProdVinsComponent, path: 'prod-vins' },
+    { component: ProdAutresComponent, path: 'prod-autres' },
+    { component: ProdFruitsComponent, path: 'prod-fruits' },
+    { component: ProdLegumesComponent, path: 'prod-legumes' },
+    { component: ProdBieresComponent, path: 'prod-bieres' },
+    { component: ProdFromagesComponent, path: 'prod-fromages'},
+  ]},
+ 
 
 ];
 
