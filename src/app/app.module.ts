@@ -6,15 +6,30 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Test123Component } from './test123/test123.component';
-import { ConnexionComponent } from './connexion/connexion.component';
+import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
+import { NavComponent } from './nav/nav.component';
+import { EtalComponent } from './etal/etal.component';
+import { ProdFruitsComponent } from './prod-fruits/prod-fruits.component';
+import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
+import { ProdVinsComponent } from './prod-vins/prod-vins.component';
+import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
+import { ProdAutresComponent } from './prod-autres/prod-autres.component';
+import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Test123Component,
-    ConnexionComponent
+    MenuProducteurComponent,
+    NavComponent,
+    EtalComponent,
+    ProdFruitsComponent,
+    ProdLegumesComponent,
+    ProdVinsComponent,
+    ProdBieresComponent,
+    ProdAutresComponent,
+    ProdFromagesComponent
   ],
   imports: [
     BrowserModule,
