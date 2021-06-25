@@ -7,7 +7,7 @@
 /* old style*/
 
 .titre-perso{
-    color: rgb(63, 61, 175);
+    color: rgb(25, 85, 17);
 }
 
 .center{
@@ -44,7 +44,7 @@
     border-radius: 5px;
 }
 .bt-perso:hover {
-    background-color: rgb(57, 34, 160);
+    background-color: rgb(35, 139, 44);
 }
 
 .color-red{
