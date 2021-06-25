@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Test123Component } from './test123/test123.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Test123Component
+    Test123Component,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
