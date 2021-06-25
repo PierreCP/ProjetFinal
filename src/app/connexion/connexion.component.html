@@ -24,7 +24,9 @@
                         <input type="password" name="password" ngModel='' class="form-control" />
                     </div>
                     <button type="submit" class="btn btn-block myFont-title">connexion</button>
-                    <br><br><br><br><br>
+                    <br><br>
+                    <p class="text-danger text-center"> {{ authService.MsgErr }} </p>
+                    <br><br>
                     <h1 class="text-center myFont-head"><b>Pas encore membre ?</b>  </h1>
                     <br><br><br>
                     <div class="row">
