@@ -10,7 +10,9 @@
 body {
     background-color: #f8f8f8
 }
-
+.backcolor {
+    background-color: #f8f8f8
+}
 .container {
     margin-top: 20px;
     padding: 40px 20px
@@ -109,6 +111,6 @@ b {
     margin-top: 100px;
 }
 .center-div {
-    margin: 0 auto;
-    width: 100px; 
+    height: 100%;
+    width: 100%; 
 }
