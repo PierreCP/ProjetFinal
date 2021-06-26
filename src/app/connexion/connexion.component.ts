@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AccessService } from '../access.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-connexion',
