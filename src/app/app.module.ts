@@ -16,6 +16,15 @@ import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { Test123Component } from './test123/test123.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -31,14 +40,23 @@ import { ConnexionComponent } from './connexion/connexion.component';
     ProdBieresComponent,
     ProdAutresComponent,
     ProdFromagesComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    Test123Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    MatSliderModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    HttpClientModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

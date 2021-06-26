@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+/**
+ * @title Toolbar overview
+ */
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
