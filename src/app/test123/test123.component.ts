@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import { AccessService } from '../access.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-test123',
@@ -10,18 +14,32 @@ export class Test123Component implements OnInit {
 
   events: string[] = [];
   opened: boolean = true;
+  image: any;
+  msgErr = '';
 
- // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
+  // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
 
-  constructor() { }
+  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
   ngOnInit(): void {
   }
 
-  toggleSidenav(): void{
+  toggleSidenav(): void {
     this.opened = !this.opened
   }
+  /*
+  [Recherche Clovis image/blob]
+
+   afficherImg(i: any): void {
+     this.http.post(this.access.getBackURL() + 'image', i).subscribe({
+       next: (data) => {
+         
+       },
+       error: (err) => { console.log(err) }
+     })
+   }
+   */
 
 
 }
