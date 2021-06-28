@@ -14,11 +14,12 @@ export class ConnexionComponent implements OnInit {
 
   user: any;
   MsgErr = '';
+  Type = '';
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
   ngOnInit(): void {
-    if (this.authService.getUserInLocalStorage() != null){
+    if (this.authService.getUserInLocalStorage() != null) {
       this.route.navigateByUrl('accueil');
     }
   }
@@ -29,7 +30,21 @@ export class ConnexionComponent implements OnInit {
         this.user = data;
         if (this.user != null) {
           this.authService.setUserInLocalStorage(this.user);
-          this.route.navigateByUrl('accueil');
+          this.http.get(this.access.getBackURL() + 'person/type/' + this.user.id, { responseType: 'text'}).subscribe({
+            next: (data) => {
+              this.Type = data;
+              console.log(this.Type);
+              if (this.Type == "Admin") {
+                this.route.navigateByUrl('accueil');
+              }
+              else if (this.Type == "Producteur") {
+                this.route.navigateByUrl('menu-prod');
+              }
+              else if (this.Type == "Consommateur") {
+                this.route.navigateByUrl('menu-cons');
+              }
+            }
+          });
         } else {
           this.MsgErr = 'Identifiant ou mot de passe incorrect !'
         }
