@@ -53,6 +53,12 @@ import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.compon
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
+import { ProdFruitsDrupesComponent } from './prod-fruits-drupes/prod-fruits-drupes.component';
+import { ProdFruitsBaiesComponent } from './prod-fruits-baies/prod-fruits-baies.component';
+import { ProdFruitsPomesComponent } from './prod-fruits-pomes/prod-fruits-pomes.component';
+import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-agrumes.component';
+import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
+import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 
 >>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
 
@@ -94,8 +100,18 @@ import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
     ProdLegumesfruitsComponent,
     ProdSaladesComponent,
     ProdLegumesfeuillesComponent,
+<<<<<<< HEAD
     ProdLegumesSecComponent
 >>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
+=======
+    ProdLegumesSecComponent,
+    ProdFruitsDrupesComponent,
+    ProdFruitsBaiesComponent,
+    ProdFruitsPomesComponent,
+    ProdFruitsAgrumesComponent,
+    ProdFruitsPepoComponent,
+    ProdFruitsTropicauxComponent
+>>>>>>> a78d962765f31c7f289a3d0dca99c16e2cd4b521
   ],
   imports: [
     BrowserModule,
