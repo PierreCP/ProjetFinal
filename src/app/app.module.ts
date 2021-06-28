@@ -46,6 +46,7 @@ import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.compon
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 
@@ -83,7 +84,8 @@ import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
     ProdLegumesfruitsComponent,
     ProdSaladesComponent,
     ProdLegumesfeuillesComponent,
-    ProdLegumesSecComponent
+    ProdLegumesSecComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
