@@ -25,7 +25,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+<<<<<<< HEAD
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
+=======
+import { AccueilComponent } from './accueil/accueil.component';
+>>>>>>> eddcb7f30b2c73f3ca07bc93ff8cec4cf8c82c3d
 
 
 
@@ -43,7 +47,11 @@ import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur
     ProdFromagesComponent,
     ConnexionComponent,
     Test123Component,
+<<<<<<< HEAD
     MenuConsommateurComponent
+=======
+    AccueilComponent
+>>>>>>> eddcb7f30b2c73f3ca07bc93ff8cec4cf8c82c3d
   ],
   imports: [
     BrowserModule,
