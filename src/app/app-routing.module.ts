@@ -20,14 +20,14 @@ const routes: Routes = [
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },
     { component: ProdAutresComponent, path: 'prod-autres' },
-    { component: ProdFruitsComponent, path: 'prod-fruits' },
     { component: ProdLegumesComponent, path: 'prod-legumes' },
     { component: ProdBieresComponent, path: 'prod-bieres' },
     { component: ProdFromagesComponent, path: 'prod-fromages'},
     { component: Test123Component, path: 'test'},
   ]},
   {component: AccueilComponent, path: 'accueil'},
-  {component: MenuConsommateurComponent, path: 'menu-cons'}
+  {component: MenuConsommateurComponent, path: 'menu-cons'},
+  { component: ProdFruitsComponent, path: 'prod-fruits' }
 
 ];
 
