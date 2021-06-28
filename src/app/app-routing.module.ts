@@ -74,6 +74,12 @@ const routes: Routes = [
   {component: ProdLegumesfruitsComponent, path: 'prod-legumesFruits'},
   {component: ProdSaladesComponent, path: 'prod-salades'},
   {component: ProdLegumesfeuillesComponent, path: 'prod-legumesFeuilles'},
+  {component: ProdLegumesSecComponent, path: 'prod-drupes'},
+  {component: ProdLegumesSecComponent, path: 'prod-baies'},
+  {component: ProdLegumesSecComponent, path: 'prod-pomes'},
+  {component: ProdLegumesSecComponent, path: 'prod-agrumes'},
+  {component: ProdLegumesSecComponent, path: 'prod-pepos'},
+  {component: ProdLegumesSecComponent, path: 'prod-tropicaux'},
   {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
 
 
