@@ -17,16 +17,15 @@ import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
   { component: MenuProducteurComponent, path: 'menu-prod' },
-  { component: EtalComponent, path: 'etal', children: [
-    { component: ProdVinsComponent, path: 'prod-vins' },
-    { component: ProdAutresComponent, path: 'prod-autres' },
-    { component: ProdLegumesComponent, path: 'prod-legumes' },
-    { component: ProdBieresComponent, path: 'prod-bieres' },
-    { component: ProdFromagesComponent, path: 'prod-fromages'},
-    { component: Test123Component, path: 'test'},
-  ]},
-  {component: AccueilComponent, path: 'accueil'},
-  {component: MenuConsommateurComponent, path: 'menu-cons'},
+  { component: EtalComponent, path: 'etal' },
+  { component: ProdVinsComponent, path: 'prod-vins' },
+  { component: ProdAutresComponent, path: 'prod-autres' },
+  { component: ProdLegumesComponent, path: 'prod-legumes' },
+  { component: ProdBieresComponent, path: 'prod-bieres' },
+  { component: ProdFromagesComponent, path: 'prod-fromages' },
+  { component: Test123Component, path: 'test' },
+  { component: AccueilComponent, path: 'accueil' },
+  { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: ProdFruitsComponent, path: 'prod-fruits' }
 
 ];
