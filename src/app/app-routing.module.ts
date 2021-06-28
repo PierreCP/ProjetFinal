@@ -11,6 +11,7 @@ import { ProdFruitsComponent } from './prod-fruits/prod-fruits.component';
 import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 import { Test123Component } from './test123/test123.component';
+import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 
 
 const routes: Routes = [
@@ -25,8 +26,8 @@ const routes: Routes = [
     { component: ProdFromagesComponent, path: 'prod-fromages'},
     { component: Test123Component, path: 'test'},
   ]},
-  {component: AccueilComponent, path: 'accueil'}
- 
+  {component: AccueilComponent, path: 'accueil'},
+  {component: MenuConsommateurComponent, path: 'menu-cons'}
 
 ];
 
