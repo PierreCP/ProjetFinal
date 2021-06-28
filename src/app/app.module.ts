@@ -28,23 +28,23 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
-import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
-import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
-import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
-import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
-import { ProdRougesComponent } from './prod-rouges/prod-rouges.component';
-import { ProdBlancsComponent } from './prod-blancs/prod-blancs.component';
-import { ProdRosesComponent } from './prod-roses/prod-roses.component';
-import { ProdChampagnesComponent } from './prod-champagnes/prod-champagnes.component';
-import { ProdRacinesComponent } from './prod-racines/prod-racines.component';
-import { ProdChouxComponent } from './prod-choux/prod-choux.component';
-import { ProdCourgesComponent } from './prod-courges/prod-courges.component';
-import { ProdChampignonsComponent } from './prod-champignons/prod-champignons.component';
-import { ProdAromatiquesComponent } from './prod-aromatiques/prod-aromatiques.component';
+import { ProdBlondesComponent } from './prod-bieres-blondes/prod-blondes.component';
+import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
+import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
+import { ProdBlanchesComponent } from './prod-bieres-blanches/prod-blanches.component';
+import { ProdRougesComponent } from './prod-vins-rouges/prod-rouges.component';
+import { ProdBlancsComponent } from './prod-vins-blancs/prod-blancs.component';
+import { ProdChampagnesComponent } from './prod-vins-champagnes/prod-champagnes.component';
+import { ProdRacinesComponent } from './prod-legumes-racines/prod-racines.component';
+import { ProdChouxComponent } from './prod-legumes-choux/prod-choux.component';
+import { ProdCourgesComponent } from './prod-legumes-courges/prod-courges.component';
+import { ProdChampignonsComponent } from './prod-legumes-champignons/prod-champignons.component';
+import { ProdAromatiquesComponent } from './prod-legumes-aromatiques/prod-aromatiques.component';
 import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfruits.component';
-import { ProdSaladesComponent } from './prod-salades/prod-salades.component';
+import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.component';
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
+import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
 
 
 
@@ -63,7 +63,6 @@ import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.com
     ConnexionComponent,
     MurProducteurComponent,
     Test123Component,
-
     MenuConsommateurComponent,
     AccueilComponent,
     ProdBlondesComponent,
