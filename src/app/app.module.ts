@@ -29,13 +29,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
-<<<<<<< HEAD
-import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
-import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
-import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
-import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
-=======
 import { ProdBlondesComponent } from './prod-bieres-blondes/prod-blondes.component';
 import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
@@ -60,7 +54,6 @@ import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-ag
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 
->>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
 
 
 
@@ -85,9 +78,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdBrunesComponent,
     ProdRoussesComponent,
     ProdBlanchesComponent,
-<<<<<<< HEAD
-    ListeProducteurComponent
-=======
+    ListeProducteurComponent,
     ProdRougesComponent,
     ProdBlancsComponent,
     ProdRosesComponent,
@@ -100,18 +91,14 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdLegumesfruitsComponent,
     ProdSaladesComponent,
     ProdLegumesfeuillesComponent,
-<<<<<<< HEAD
-    ProdLegumesSecComponent
->>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
-=======
+    ProdLegumesSecComponent,
     ProdLegumesSecComponent,
     ProdFruitsDrupesComponent,
     ProdFruitsBaiesComponent,
     ProdFruitsPomesComponent,
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
-    ProdFruitsTropicauxComponent
->>>>>>> a78d962765f31c7f289a3d0dca99c16e2cd4b521
+    ProdFruitsTropicauxComponent,
   ],
   imports: [
     BrowserModule,

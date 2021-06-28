@@ -13,9 +13,7 @@ import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 import { Test123Component } from './test123/test123.component';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
-<<<<<<< HEAD
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
-=======
 import { ProdBlanchesComponent } from './prod-bieres-blanches/prod-blanches.component';
 import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
@@ -33,7 +31,6 @@ import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfru
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.component';
->>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
 
 
 const routes: Routes = [
@@ -62,9 +59,7 @@ const routes: Routes = [
   { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},
-<<<<<<< HEAD
-  {component: ListeProducteurComponent, path: 'liste-prod'}
-=======
+  {component: ListeProducteurComponent, path: 'liste-prod'},
   {component: ProdBlanchesComponent, path: 'prod-blanches'},
   {component: ProdBrunesComponent, path: 'prod-brunes'},
   {component: ProdRoussesComponent, path: 'prod-rousses'},
@@ -89,7 +84,6 @@ const routes: Routes = [
   {component: ProdLegumesSecComponent, path: 'prod-tropicaux'},
   {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
 
->>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
 
 ];
 
