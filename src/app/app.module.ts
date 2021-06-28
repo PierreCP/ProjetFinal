@@ -99,6 +99,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
     ProdFruitsTropicauxComponent,
+    ProdFruitsTropicauxComponent
   ],
   imports: [
     BrowserModule,
