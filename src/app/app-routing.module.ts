@@ -13,6 +13,23 @@ import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 import { Test123Component } from './test123/test123.component';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
+import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
+import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
+import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
+import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
+import { ProdRougesComponent } from './prod-rouges/prod-rouges.component';
+import { ProdBlancsComponent } from './prod-blancs/prod-blancs.component';
+import { ProdRosesComponent } from './prod-roses/prod-roses.component';
+import { ProdChampagnesComponent } from './prod-champagnes/prod-champagnes.component';
+import { ProdRacinesComponent } from './prod-racines/prod-racines.component';
+import { ProdChouxComponent } from './prod-choux/prod-choux.component';
+import { ProdCourgesComponent } from './prod-courges/prod-courges.component';
+import { ProdChampignonsComponent } from './prod-champignons/prod-champignons.component';
+import { ProdAromatiquesComponent } from './prod-aromatiques/prod-aromatiques.component';
+import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfruits.component';
+import { ProdSaladesComponent } from './prod-salades/prod-salades.component';
+import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
+import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 
 
 const routes: Routes = [
@@ -40,7 +57,23 @@ const routes: Routes = [
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
-  {component: MurProducteurComponent, path: 'mur'}
+  {component: MurProducteurComponent, path: 'mur'},
+  {component: ProdBlanchesComponent, path: 'prod-blanches'},
+  {component: ProdBrunesComponent, path: 'prod-brunes'},
+  {component: ProdRoussesComponent, path: 'prod-rousses'},
+  {component: ProdBlondesComponent, path: 'prod-blondes'},
+  {component: ProdRougesComponent, path: 'prod-rouges'},
+  {component: ProdBlancsComponent, path: 'prod-blancs'},
+  {component: ProdRosesComponent, path: 'prod-roses'},
+  {component: ProdRacinesComponent, path: 'prod-racines'},
+  {component: ProdChouxComponent, path: 'prod-choux'},
+  {component: ProdCourgesComponent, path: 'prod-courges'},
+  {component: ProdChampignonsComponent, path: 'prod-champignons'},
+  {component: ProdAromatiquesComponent, path: 'prod-aromatiques'},
+  {component: ProdLegumesfruitsComponent, path: 'prod-legumesFruits'},
+  {component: ProdSaladesComponent, path: 'prod-salades'},
+  {component: ProdLegumesfeuillesComponent, path: 'prod-legumesFeuilles'},
+  {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
 
 
 ];

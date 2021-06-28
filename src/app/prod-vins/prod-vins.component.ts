@@ -16,5 +16,16 @@ export class ProdVinsComponent implements OnInit {
   retourEtal(): void {
     this.route.navigateByUrl('etal');
   }
-
+  redirectionRougesMenu(): void {
+    this.route.navigateByUrl('prod-rouges');
+  }
+  redirectionBlancsMenu(): void {
+    this.route.navigateByUrl('prod-blancs');
+  }
+  redirectionRosesMenu(): void {
+    this.route.navigateByUrl('prod-roses');
+  }
+  redirectionChampagnesMenu(): void {
+    this.route.navigateByUrl('prod-champagnes');
+  }
 }
