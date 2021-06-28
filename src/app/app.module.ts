@@ -28,6 +28,10 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
+import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
+import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
+import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
 
 
 
@@ -48,7 +52,11 @@ import { AccueilComponent } from './accueil/accueil.component';
     Test123Component,
 
     MenuConsommateurComponent,
-    AccueilComponent
+    AccueilComponent,
+    ProdBlondesComponent,
+    ProdBrunesComponent,
+    ProdRoussesComponent,
+    ProdBlanchesComponent
   ],
   imports: [
     BrowserModule,
