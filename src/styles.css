@@ -6,6 +6,9 @@
 
 /* old style*/
 
+.icon-size-1{
+    font-size: 50px;
+}
 
 
 .sidenav-btn {
@@ -16,6 +19,7 @@
 
 .above-banniere{
     padding-top: 150px;
+    width: 100vw;
 }
 
 .sidenav{
@@ -24,11 +28,13 @@
 }
 
 
+.drawer-content{
+    width: 100vw;
+}
 
 .drawer-container {
     width: 100vw;
-    height: 100vh;
-
+    height: max-content;
   }
   
   mat-drawer-content {

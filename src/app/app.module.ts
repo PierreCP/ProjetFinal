@@ -48,6 +48,7 @@ import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +98,8 @@ import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
