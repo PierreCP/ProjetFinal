@@ -24,7 +24,7 @@ const routes: Routes = [
     { component: ProdLegumesComponent, path: 'prod-legumes' },
     { component: ProdBieresComponent, path: 'prod-bieres' },
     { component: ProdFromagesComponent, path: 'prod-fromages'},
-    { component: Test123Component, path: 'test'},
+    { component: Test123Component, path: 'pagetest123'},
   ]},
   {component: AccueilComponent, path: 'accueil'},
   {component: MenuConsommateurComponent, path: 'menu-cons'}

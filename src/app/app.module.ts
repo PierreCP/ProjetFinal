@@ -27,6 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -61,7 +62,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
