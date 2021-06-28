@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prod-legumes',
@@ -7,9 +8,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdLegumesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
+  }
+
+  retourEtal(): void {
+    this.route.navigateByUrl('etal');
+  }
+
+  redirectionRacinesMenu(): void {
+    this.route.navigateByUrl('prod-racines');
+  }
+  redirectionChouxMenu(): void {
+    this.route.navigateByUrl('prod-choux');
+  }
+  redirectionCourgesMenu(): void {
+    this.route.navigateByUrl('prod-courges');
+  }
+  redirectionChampignonsMenu(): void {
+    this.route.navigateByUrl('prod-champignons');
+  }
+  redirectionAromatiquesMenu(): void {
+    this.route.navigateByUrl('prod-aromatiques');
+  }
+  redirectionLegumesFruitsMenu(): void {
+    this.route.navigateByUrl('prod-legumesFruits');
+  }
+  redirectionSaladesMenu(): void {
+    this.route.navigateByUrl('prod-salades');
+  }
+  redirectionLegumesFeuillesMenu(): void {
+    this.route.navigateByUrl('prod-legumesFeuilles');
+  }
+  redirectionLegumesSecsMenu(): void {
+    this.route.navigateByUrl('prod-legumesSecs');
   }
 
 }

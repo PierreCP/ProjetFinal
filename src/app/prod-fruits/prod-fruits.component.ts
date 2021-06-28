@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-prod-fruits',
@@ -7,9 +8,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdFruitsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
+  retourEtal(): void {
+    this.route.navigateByUrl('etal');
+  }
+
+
+  redirectionDrupesMenu(): void {
+    this.route.navigateByUrl('prod-drupes');
+  }
+  redirectionBaiesMenu(): void {
+    this.route.navigateByUrl('prod-baies');
+  }
+  redirectionPomesMenu(): void {
+    this.route.navigateByUrl('prod-pomes');
+  }
+  redirectionAgrumesMenu(): void {
+    this.route.navigateByUrl('prod-agrumes');
+  }
+  redirectionPeposMenu(): void {
+    this.route.navigateByUrl('prod-pepos');
+  }
+  redirectionTropicauxMenu(): void {
+    this.route.navigateByUrl('prod-tropicaux');
+  }
 }
