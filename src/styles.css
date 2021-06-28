@@ -16,9 +16,13 @@
     height: 60px;
 }
 
+.home-icon{
+    font-size: 70px;
+}
 
 .above-banniere{
-    padding-top: 150px;
+    padding-top: 15px;
+    padding-left: 40px;
     width: 100vw;
 }
 
