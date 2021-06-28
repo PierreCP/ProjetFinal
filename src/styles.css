@@ -6,6 +6,11 @@
 
 /* old style*/
 
+.general-background{
+    background-image: url('assets/img/background accueil3.png'); 
+    height: 100%;
+}
+
 .icon-size-1{
     font-size: 50px;
 }

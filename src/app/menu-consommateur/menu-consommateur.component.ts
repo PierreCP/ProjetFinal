@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class MenuConsommateurComponent implements OnInit {
 
+  hover: boolean = false;
+
   constructor(private route: Router) { }
 
   ngOnInit(): void {

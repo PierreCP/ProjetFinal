@@ -8,7 +8,7 @@ height: 150px;
 -->
 
 <div class="" >
-<mat-drawer-container class="drawer-container" hasBackdrop="true" style="background-image: url('assets/img/background accueil2.jpg'); height: 100%">
+<mat-drawer-container class="drawer-container general-background" hasBackdrop="true">
   <mat-drawer class="sidenav" #drawer mode="over">
     <div class="container pt-3 myFont-title">
       
@@ -24,6 +24,9 @@ height: 150px;
       </div>
       <div class="container">
         <button mat-raised-button  class="btn btn-block">Messagerie</button>
+      </div>
+      <div class="container">
+        <button mat-raised-button  class="btn btn-block">Nous contacter</button>
       </div>
       <div class="container">
         <button mat-raised-button  class="btn btn-block">Deconnexion</button>
@@ -62,7 +65,7 @@ height: 150px;
   </div>
     <div class="custom-margin-left row d-flex justify-content-around">
     <div class="container-fluid col-sm-4 my-pad-bot">
-    <mat-card class="example-card" (click)="doStuff()">
+    <mat-card class="example-card example-card:hover" (click)="doStuff()">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Rechercher des producteurs</mat-card-title>
@@ -120,6 +123,21 @@ height: 150px;
                 </mat-card-content>
               </mat-card>
             </div>
+
+            <div class="container-fluid col-sm-4 my-pad-bot">
+              <mat-card class="example-card" (click)="doStuff()">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Nous contacter</mat-card-title>
+                  </mat-card-header>
+                  <img class="container mt-3" mat-card-image src="/assets/img/contact.png" alt="Etale">
+                  <mat-card-content>
+                    <p class="align-text-middle">
+                      Cet outil est le votre, vos remarques sont précieuses 
+                    </p>
+                  </mat-card-content>
+                </mat-card>
+              </div>
 
             <div class="container-fluid col-sm-4 my-pad-bot">
                 <mat-card class="example-card" (click)="doStuff()">
