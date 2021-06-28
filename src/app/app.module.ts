@@ -100,6 +100,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdFruitsPomesComponent,
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
+    ProdFruitsTropicauxComponent,
     ProdFruitsTropicauxComponent
   ],
   imports: [
