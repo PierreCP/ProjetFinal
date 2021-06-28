@@ -1,11 +1,14 @@
+<!--
 <div class="bg-image" style="
 background-image: url('assets/img/banniere.jpg');
 height: 150px;
 ">
 
 <div class="above-banniere">
+-->
 
-<mat-drawer-container class="drawer-container" hasBackdrop="true">
+<div class="" >
+<mat-drawer-container class="drawer-container" hasBackdrop="true" style="background-image: url('assets/img/background accueil2.jpg'); height: 100%">
   <mat-drawer class="sidenav" #drawer mode="over">
     <div class="container pt-3 myFont-title">
       
@@ -55,12 +58,20 @@ height: 150px;
   </mat-drawer>
   <mat-drawer-content>
 
-
-    <div class="col-sm-2" >
+    <div class="col-sm-2">
+    <div>
+      <mat-card class="sans-fond" (click)="doStuff()">
+        <mat-card-header></mat-card-header>
+        <img class="container mt-3" mat-card-image src="/assets/img/logo_sans_fond.png" alt="Etale">
+        <mat-card-content></mat-card-content>
+      </mat-card>
+    </div>
+    <div class="above-banniere" >
         <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn"><mat-icon>list</mat-icon></button>
     </div>
+  </div>
     <div class="custom-margin-left row d-flex justify-content-around">
-    <div class="container-fluid col-sm-4 pb-4">
+    <div class="container-fluid col-sm-4 my-pad-bot">
     <mat-card class="example-card" (click)="doStuff()">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
@@ -75,7 +86,7 @@ height: 150px;
       </mat-card>
     </div>
 
-    <div class="container-fluid col-sm-4 pb-4">
+    <div class="container-fluid col-sm-4 my-pad-bot">
     <mat-card class="example-card" (click)="doStuff()">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
@@ -90,7 +101,7 @@ height: 150px;
       </mat-card>
     </div>
 
-    <div class="container-fluid col-sm-4 pb-4">
+    <div class="container-fluid col-sm-4 my-pad-bot">
         <mat-card class="example-card" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
@@ -105,7 +116,7 @@ height: 150px;
           </mat-card>
         </div>
 
-        <div class="container-fluid col-sm-4 pb-4">
+        <div class="container-fluid col-sm-4 my-pad-bot">
             <mat-card class="example-card" (click)="doStuff()">
                 <mat-card-header>
                   <div mat-card-avatar class="example-header-image"></div>
@@ -120,7 +131,7 @@ height: 150px;
               </mat-card>
             </div>
 
-            <div class="container-fluid col-sm-4 pb-4">
+            <div class="container-fluid col-sm-4 my-pad-bot">
                 <mat-card class="example-card" (click)="doStuff()">
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
