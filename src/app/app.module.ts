@@ -16,6 +16,7 @@ import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -43,6 +44,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     ProdAutresComponent,
     ProdFromagesComponent,
     ConnexionComponent,
+    MurProducteurComponent,
     Test123Component,
 
     MenuConsommateurComponent,
@@ -53,6 +55,7 @@ import { AccueilComponent } from './accueil/accueil.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,

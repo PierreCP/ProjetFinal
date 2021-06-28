@@ -4,6 +4,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EtalComponent } from './etal/etal.component';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
@@ -26,7 +27,8 @@ const routes: Routes = [
   { component: Test123Component, path: 'test' },
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
-  { component: ProdFruitsComponent, path: 'prod-fruits' }
+  { component: ProdFruitsComponent, path: 'prod-fruits' },
+  {component: MurProducteurComponent, path: 'mur'}
 
 ];
 
