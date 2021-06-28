@@ -26,13 +26,35 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
+<<<<<<< HEAD
 import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
 import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
 import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
+=======
+import { ProdBlondesComponent } from './prod-bieres-blondes/prod-blondes.component';
+import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
+import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
+import { ProdBlanchesComponent } from './prod-bieres-blanches/prod-blanches.component';
+import { ProdRougesComponent } from './prod-vins-rouges/prod-rouges.component';
+import { ProdBlancsComponent } from './prod-vins-blancs/prod-blancs.component';
+import { ProdChampagnesComponent } from './prod-vins-champagnes/prod-champagnes.component';
+import { ProdRacinesComponent } from './prod-legumes-racines/prod-racines.component';
+import { ProdChouxComponent } from './prod-legumes-choux/prod-choux.component';
+import { ProdCourgesComponent } from './prod-legumes-courges/prod-courges.component';
+import { ProdChampignonsComponent } from './prod-legumes-champignons/prod-champignons.component';
+import { ProdAromatiquesComponent } from './prod-legumes-aromatiques/prod-aromatiques.component';
+import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfruits.component';
+import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.component';
+import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
+import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
+import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
+
+>>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
 
 
 
@@ -51,14 +73,29 @@ import { ListeProducteurComponent } from './liste-producteur/liste-producteur.co
     ConnexionComponent,
     MurProducteurComponent,
     Test123Component,
-
     MenuConsommateurComponent,
     AccueilComponent,
     ProdBlondesComponent,
     ProdBrunesComponent,
     ProdRoussesComponent,
     ProdBlanchesComponent,
+<<<<<<< HEAD
     ListeProducteurComponent
+=======
+    ProdRougesComponent,
+    ProdBlancsComponent,
+    ProdRosesComponent,
+    ProdChampagnesComponent,
+    ProdRacinesComponent,
+    ProdChouxComponent,
+    ProdCourgesComponent,
+    ProdChampignonsComponent,
+    ProdAromatiquesComponent,
+    ProdLegumesfruitsComponent,
+    ProdSaladesComponent,
+    ProdLegumesfeuillesComponent,
+    ProdLegumesSecComponent
+>>>>>>> d7e3380ecb9d8308f7d3c7c9aaad42986d5ef54a
   ],
   imports: [
     BrowserModule,
@@ -74,7 +111,8 @@ import { ListeProducteurComponent } from './liste-producteur/liste-producteur.co
     MatCheckboxModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
