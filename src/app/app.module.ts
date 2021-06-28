@@ -16,6 +16,7 @@ import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 
 
 
@@ -31,14 +32,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
     ProdBieresComponent,
     ProdAutresComponent,
     ProdFromagesComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    MurProducteurComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

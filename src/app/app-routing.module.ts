@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EtalComponent } from './etal/etal.component';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
     { component: ProdBieresComponent, path: 'prod-bieres' },
     { component: ProdFromagesComponent, path: 'prod-fromages'},
   ]},
+  {component: MurProducteurComponent, path: 'mur'},
  
 
 ];
