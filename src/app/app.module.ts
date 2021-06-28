@@ -26,6 +26,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ProdBlondesComponent } from './prod-bieres-blondes/prod-blondes.component';
@@ -99,7 +100,7 @@ import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
     MatFormFieldModule,
     MatSelectModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
