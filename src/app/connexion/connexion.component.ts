@@ -19,7 +19,7 @@ export class ConnexionComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.getUserInLocalStorage() != null){
-      this.route.navigateByUrl('menu-cons');
+      this.route.navigateByUrl('accueil');
     }
   }
 
@@ -29,7 +29,7 @@ export class ConnexionComponent implements OnInit {
         this.user = data;
         if (this.user != null) {
           this.authService.setUserInLocalStorage(this.user);
-          this.route.navigateByUrl('menu-cons');
+          this.route.navigateByUrl('accueil');
         } else {
           this.MsgErr = 'Identifiant ou mot de passe incorrect !'
         }
