@@ -92,3 +92,26 @@ b {
 .mt-120{
     margin-top: 120px;
 }
+
+.btn-default
+ 
+{
+ 
+background-color: whitesmoke;
+ 
+color:black;
+ 
+border-color: #2F3E48;
+ 
+}
+ 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+ 
+ 
+ 
+background-color: #cf1812;
+ 
+color:#FFF;
+ 
+border-color: #31347B;
+}

@@ -16,4 +16,24 @@ export class ProdFruitsComponent implements OnInit {
   retourEtal(): void {
     this.route.navigateByUrl('etal');
   }
+
+
+  redirectionDrupesMenu(): void {
+    this.route.navigateByUrl('prod-drupes');
+  }
+  redirectionBaiesMenu(): void {
+    this.route.navigateByUrl('prod-baies');
+  }
+  redirectionPomesMenu(): void {
+    this.route.navigateByUrl('prod-pomes');
+  }
+  redirectionAgrumesMenu(): void {
+    this.route.navigateByUrl('prod-agrumes');
+  }
+  redirectionPeposMenu(): void {
+    this.route.navigateByUrl('prod-pepos');
+  }
+  redirectionTropicauxMenu(): void {
+    this.route.navigateByUrl('prod-tropicaux');
+  }
 }
