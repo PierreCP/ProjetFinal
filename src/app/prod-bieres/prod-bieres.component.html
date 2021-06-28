@@ -7,6 +7,7 @@
     </div>
     <div class="row">
         <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionBlanchesMenu()'>
             <div class="box bg-white">
                 <div class="d-flex align-items-center">
                     <div
@@ -17,9 +18,10 @@
                             <p class="text-muted"></p>
                         </div>
                 </div>
-            </div>
+            </div></a>
         </div>
         <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionBlondesMenu()'>
             <div class="box bg-white">
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan"> <img
@@ -28,9 +30,10 @@
                             <p class="text-muted"></p>
                          </div>
                 </div>
-            </div>
+            </div></a>
         </div>
         <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionRoussesMenu()'>
             <div class="box bg-white">
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink"> <img
@@ -40,26 +43,25 @@
                             <p class="text-muted"></p>
                          </div>
                 </div>
-            </div>
+            </div></a>
         </div>
         <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+            <a (click)='redirectionBrunesMenu()'>
             <div class="box bg-white">
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple"> <img
                             src="https://image.migros.ch/product-zoom/559484334aa176ce47ca17a1576573f80664afe6/champignons-bruns.jpg"
                             alt=""> </div>
                     <div class="d-flex flex-column"> <b>Bières brunes</b>
-                            <p class="text-muted">32 classes</p>
+                            <p class="text-muted"></p>
                         </div>
                 </div>
-            </div>
+            </div></a>
         </div>
         <div class="container-fluid">
-            <a href="etal">
-                <button type="button" class="btn btn-block btn-primary">
-                    <font size="6" style="color: white">Retour</font>
-                </button>
-            </a>
-        </div>
+            <button type="button" (click)='retourEtal()' class="btn btn-block btn-primary">
+                <font size="6" style="color: white">Retour</font>
+            </button>
+    </div>
     </div>
 </div>
