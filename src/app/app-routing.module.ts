@@ -4,6 +4,7 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EtalComponent } from './etal/etal.component';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
@@ -27,7 +28,20 @@ const routes: Routes = [
     { component: Test123Component, path: 'pagetest123'},
   ]},
   {component: AccueilComponent, path: 'accueil'},
-  {component: MenuConsommateurComponent, path: 'menu-cons'}
+  {component: MenuConsommateurComponent, path: 'menu-cons'},
+
+  { component: EtalComponent, path: 'etal' },
+  { component: ProdVinsComponent, path: 'prod-vins' },
+  { component: ProdAutresComponent, path: 'prod-autres' },
+  { component: ProdLegumesComponent, path: 'prod-legumes' },
+  { component: ProdBieresComponent, path: 'prod-bieres' },
+  { component: ProdFromagesComponent, path: 'prod-fromages' },
+  { component: Test123Component, path: 'test' },
+  { component: AccueilComponent, path: 'accueil' },
+  { component: MenuConsommateurComponent, path: 'menu-cons' },
+  { component: ProdFruitsComponent, path: 'prod-fruits' },
+  {component: MurProducteurComponent, path: 'mur'}
+
 
 ];
 

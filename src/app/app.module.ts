@@ -16,6 +16,7 @@ import { ProdBieresComponent } from './prod-bieres/prod-bieres.component';
 import { ProdAutresComponent } from './prod-autres/prod-autres.component';
 import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -27,7 +28,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
+
 import {MatCardModule} from '@angular/material/card';
+
+import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
+import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
+import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
+import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
+
 
 
 
@@ -44,16 +52,22 @@ import {MatCardModule} from '@angular/material/card';
     ProdAutresComponent,
     ProdFromagesComponent,
     ConnexionComponent,
+    MurProducteurComponent,
     Test123Component,
 
     MenuConsommateurComponent,
-    AccueilComponent
+    AccueilComponent,
+    ProdBlondesComponent,
+    ProdBrunesComponent,
+    ProdRoussesComponent,
+    ProdBlanchesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     MatSliderModule,
     MatToolbarModule,
     MatIconModule,
