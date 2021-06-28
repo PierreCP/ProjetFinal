@@ -6,10 +6,7 @@
                     background-image: url('assets/img/étal_magasin_fromages.jpg');
                     ">
                 <div class="card col-sm-2">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up
-                        the bulk of the card's content.
+                    <img alt="" src="assets/img/tete.jpg">
                 </div>
             </div>
         </div>
@@ -20,43 +17,15 @@
     <h4><i>Producteur de fromages depuis 1978</i></h4>
     <hr>
 </div>
-<nav class="navbar navbar-expand-lg navbar-light bg-light container">
-    <div class="container-fluid row">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-sm-7">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Mes publications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Promotions en cours</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mes abonnés</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Commandes en cours</a>
-                </li>
-            </ul>
-            <button type="button" class="btn btn-dark col-sm-2 mt-1">
-                Notifications<span class="badge bg-danger ml-2">8</span>
-            </button>
-            <form class="d-flex input-group w-auto col-sm-3">
-                <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
-                <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-                    Search
-                </button>
-            </form>
-        </div>
-    </div>
-</nav>
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" >
             <div class="card text-center card-shadow">
                 <div class="card-header"><strong>Mes Infos</strong></div>
                 <div class="row">
                     <div class="col-sm-6">
+                        <br>
                         <label>Nom :</label>
                         <br>
                         <label>Prénom :</label>
@@ -65,23 +34,24 @@
                         <br>
                         <label>Adresse :</label>
                     </div>
-                    <div class="col-sm-6">
-                        <label>Nom</label>
+                    <div class="col-sm-6" >
                         <br>
-                        <label>Prénom</label>
+                        <label>{{person.nom}}</label>
                         <br>
-                        <label>Magasin</label>
+                        <label>{{person.prenom}}</label>
                         <br>
-                        <label>Adresse</label>
+                        <label>{{person.nom_magasin}}</label>
+                        <br>
+                        <label>{{person.adresse}}</label>
                     </div>
                 </div>
+                <hr>
                 <button class="btn btn-block btn-secondary">Modifier mon profil</button>
             </div>
             <br>
             <div class="card card-shadow text-center">
                 <div class="card-header"><strong>Mes Photos</strong></div>
-                <div class="card-body"></div>
-                <div class="cantainer row">
+                <div class="card-body container row">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-5">
                         <img src="assets/img/camembert.jpg" alt="" width="100%">
@@ -89,7 +59,7 @@
                     <div class="col-sm-5">
                         <img src="assets/img/étal_magasin_fromages.jpg" alt="" width="100%">
                     </div>
-                    
+
                 </div>
                 <br>
             </div>
@@ -103,13 +73,18 @@
                         <img src="assets/img/tete.jpg" alt="tete" width="100%">
                         <label>Tete</label>
                     </div>
-                    
+
                 </div>
                 <br>
             </div>
         </div>
         <div class="col-sm-8">
             <div class="col-sm-1"></div>
+            <div class="row">
+                <button class="ml-4 btn btn-block btn-outline-secondary col-sm-5">Affiche des publications</button>
+                <div class="col-sm-1"></div>
+                <button class="mr-4 btn btn-block btn-outline-secondary col-sm-5">Affichage des produits</button>
+            </div>
             <div class="card card-shadow">
                 <div class="card-header text-center">
                     <label><strong>Publications</strong></label>
@@ -132,7 +107,37 @@
                     <label>Camembert de Normandie AOP</label>
                 </div>
             </div>
+            <br>
+            <div class="card card-shadow">
+                <div class="card-header text-center">
+                    <label><strong>Liste des produits</strong></label>
+                </div>
+                <div class="card">
+                    <div class="card-body row" *ngFor='let pr of produit'>
+                        <div class="col-sm-5 mt-2">
+                            <img alt="" src="assets/img/camembert.jpg" width="100%">
+                            <br>
+                        </div>
+                        <div class="card col-sm-7">
+                            <div class="card-header text-center">
+                                <label>{{pr.description}}</label>
+                            </div>
+                            <div class="card-body col-sm-6">
+                                <label>Nom du produit : {{pr.nom}}</label>
+                                <br>
+                                <label>Catégorie : {{pr.categorie}} </label>
+                                <br>
+                                <label>Quantité disponible : {{pr.quantite}}</label>
+                                <br>
+                                <label>Prix : {{pr.prix}}</label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </div>
     <br><br><br>
 </div>
