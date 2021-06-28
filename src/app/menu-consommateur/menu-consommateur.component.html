@@ -1,0 +1,37 @@
+<div class="bg-image" style="
+background-image: url('assets/img/banniere.jpg');
+height: 150px;
+">
+
+<div class="above-banniere">
+
+<mat-drawer-container class="drawer-container" hasBackdrop="true">
+  <mat-drawer class="sidenav" #drawer mode="over">
+    <div class="container pt-3 myFont-title">
+      
+      <h1 class="myFont-head">Menu principal</h1>
+
+          <mat-form-field appearance="fill">
+      <mat-label>Has backdrop</mat-label>
+      <mat-select #hasBackdrop>
+        <mat-option>Unset</mat-option>
+        <mat-option [value]="true">True</mat-option>
+        <mat-option [value]="false">False</mat-option>
+      </mat-select>
+
+      <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
+
+    </mat-form-field>
+    </div>
+
+    
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn"><mat-icon>list</mat-icon></button>
+
+    <!-- AJOUTER LE CODE DE LA PAGE ICI -->
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+</div>
