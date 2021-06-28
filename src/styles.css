@@ -199,10 +199,6 @@ body {
     background-color: #f8f8f8
 }
 
-.container {
-    margin-top: 20px;
-    padding: 40px 20px
-}
 
 .box {
     padding: 40px 30px;
@@ -219,11 +215,6 @@ a:hover {
     text-decoration: none
 }
 
-img {
-    object-fit: contain;
-    width: 35px;
-    height: 35px
-}
 
 p.text-muted {
     margin: 0;
