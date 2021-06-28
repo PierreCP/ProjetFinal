@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EtalComponent } from './etal/etal.component';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
@@ -10,6 +11,8 @@ import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ProdFruitsComponent } from './prod-fruits/prod-fruits.component';
 import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
+import { Test123Component } from './test123/test123.component';
+
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -21,8 +24,10 @@ const routes: Routes = [
     { component: ProdLegumesComponent, path: 'prod-legumes' },
     { component: ProdBieresComponent, path: 'prod-bieres' },
     { component: ProdFromagesComponent, path: 'prod-fromages'},
+    { component: Test123Component, path: 'test'},
   ]},
   {component: MurProducteurComponent, path: 'mur'},
+  {component: AccueilComponent, path: 'accueil'}
  
 
 ];

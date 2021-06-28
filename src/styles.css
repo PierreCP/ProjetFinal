@@ -6,6 +6,57 @@
 
 /* old style*/
 
+
+
+.sidenav-btn {
+    width: 60px;
+    height: 60px;
+}
+
+
+.above-banniere{
+    padding-top: 150px;
+}
+
+.sidenav{
+    background-color: rgb(203, 255, 203);
+    width: 400px;
+}
+
+
+
+.drawer-container {
+    width: 100vw;
+    height: 100vh;
+
+  }
+  
+  mat-drawer-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.sidenav-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-events {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #555;
+  }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
 .flip-horizontally {
     transform: scaleX(-1);
   }
@@ -13,30 +64,30 @@
 .myFont-head{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: xx-large;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
 .myFont-title{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40);
   }
 
   .myFont-subtitle{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
   .myFont-text{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
 
 .titre-perso{
-    color: rgb(25, 85, 17);
+    color: rgb(40, 153, 40)
 }
 
 .center{
@@ -116,6 +167,9 @@
 .mt-100 {
     margin-top: 100px;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
