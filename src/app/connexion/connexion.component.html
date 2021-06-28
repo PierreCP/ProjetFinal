@@ -11,10 +11,9 @@
             <img src="assets/img/vigne.png" class="img-fluid" alt="">
         </div>
         <div class="col-sm-6 container pt-5">
-            <!--(ngSubmit)='connexion(fConnect.value)'-->
             <h1 class="text-center container myFont-head"><b>Bienvenue sur court-circuit !</b> </h1>
             <br><br><br>
-            <form (ngSubmit)="connexion(connexionForm.value)" #connexionForm="ngForm">
+            <form #fConnect="ngForm" (ngSubmit)='connexion(fConnect.value)'>
                 <div style="margin: auto; width: 60%">
                     <div class="form-group">
                         <label class="label-perso">Login : </label>
@@ -22,7 +21,7 @@
                     </div>
                     <div class="form-group">
                         <label class="label-perso">Password : </label>
-                        <input type="password" class="form-control" ngModel required name="mdp" #mdp="ngModel" />
+                        <input type="password" name="mdp" ngModel='' class="form-control" />
                     </div>
                     <button type="submit" class="btn btn-block myFont-title">connexion</button>
                     <br><br>
@@ -43,11 +42,6 @@
 
                     </div>
 
-                    <div>
-                        <p class="text-danger text-center">
-                            <!--{{ authService.MsgErr }}-->
-                        </p>
-                    </div>
                 </div>
             </form>
         </div>
