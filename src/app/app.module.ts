@@ -32,6 +32,7 @@ import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
 import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
 import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
+import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
 
 
 
@@ -56,7 +57,8 @@ import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
     ProdBlondesComponent,
     ProdBrunesComponent,
     ProdRoussesComponent,
-    ProdBlanchesComponent
+    ProdBlanchesComponent,
+    ListeProducteurComponent
   ],
   imports: [
     BrowserModule,

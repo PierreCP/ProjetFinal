@@ -13,6 +13,7 @@ import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 import { Test123Component } from './test123/test123.component';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
+import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
 
 
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
-  {component: MurProducteurComponent, path: 'mur'}
+  {component: MurProducteurComponent, path: 'mur'},
+  {component: ListeProducteurComponent, path: 'liste-prod'}
 
 ];
 

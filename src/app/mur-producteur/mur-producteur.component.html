@@ -20,7 +20,7 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4" >
             <div class="card text-center card-shadow">
                 <div class="card-header"><strong>Mes Infos</strong></div>
                 <div class="row">
@@ -34,15 +34,15 @@
                         <br>
                         <label>Adresse :</label>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" >
                         <br>
-                        <label>Nom</label>
+                        <label>{{person.nom}}</label>
                         <br>
-                        <label>Prénom</label>
+                        <label>{{person.prenom}}</label>
                         <br>
-                        <label>Magasin</label>
+                        <label>{{person.nom_magasin}}</label>
                         <br>
-                        <label>Adresse</label>
+                        <label>{{person.adresse}}</label>
                     </div>
                 </div>
                 <hr>
@@ -113,23 +113,23 @@
                     <label><strong>Liste des produits</strong></label>
                 </div>
                 <div class="card">
-                    <div class="card-body row">
+                    <div class="card-body row" *ngFor='let pr of produit'>
                         <div class="col-sm-5 mt-2">
                             <img alt="" src="assets/img/camembert.jpg" width="100%">
                             <br>
                         </div>
                         <div class="card col-sm-7">
                             <div class="card-header text-center">
-                                <label>Camembert de Normandie AOP</label>
+                                <label>{{pr.description}}</label>
                             </div>
                             <div class="card-body col-sm-6">
-                                <label>Nom du produit :</label>
+                                <label>Nom du produit : {{pr.nom}}</label>
                                 <br>
-                                <label>Catégorie :</label>
+                                <label>Catégorie : {{pr.categorie}} </label>
                                 <br>
-                                <label>Quantité disponible :</label>
+                                <label>Quantité disponible : {{pr.quantite}}</label>
                                 <br>
-                                <label>Prix :</label>
+                                <label>Prix : {{pr.prix}}</label>
                             </div>
 
                         </div>
