@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { AccessService } from '../access.service';
-import {NgForm} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-connexion',
@@ -12,7 +12,7 @@ import {NgForm} from '@angular/forms';
 })
 export class ConnexionComponent implements OnInit {
 
-  user: any;
+  person: any;
   MsgErr: any;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
@@ -20,12 +20,17 @@ export class ConnexionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  connexion(u: any): void{
-    this.http.post(this.access.getBackURL() + 'login', u).subscribe({
-      next: (data)=> {this.user = data; if (this.user.id != null) { this.authService.setUserInLocalStorage(this.user) ; this.route.navigateByUrl('memoprive');} else{
-        this.MsgErr = 'Indentifiant ou mot de passe incorrecte !'
-      }},
-      error: (err)=> {}
+  connexion(p: any): void {
+    this.http.post(this.access.getBackURL() + 'login', p).subscribe({
+      next: (data) => {
+        this.person = data;
+        if (data != null) {
+          this.authService.setUserInLocalStorage(this.person); this.route.navigateByUrl('');
+        } else {
+          this.MsgErr = 'Indentifiant ou mot de passe incorrecte !'
+        }
+      },
+      error: (err) => { }
     })
   }
 
