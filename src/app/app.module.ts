@@ -29,6 +29,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
 import { ProdBlondesComponent } from './prod-bieres-blondes/prod-blondes.component';
 import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
@@ -78,6 +79,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdBrunesComponent,
     ProdRoussesComponent,
     ProdBlanchesComponent,
+    ListeProducteurComponent,
     ProdRougesComponent,
     ProdBlancsComponent,
     ProdRosesComponent,
@@ -92,6 +94,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdLegumesfeuillesComponent,
     ProdLegumesSecComponent,
     InscriptionComponent,
+    ProdLegumesSecComponent,
     ProdFruitsDrupesComponent,
     ProdFruitsBaiesComponent,
     ProdFruitsPomesComponent,

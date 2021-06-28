@@ -13,6 +13,7 @@ import { ProdLegumesComponent } from './prod-legumes/prod-legumes.component';
 import { ProdVinsComponent } from './prod-vins/prod-vins.component';
 import { Test123Component } from './test123/test123.component';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
+import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
 import { ProdBlanchesComponent } from './prod-bieres-blanches/prod-blanches.component';
 import { ProdBrunesComponent } from './prod-bieres-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-bieres-rousses/prod-rousses.component';
@@ -58,6 +59,7 @@ const routes: Routes = [
   { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},
+  {component: ListeProducteurComponent, path: 'liste-prod'},
   {component: ProdBlanchesComponent, path: 'prod-blanches'},
   {component: ProdBrunesComponent, path: 'prod-brunes'},
   {component: ProdRoussesComponent, path: 'prod-rousses'},
