@@ -3,3 +3,6 @@
     display: block;
     margin-top: 20%;
   }
+  .grad {
+    background-image: linear-gradient(to bottom, #1c87c9, #8ebf42);
+  }
