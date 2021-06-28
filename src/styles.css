@@ -8,15 +8,27 @@
 
 
 
-.sidenav{
-    background-color: rgb(146, 255, 204);
+.sidenav-btn {
+    width: 60px;
+    height: 60px;
 }
 
 
-.drawer-container {
+.above-banniere{
+    padding-top: 150px;
+}
+
+.sidenav{
+    background-color: rgb(203, 255, 203);
     width: 400px;
-    height: 100%;
-    margin: 12px;
+}
+
+
+
+.drawer-container {
+    width: 100vw;
+    height: 100vh;
+
   }
   
   mat-drawer-content {
@@ -52,30 +64,30 @@
 .myFont-head{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: xx-large;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
 .myFont-title{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40);
   }
 
   .myFont-subtitle{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: large;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
   .myFont-text{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
-    color: rgb(57, 180, 113);
+    color: rgb(40, 153, 40)
   }
 
 
 .titre-perso{
-    color: rgb(25, 85, 17);
+    color: rgb(40, 153, 40)
 }
 
 .center{
