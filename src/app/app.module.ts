@@ -32,6 +32,19 @@ import { ProdBlondesComponent } from './prod-blondes/prod-blondes.component';
 import { ProdBrunesComponent } from './prod-brunes/prod-brunes.component';
 import { ProdRoussesComponent } from './prod-rousses/prod-rousses.component';
 import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
+import { ProdRougesComponent } from './prod-rouges/prod-rouges.component';
+import { ProdBlancsComponent } from './prod-blancs/prod-blancs.component';
+import { ProdRosesComponent } from './prod-roses/prod-roses.component';
+import { ProdChampagnesComponent } from './prod-champagnes/prod-champagnes.component';
+import { ProdRacinesComponent } from './prod-racines/prod-racines.component';
+import { ProdChouxComponent } from './prod-choux/prod-choux.component';
+import { ProdCourgesComponent } from './prod-courges/prod-courges.component';
+import { ProdChampignonsComponent } from './prod-champignons/prod-champignons.component';
+import { ProdAromatiquesComponent } from './prod-aromatiques/prod-aromatiques.component';
+import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfruits.component';
+import { ProdSaladesComponent } from './prod-salades/prod-salades.component';
+import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
+import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 
 
 
@@ -56,7 +69,20 @@ import { ProdBlanchesComponent } from './prod-blanches/prod-blanches.component';
     ProdBlondesComponent,
     ProdBrunesComponent,
     ProdRoussesComponent,
-    ProdBlanchesComponent
+    ProdBlanchesComponent,
+    ProdRougesComponent,
+    ProdBlancsComponent,
+    ProdRosesComponent,
+    ProdChampagnesComponent,
+    ProdRacinesComponent,
+    ProdChouxComponent,
+    ProdCourgesComponent,
+    ProdChampignonsComponent,
+    ProdAromatiquesComponent,
+    ProdLegumesfruitsComponent,
+    ProdSaladesComponent,
+    ProdLegumesfeuillesComponent,
+    ProdLegumesSecComponent
   ],
   imports: [
     BrowserModule,

@@ -17,4 +17,32 @@ export class ProdLegumesComponent implements OnInit {
     this.route.navigateByUrl('etal');
   }
 
+  redirectionRacinesMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionChouxMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionCourgesMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionChampignonsMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionAromatiquesMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionLegumesFruitsMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionSaladesMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionLegumesFeuillesMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+  redirectionLegumesSecsMenu(): void {
+    this.route.navigateByUrl('prod-autres');
+  }
+
 }
