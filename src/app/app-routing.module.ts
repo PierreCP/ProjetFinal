@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { EtalComponent } from './etal/etal.component';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
     { component: ProdFromagesComponent, path: 'prod-fromages'},
     { component: Test123Component, path: 'test'},
   ]},
+  {component: AccueilComponent, path: 'accueil'}
  
 
 ];

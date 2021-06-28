@@ -25,6 +25,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 
@@ -41,7 +42,8 @@ import {MatListModule} from '@angular/material/list';
     ProdAutresComponent,
     ProdFromagesComponent,
     ConnexionComponent,
-    Test123Component
+    Test123Component,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,
