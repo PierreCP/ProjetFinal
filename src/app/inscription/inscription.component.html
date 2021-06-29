@@ -16,8 +16,17 @@
             <form #fInscr="ngForm" (ngSubmit)='inscription(fInscr.value)'>
                 <div style="margin: auto; width: 60%">
                     <div class="form-group">
+                        <label class="label-perso">Type d'utilisateur:</label>
+                        <br>
+                        <mat-select (selectionChange)="changeType($event)">
+                            <mat-option value="">-- Veuillez choisir une catégorie --</mat-option>
+                            <mat-option value="consommateur">Consommateur</mat-option>
+                            <mat-option value="producteur">Producteur</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="form-group">
                         <label class="label-perso">Login : </label>
-                        <input type="text" class="form-control" ngModel required name="login" #login="ngModel" />
+                        <input type="text" class="form-control" ngModel='' required name="login" #login="ngModel" />
                     </div>
                     <div class="form-group">
                         <label class="label-perso">Password : </label>
