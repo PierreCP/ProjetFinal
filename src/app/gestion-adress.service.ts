@@ -18,14 +18,14 @@ export class GestionAdressService {
     this.adressFormatee = '';
    }
 
-  getCoordinates(): void{
+  getCoordinates(a: any): void{
     this.http.get(this.access.getBackURL() + 'nullAdress').subscribe({
       next: (data) => {
         this.adress = data;
         
-        this.adress.numeroRue = 4;
-        this.adress.nomRue = "rue du haras";
-        this.adress.codePostal = 44119;
+        this.adress.numeroRue = a.numeroRue;
+        this.adress.nomRue = a.nomRue;
+        this.adress.codePostal = a.codePostal;
 
 
         this.adressFormatee = '';
@@ -49,12 +49,22 @@ export class GestionAdressService {
             this.adress.nomCommune = this.stockAPI.features[0].properties.city;
 
             console.log(this.adress);
+
+            this.newAdress(this.adress);
+
           },
           error: (err) => { console.log("get coordinate error",err) }})
 
       },
       error: (err) => { console.log(err) }})  
   }
+
+
+newAdress(a: any): void{
+  this.http.post(this.access.getBackURL() + 'newAdress', a).subscribe({
+    next: (data) => {},
+    error: (err) => { console.log("get coordinate error",err) }})
+}
 
 
 
