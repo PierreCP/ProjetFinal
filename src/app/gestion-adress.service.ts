@@ -18,7 +18,7 @@ export class GestionAdressService {
     this.adressFormatee = '';
    }
 
-  getCoordinates(): any{
+  getCoordinates(): void{
     this.http.get(this.access.getBackURL() + 'nullAdress').subscribe({
       next: (data) => {
         this.adress = data;
@@ -42,17 +42,21 @@ export class GestionAdressService {
           next: (data) => {
             console.log(this.stockAPI);
             this.stockAPI = data;
-            console.log(data);
-            console.log(this.stockAPI.features[0].geometry.coordinates); 
+            
+
+            this.adress.x = this.stockAPI.features[0].properties.x;
+            this.adress.y = this.stockAPI.features[0].properties.y;
+            this.adress.nomCommune = this.stockAPI.features[0].properties.city;
+
+            console.log(this.adress);
           },
           error: (err) => { console.log("get coordinate error",err) }})
 
       },
-      error: (err) => { console.log(err) }})
-      
-    
-  
+      error: (err) => { console.log(err) }})  
   }
+
+
 
 
 }
