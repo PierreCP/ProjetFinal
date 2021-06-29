@@ -47,12 +47,15 @@ import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.compon
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 import { ProdFruitsDrupesComponent } from './prod-fruits-drupes/prod-fruits-drupes.component';
 import { ProdFruitsBaiesComponent } from './prod-fruits-baies/prod-fruits-baies.component';
 import { ProdFruitsPomesComponent } from './prod-fruits-pomes/prod-fruits-pomes.component';
 import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-agrumes.component';
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 
 
@@ -92,6 +95,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdSaladesComponent,
     ProdLegumesfeuillesComponent,
     ProdLegumesSecComponent,
+    InscriptionComponent,
     ProdLegumesSecComponent,
     ProdFruitsDrupesComponent,
     ProdFruitsBaiesComponent,
@@ -99,7 +103,8 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
     ProdFruitsTropicauxComponent,
-    ProdFruitsTropicauxComponent
+    MenuAdminComponent,
+    ImageUploaderComponent
   ],
   imports: [
     BrowserModule,

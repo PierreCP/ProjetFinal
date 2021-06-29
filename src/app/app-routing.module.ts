@@ -31,10 +31,22 @@ import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfru
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ProdFruitsDrupesComponent } from './prod-fruits-drupes/prod-fruits-drupes.component';
+import { ProdFruitsBaiesComponent } from './prod-fruits-baies/prod-fruits-baies.component';
+import { ProdFruitsPomesComponent } from './prod-fruits-pomes/prod-fruits-pomes.component';
+import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-agrumes.component';
+import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
+import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
+  { component: InscriptionComponent, path: 'inscription'},
+  { component: ImageUploaderComponent, path: 'uploader' },
+  
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },
@@ -45,9 +57,9 @@ const routes: Routes = [
     { component: ProdFromagesComponent, path: 'prod-fromages'},
     { component: Test123Component, path: 'pagetest123'},
   ]},
+
   {component: AccueilComponent, path: 'accueil'},
   {component: MenuConsommateurComponent, path: 'menu-cons'},
-
   { component: EtalComponent, path: 'etal' },
   { component: ProdVinsComponent, path: 'prod-vins' },
   { component: ProdAutresComponent, path: 'prod-autres' },
@@ -57,6 +69,7 @@ const routes: Routes = [
   { component: Test123Component, path: 'test' },
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
+  { component: MenuAdminComponent, path: 'menu-admin' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},
   {component: ListeProducteurComponent, path: 'liste-prod'},
@@ -76,12 +89,12 @@ const routes: Routes = [
   {component: ProdLegumesfruitsComponent, path: 'prod-legumesFruits'},
   {component: ProdSaladesComponent, path: 'prod-salades'},
   {component: ProdLegumesfeuillesComponent, path: 'prod-legumesFeuilles'},
-  {component: ProdLegumesSecComponent, path: 'prod-drupes'},
-  {component: ProdLegumesSecComponent, path: 'prod-baies'},
-  {component: ProdLegumesSecComponent, path: 'prod-pomes'},
-  {component: ProdLegumesSecComponent, path: 'prod-agrumes'},
-  {component: ProdLegumesSecComponent, path: 'prod-pepos'},
-  {component: ProdLegumesSecComponent, path: 'prod-tropicaux'},
+  {component: ProdFruitsDrupesComponent, path: 'prod-drupes'},
+  {component: ProdFruitsBaiesComponent, path: 'prod-baies'},
+  {component: ProdFruitsPomesComponent, path: 'prod-pomes'},
+  {component: ProdFruitsAgrumesComponent, path: 'prod-agrumes'},
+  {component: ProdFruitsPepoComponent, path: 'prod-pepos'},
+  {component: ProdFruitsTropicauxComponent, path: 'prod-tropicaux'},
   {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
 
 

@@ -14,8 +14,8 @@ export class Test123Component implements OnInit {
 
   events: string[] = [];
   opened: boolean = true;
-  image: any;
   msgErr = '';
+  
 
   // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
@@ -28,18 +28,5 @@ export class Test123Component implements OnInit {
   toggleSidenav(): void {
     this.opened = !this.opened
   }
-  /*
-  [Recherche Clovis image/blob]
-
-   afficherImg(i: any): void {
-     this.http.post(this.access.getBackURL() + 'image', i).subscribe({
-       next: (data) => {
-         
-       },
-       error: (err) => { console.log(err) }
-     })
-   }
-   */
-
 
 }
