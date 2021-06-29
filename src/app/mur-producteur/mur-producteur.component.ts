@@ -9,9 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class MurProducteurComponent implements OnInit {
 
-  person: any;
   producteur: any;
-  produit: any;
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   ngOnInit(): void {
