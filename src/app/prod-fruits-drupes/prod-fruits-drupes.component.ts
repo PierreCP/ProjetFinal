@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -10,11 +11,12 @@ import { AuthService } from '../auth.service';
 })
 export class ProdFruitsDrupesComponent implements OnInit {
 
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router) { }
-
-  drupes: any;
+  constructor(private http: HttpClient, private access: AccessService, private authService: AuthService, private route: Router) { }
+  
+  user: any;
+  liste: any;
   ngOnInit(): void {
-    this.getDrupes();
+    this.getSousCategorieByProducteur('Drupes');
   }
 
   retourFruitsMenu(): void {
@@ -23,7 +25,15 @@ export class ProdFruitsDrupesComponent implements OnInit {
 
   getDrupes(): void{
     this.http.get('http://localhost:8082/produit/sous_categorie/Drupes').subscribe({
-      next: (data)=> (this.drupes = data),
+      next: (data)=> (this.liste = data),
+      error: (err)=> (console.log(err))
+    });
+  }
+
+  getSousCategorieByProducteur(sousCategorie: String): void{
+    this.user=this.authService.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/person/produit/' + this.user.id + '/' + sousCategorie).subscribe({
+      next: (data)=> (this.liste = data),
       error: (err)=> (console.log(err))
     });
   }
