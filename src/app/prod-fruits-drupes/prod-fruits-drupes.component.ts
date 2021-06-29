@@ -21,14 +21,9 @@ export class ProdFruitsDrupesComponent implements OnInit {
 
   retourFruitsMenu(): void {
     this.route.navigateByUrl('prod-fruits');
+
   }
 
-  getDrupes(): void{
-    this.http.get('http://localhost:8082/produit/sous_categorie/Drupes').subscribe({
-      next: (data)=> (this.liste = data),
-      error: (err)=> (console.log(err))
-    });
-  }
 
   getSousCategorieByProducteur(sousCategorie: String): void{
     this.user=this.authService.getUserInLocalStorage();
