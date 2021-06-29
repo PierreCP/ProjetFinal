@@ -47,6 +47,7 @@ import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.compon
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdRosesComponent } from './prod-vins-roses/prod-roses.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 import { ProdFruitsDrupesComponent } from './prod-fruits-drupes/prod-fruits-drupes.component';
 import { ProdFruitsBaiesComponent } from './prod-fruits-baies/prod-fruits-baies.component';
 import { ProdFruitsPomesComponent } from './prod-fruits-pomes/prod-fruits-pomes.component';
@@ -94,13 +95,13 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     ProdSaladesComponent,
     ProdLegumesfeuillesComponent,
     ProdLegumesSecComponent,
+    InscriptionComponent,
     ProdLegumesSecComponent,
     ProdFruitsDrupesComponent,
     ProdFruitsBaiesComponent,
     ProdFruitsPomesComponent,
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
-    ProdFruitsTropicauxComponent,
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
     ImageUploaderComponent

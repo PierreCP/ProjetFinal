@@ -19,8 +19,23 @@ export class ConnexionComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
   ngOnInit(): void {
-    if (this.authService.getUserInLocalStorage() != null) {
-      this.route.navigateByUrl('accueil');
+    if (this.authService.isConnected()) {
+      this.user = this.authService.getUserInLocalStorage();
+      this.http.get(this.access.getBackURL() + 'person/type/' + this.user.id, { responseType: 'text' }).subscribe({
+        next: (data) => {
+          this.Type = data;
+          console.log(this.Type);
+          if (this.Type == "Admin") {
+            this.route.navigateByUrl('menu-admin');
+          }
+          else if (this.Type == "Producteur") {
+            this.route.navigateByUrl('menu-prod');
+          }
+          else if (this.Type == "Consommateur") {
+            this.route.navigateByUrl('menu-cons');
+          }
+        }
+      });
     }
   }
 
@@ -30,12 +45,12 @@ export class ConnexionComponent implements OnInit {
         this.user = data;
         if (this.user != null) {
           this.authService.setUserInLocalStorage(this.user);
-          this.http.get(this.access.getBackURL() + 'person/type/' + this.user.id, { responseType: 'text'}).subscribe({
+          this.http.get(this.access.getBackURL() + 'person/type/' + this.user.id, { responseType: 'text' }).subscribe({
             next: (data) => {
               this.Type = data;
               console.log(this.Type);
               if (this.Type == "Admin") {
-                this.route.navigateByUrl('accueil');
+                this.route.navigateByUrl('menu-admin');
               }
               else if (this.Type == "Producteur") {
                 this.route.navigateByUrl('menu-prod');

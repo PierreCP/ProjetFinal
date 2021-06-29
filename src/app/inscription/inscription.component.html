@@ -1,0 +1,79 @@
+<div class="">
+    <!-- Background image -->
+    <div class="bg-image" style="
+    background-image: url('assets/img/banniere.jpg');
+    height: 150px;
+  ">
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-sm-3 text-center">
+            <img src="assets/img/vigne.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-6 container pt-5">
+            <h1 class="text-center container myFont-head"><b>Inscription</b> </h1>
+            <br><br>
+            <form #fInscr="ngForm" (ngSubmit)='inscription(fInscr.value)'>
+                <div style="margin: auto; width: 60%">
+                    <div class="form-group">
+                        <label class="label-perso">Type d'utilisateur:</label>
+                        <br>
+                        <mat-select (selectionChange)="changeType($event)">
+                            <mat-option value="">-- Veuillez choisir une catégorie --</mat-option>
+                            <mat-option value="consommateur">Consommateur</mat-option>
+                            <mat-option value="producteur">Producteur</mat-option>
+                        </mat-select>
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Login : </label>
+                        <input type="text" class="form-control" ngModel='' required name="login" #login="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Password : </label>
+                        <input type="password" name="mdp" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Nom : </label>
+                        <input type="text" name="nom" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Prénom : </label>
+                        <input type="text" name="prenom" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Age : </label>
+                        <input type="text" name="age" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Numéro de Rue : </label>
+                        <input type="text" name="numeroRue" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Nom de Rue : </label>
+                        <input type="text" name="nomRue" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Ville : </label>
+                        <input type="text" name="nomCommune" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Code Postal : </label>
+                        <input type="text" name="codePostal" ngModel='' class="form-control" />
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-block myFont-title">Inscription</button>
+                    <br>
+                    <button type="button" onclick="window.location.href='login'"
+                        class="btn btn-block myFont-title">Retour</button>
+                    <br>
+                    <p class="text-danger text-center"> {{ MsgErr }} </p>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3 text-center">
+            <img src="assets/img/vigne.png" class="img-fluid flip-horizontally" alt="" height="500">
+
+        </div>
+    </div>
+</div>
