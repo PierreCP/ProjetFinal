@@ -37,10 +37,13 @@ import { ProdFruitsPomesComponent } from './prod-fruits-pomes/prod-fruits-pomes.
 import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-agrumes.component';
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
+  { component: ImageUploaderComponent, path: 'uploader' },
+  
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },
