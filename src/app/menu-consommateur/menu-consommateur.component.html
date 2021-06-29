@@ -26,7 +26,7 @@ height: 150px;
         <button mat-raised-button  class="btn btn-block">Messagerie</button>
       </div>
       <div class="container">
-        <button mat-raised-button  class="btn btn-block">Deconnexion</button>
+        <button mat-raised-button (click)='authService.deconnexion()'  class="btn btn-block">Deconnexion</button>
       </div>
 
                       <!--
@@ -122,7 +122,7 @@ height: 150px;
             </div>
 
             <div class="container-fluid col-sm-4 my-pad-bot">
-                <mat-card class="example-card" (click)="doStuff()">
+                <mat-card class="example-card" (click)='authService.deconnexion()'>
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
                       <mat-card-title>Déconnexion</mat-card-title>

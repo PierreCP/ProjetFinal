@@ -12,7 +12,7 @@
         </div>
         <div class="col-sm-6 container pt-5">
             <h1 class="text-center container myFont-head"><b>Bienvenue sur court-circuit !</b> </h1>
-            <br><br><br>
+            <br><br>
             <form #fConnect="ngForm" (ngSubmit)='connexion(fConnect.value)'>
                 <div style="margin: auto; width: 60%">
                     <div class="form-group">
@@ -24,22 +24,18 @@
                         <input type="password" name="mdp" ngModel='' class="form-control" />
                     </div>
                     <button type="submit" class="btn btn-block myFont-title">connexion</button>
-                    <br><br>
+                    <br>
                     <p class="text-danger text-center"> {{ MsgErr }} </p>
                     <br><br>
                     <h1 class="text-center myFont-head"><b>Pas encore membre ?</b> </h1>
-                    <br><br><br>
+                    <br>
                     <div class="row">
 
                         <div class="container">
                             <button type="button" onclick="window.location.href='inscription'"
-                                class="btn btn-block myFont-title">Je suis consommateur !</button>
+                                class="btn btn-block myFont-title">Je m'inscris !</button>
                         </div>
-                        <div class="container">
-                            <button type="button" onclick="window.location.href='inscription'"
-                                class="btn btn-block myFont-title">Je suis producteur !</button>
-                        </div>
-
+                        
                     </div>
 
                 </div>

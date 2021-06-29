@@ -31,10 +31,13 @@ import { ProdLegumesfruitsComponent } from './prod-legumesfruits/prod-legumesfru
 import { ProdLegumesfeuillesComponent } from './prod-legumesfeuilles/prod-legumesfeuilles.component';
 import { ProdLegumesSecComponent } from './prod-legumes-sec/prod-legumes-sec.component';
 import { ProdSaladesComponent } from './prod-legumes-salades/prod-salades.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
+  { component: InscriptionComponent, path: 'inscription'},
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },
@@ -45,8 +48,6 @@ const routes: Routes = [
     { component: ProdFromagesComponent, path: 'prod-fromages'},
     { component: Test123Component, path: 'pagetest123'},
   ]},
-  {component: AccueilComponent, path: 'accueil'},
-  {component: MenuConsommateurComponent, path: 'menu-cons'},
 
   { component: EtalComponent, path: 'etal' },
   { component: ProdVinsComponent, path: 'prod-vins' },
@@ -57,6 +58,7 @@ const routes: Routes = [
   { component: Test123Component, path: 'test' },
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
+  { component: MenuAdminComponent, path: 'menu-admin' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},
   {component: ListeProducteurComponent, path: 'liste-prod'},
