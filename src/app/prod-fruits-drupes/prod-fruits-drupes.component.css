@@ -20,3 +20,7 @@ color:#FFF;
  
 border-color: #31347B;
 }
+
+.example-card:hover{
+    background-color: rgba(131, 131, 131, 0.651);
+  }
