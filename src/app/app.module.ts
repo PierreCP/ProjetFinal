@@ -55,6 +55,7 @@ import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-ag
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 
 
 
@@ -102,8 +103,8 @@ import { MenuAdminComponent } from './menu-admin/menu-admin.component';
     ProdFruitsAgrumesComponent,
     ProdFruitsPepoComponent,
     ProdFruitsTropicauxComponent,
-    ProdFruitsTropicauxComponent,
-    MenuAdminComponent
+    MenuAdminComponent,
+    ImageUploaderComponent
   ],
   imports: [
     BrowserModule,
