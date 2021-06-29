@@ -34,15 +34,15 @@
                         <br>
                         <label>Adresse :</label>
                     </div>
-                    <div class="col-sm-6" >
+                    <div class="col-sm-6" *ngFor='let pro of producteur'>
                         <br>
-                        <label>{{person.nom}}</label>
+                        <label>{{pro.nom}}</label>
                         <br>
-                        <label>{{person.prenom}}</label>
+                        <label>{{pro.prenom}}</label>
                         <br>
-                        <label>{{person.nom_magasin}}</label>
+                        <label>{{pro.nomMagasin}}</label>
                         <br>
-                        <label>{{person.adresse}}</label>
+                        <label>{{pro.adresse}}</label>
                     </div>
                 </div>
                 <hr>
@@ -81,7 +81,7 @@
         <div class="col-sm-8">
             <div class="col-sm-1"></div>
             <div class="row">
-                <button class="ml-4 btn btn-block btn-outline-secondary col-sm-5">Affiche des publications</button>
+                <button class="ml-4 btn btn-block btn-outline-secondary col-sm-5">Affichage des publications</button>
                 <div class="col-sm-1"></div>
                 <button class="mr-4 btn btn-block btn-outline-secondary col-sm-5">Affichage des produits</button>
             </div>
@@ -113,23 +113,23 @@
                     <label><strong>Liste des produits</strong></label>
                 </div>
                 <div class="card">
-                    <div class="card-body row" *ngFor='let pr of produit'>
+                    <div class="card-body row" *ngFor=''>
                         <div class="col-sm-5 mt-2">
                             <img alt="" src="assets/img/camembert.jpg" width="100%">
                             <br>
                         </div>
                         <div class="card col-sm-7">
                             <div class="card-header text-center">
-                                <label>{{pr.description}}</label>
+                                <label></label>
                             </div>
                             <div class="card-body col-sm-6">
-                                <label>Nom du produit : {{pr.nom}}</label>
+                                <label>Nom du produit : </label>
                                 <br>
-                                <label>Catégorie : {{pr.categorie}} </label>
+                                <label>Catégorie : </label>
                                 <br>
-                                <label>Quantité disponible : {{pr.quantite}}</label>
+                                <label>Quantité disponible : </label>
                                 <br>
-                                <label>Prix : {{pr.prix}}</label>
+                                <label>Prix : </label>
                             </div>
 
                         </div>

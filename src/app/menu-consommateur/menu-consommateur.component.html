@@ -8,7 +8,7 @@ height: 150px;
 -->
 
 <div class="" >
-<mat-drawer-container class="drawer-container general-background" hasBackdrop="true">
+<mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
   <mat-drawer class="sidenav" #drawer mode="over">
     <div class="container pt-3 myFont-title">
       
@@ -30,6 +30,9 @@ height: 150px;
       </div>
       <div class="container">
         <button mat-raised-button  class="btn btn-block">Deconnexion</button>
+      </div>
+      <div class="container">
+        <button mat-raised-button (click)="getAdress()" class="btn btn-block">test</button>
       </div>
 
                       <!--
