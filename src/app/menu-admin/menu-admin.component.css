@@ -1,0 +1,31 @@
+.example-card {
+    max-width: 400px;
+    height: 500px;
+  }
+
+  .example-card:hover, .example-card:focus, .example-card:active {
+    max-width: 400px;
+    height: 500px;
+    background-color: red;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.liege.be/fr/vie-communale/services-communaux/commerce/foires-et-marches/marches/images/court-circuit-logo-web.jpg/@@images/image.jpeg');
+    background-size: cover;
+  }
+
+  .custom-margin-left{
+    margin-left: 10%;
+  }
+
+  .my-pad-bot{
+    padding-bottom: 50px;
+  }
+
+  .sans-fond{
+    max-width: 200px;
+    max-height: 200px;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    box-shadow: none;
+  }
