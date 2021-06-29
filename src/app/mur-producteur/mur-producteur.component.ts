@@ -20,7 +20,7 @@ export class MurProducteurComponent implements OnInit {
   }
 
   getProductFromProducteur(): void{
-    this.http.get('http://localhost:8082/producteur/produits/' + this.producteurService.producteur.id).subscribe({
+    this.http.get('http://localhost:8082/producteur/produit/' + this.producteurService.producteur.id).subscribe({
       next: (data)=> (this.produit = data),
       error: (err)=> (console.log(err))
     });

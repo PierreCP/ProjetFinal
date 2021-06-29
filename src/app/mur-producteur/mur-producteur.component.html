@@ -29,7 +29,7 @@
                         <p><strong>Nom : </strong>{{producteur.person.nom}}</p>
                         <p><strong>Prenom : </strong>{{producteur.person.prenom}}</p>
                         <p><strong>Magasin : </strong>{{producteur.nomMagasin}}</p>
-                        <p><strong>Adresse : </strong>{{producteur.person.adresse}}</p>
+                        <p><strong>Adresse : </strong>{{producteur.person.adresse.numeroRue}} {{producteur.person.adresse.nomRue}}</p>
                     </div>
                 </div>
                 <hr>
@@ -111,9 +111,9 @@
                             </div>
                             <div class="card-body">
                                 <p><strong>Description : </strong>{{p.description}}</p>
-                                <p><strong>Catégorie : </strong> {{p.type.categorie}}</p>
-                                <p><strong>Quantité disponible : </strong>{{p.quantite}} €</p>
-                                <p><strong>Prix : </strong> {{p.prix}}</p>
+                                <p><strong>Catégorie : </strong> {{p.sousCategorie.nom}}</p>
+                                <p><strong>Quantité disponible : </strong>{{p.quantite}}</p>
+                                <p><strong>Prix : </strong> {{p.prix}} €</p>
                             </div>
 
                         </div>
