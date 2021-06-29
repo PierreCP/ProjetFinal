@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { ProducteurService } from '../producteur.service';
 
 @Component({
   selector: 'app-liste-producteur',
@@ -9,8 +10,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./liste-producteur.component.css']
 })
 export class ListeProducteurComponent implements OnInit {
-  producteur: any;
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router) { }
+  prdt: any;
+  constructor(private http: HttpClient, private authService: AuthService, private route: Router, private producteurService: ProducteurService) { }
 
   ngOnInit(): void {
     this.getProducteurs();
@@ -18,12 +19,13 @@ export class ListeProducteurComponent implements OnInit {
 
   getProducteurs(): void{
     this.http.get('http://localhost:8082/producteur').subscribe({
-      next: (data)=> (this.producteur = data),
+      next: (data)=> (this.prdt = data),
       error: (err)=> (console.log(err))
     });
   }
 
-  redirectionFicheProducteur(): void{
+  redirectionFicheProducteur(prdt: any): any{
+    this.producteurService.producteur = prdt;
     this.route.navigateByUrl('mur');
   }
 

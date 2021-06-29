@@ -2,8 +2,8 @@
     <h1 class="text-center">Liste des Producteurs</h1>
     <hr>
     <div class="row">
-        <div class="col-sm-6" *ngFor='let pro of producteur'>
-            <mat-card class="example-card example-card:hover card-shadow mt-2" (click)='redirectionFicheProducteur()'>
+        <div class="col-sm-6" *ngFor='let pro of prdt'>
+            <mat-card class="example-card example-card:hover card-shadow mt-2" (click)='redirectionFicheProducteur(pro)'>
                 <div class="text-center">
                     <label class="text-center"><strong>{{pro.person.nom}} {{pro.person.prenom}}</strong></label>
                     <hr>
