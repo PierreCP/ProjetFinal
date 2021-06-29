@@ -4,7 +4,21 @@
     margin-top: 80px;
 }
 
+.foo {
+
+    background-image: url('/assets/img/background accueil3.png');
+    background-size: cover, 100% auto; 
+    height:100%;
+    background-repeat: repeat;
+
+}
+
 /* old style*/
+
+.general-background{
+    background-image: url('assets/img/background accueil3.png'); 
+    height: 100%;
+}
 
 .icon-size-1{
     font-size: 50px;

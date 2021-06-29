@@ -1,84 +1,100 @@
-<div class="container-fluid bg-light rounded" style="background-image: url('assets/img/background accueil2.jpg'); height: 100%">
-    <div class="h4 font-weight-bold text-center py-3" ><p class="mt-120" style="color: white"><font size="7">Mon étal</font></p></div>
-    <div class="row">
-        
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionFruitsMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    
-                    <div class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                        <img src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
-                    </div>
-                    <div class="d-flex flex-column"> <b>Fruits</b> 
-                            <p class="text-muted"></p>
-                         </div>
-                        
-                </div>
-            </div></a>
-        </div> 
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionLegumesMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan"> <img
-                            src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png" alt=""> </div>
-                            <div class="d-flex flex-column"> <b>Légumes</b>
-                            <p class="text-muted"></p> 
-                         </div>
-                </div>
-            </div></a>
+
+    <div class="container-fluid bg-light rounded foo">
+        <div class="h4 font-weight-bold text-center py-3">
+            <p class="mt-120" style="color: white">
+                <font size="7">Mon étal</font>
+            </p>
         </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionFromagesMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink"> <img
-                            src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png" alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Fromages</b> 
-                            <p class="text-muted"></p>
-                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <a (click)='redirectionVinsMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple"> <img
-                            src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png"
-                            alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Vins</b> 
-                            <p class="text-muted"></p>
-                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <a (click)='redirectionBieresMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan"> <img
-                            src="https://freepngimg.com/thumb/beer/8-beer-png-image.png"
-                            alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Bières</b> 
-                            <p class="text-muted"></p>
-                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <a (click)='redirectionAutresMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink"> <img
-                            src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
-                            alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Autres</b> 
-                            <p class="text-muted"></p>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionFruitsMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+
+                            <div
+                                class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+                                <img src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Fruits</b>
+                                <p class="text-muted"></p>
+                            </div>
+
                         </div>
-                </div>
-            </div></a>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionLegumesMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
+                                <img src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Légumes</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionFromagesMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
+                                <img src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Fromages</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+                <a (click)='redirectionVinsMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div
+                                class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
+                                <img src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Vins</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+                <a (click)='redirectionBieresMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
+                                <img src="https://freepngimg.com/thumb/beer/8-beer-png-image.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Bières</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+                <a (click)='redirectionAutresMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
+                                <img src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
+                                    alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Autres</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
-</div>
