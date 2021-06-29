@@ -9,7 +9,6 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./liste-producteur.component.css']
 })
 export class ListeProducteurComponent implements OnInit {
-
   producteur: any;
   constructor(private http: HttpClient, private authService: AuthService, private route: Router) { }
 

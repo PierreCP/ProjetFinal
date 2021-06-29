@@ -16,11 +16,5 @@ export class MurProducteurComponent implements OnInit {
     this.getProducteurs();
   }
 
-  getProducteurs(): void{
-    this.http.get('http://localhost:8082/producteur').subscribe({
-      next: (data)=> (this.producteur = data),
-      error: (err)=> (console.log(err))
-    });
-  }
 
 }
