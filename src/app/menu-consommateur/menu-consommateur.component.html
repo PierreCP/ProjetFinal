@@ -35,7 +35,30 @@ height: 150px;
         <button mat-raised-button (click)="adress.updateCoordinates(59)" class="btn btn-block">test</button>
       </div>
 
-                      <!--
+        <h1 class="myFont-head">Menu principal</h1>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Rechercher des producteurs</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Rechercher des produits</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Modifier le profil</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Messagerie</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Nous contacter</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.deconnexion()' class="btn btn-block">Deconnexion</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)="getAdress()" class="btn btn-block">test</button>
+        </div>
+
+        <!--
                           <mat-form-field appearance="fill">
       <mat-label>Has backdrop</mat-label>
       <mat-select #hasBackdrop>
@@ -106,63 +129,63 @@ height: 150px;
             <img class="container mt-3" mat-card-image src="/assets/img/utilisateur.png" alt="Etale">
             <mat-card-content>
               <p class="align-text-middle">
-                Modifiez votre profil  
+                Modifiez votre profil
               </p>
             </mat-card-content>
           </mat-card>
         </div>
 
         <div class="container-fluid col-sm-4 my-pad-bot">
-            <mat-card class="example-card" (click)="doStuff()">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Messagerie</mat-card-title>
-                </mat-card-header>
-                <img class="container mt-3" mat-card-image src="/assets/img/messagerie.jpg" alt="Etale">
-                <mat-card-content>
-                  <p class="align-text-middle">
-                    Accedez à votre messagerie  
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
+          <mat-card class="example-card" (click)="doStuff()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Messagerie</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/messagerie.jpg" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Accedez à votre messagerie
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-            <div class="container-fluid col-sm-4 my-pad-bot">
-              <mat-card class="example-card" (click)="doStuff()">
-                  <mat-card-header>
-                    <div mat-card-avatar class="example-header-image"></div>
-                    <mat-card-title>Nous contacter</mat-card-title>
-                  </mat-card-header>
-                  <img class="container mt-3" mat-card-image src="/assets/img/contact.png" alt="Etale">
-                  <mat-card-content>
-                    <p class="align-text-middle">
-                      Cet outil est le votre, vos remarques sont précieuses 
-                    </p>
-                  </mat-card-content>
-                </mat-card>
-              </div>
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="doStuff()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Nous contacter</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/contact.png" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Cet outil est le votre, vos remarques sont précieuses
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
 
-            <div class="container-fluid col-sm-4 my-pad-bot">
-                <mat-card class="example-card" (click)='authService.deconnexion()'>
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Déconnexion</mat-card-title>
-                    </mat-card-header>
-                    <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
-                    <mat-card-content>
-                      <p class="align-text-middle">
-                        On se retrouve très vite !  
-                      </p>
-                    </mat-card-content>
-                  </mat-card>
-                </div>
-            </div>
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)='authService.deconnexion()'>
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Déconnexion</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                On se retrouve très vite !
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
 
 
-        
-    <!---->
 
-  </mat-drawer-content>
-</mat-drawer-container>
+      <!---->
+
+    </mat-drawer-content>
+  </mat-drawer-container>
 
 </div>
