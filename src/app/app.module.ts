@@ -57,8 +57,10 @@ import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.com
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
-import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { TestComponent } from './test/test.component';
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
+import { AdminActivationComponent } from './admin-activation/admin-activation.component';
 
 
 
@@ -109,7 +111,9 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
     MenuAdminComponent,
     ImageUploaderComponent,
     AdminActivationComponent,
-    ImageGestionComponent
+    ImageGestionComponent,
+    TestComponent,
+
   ],
   imports: [
     BrowserModule,

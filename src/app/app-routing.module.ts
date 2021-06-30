@@ -40,10 +40,9 @@ import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-ag
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
-import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { TestComponent } from './test/test.component';
 import { AdminActivationComponent } from './admin-activation/admin-activation.component';
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
-
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -73,7 +72,8 @@ const routes: Routes = [
   { component: ProdLegumesComponent, path: 'prod-legumes' },
   { component: ProdBieresComponent, path: 'prod-bieres' },
   { component: ProdFromagesComponent, path: 'prod-fromages' },
-  { component: Test123Component, path: 'test' },
+  { component: Test123Component, path: 'test123' },
+  {component: TestComponent, path: 'test'},
   { component: AccueilComponent, path: 'accueil' },
   { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: MenuAdminComponent, path: 'menu-admin' },

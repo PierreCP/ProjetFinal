@@ -1,100 +1,200 @@
+<div class=" bg-light rounded foo">
+    <div class="h4 font-weight-bold text-center py-3">
+        <p class="mt-120" style="color: white">
+            <font size="7">Mon étal</font>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionFruitsMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div
+                            class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+                            <img src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Fruits</b>
+                            <p class="text-muted"></p>
+                        </div>
 
-    <div class="container-fluid bg-light rounded foo">
-        <div class="h4 font-weight-bold text-center py-3">
-            <p class="mt-120" style="color: white">
-                <font size="7">Mon étal</font>
-            </p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="row">
+        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionLegumesMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
+                            <img src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Légumes</b>
+                            <p class="text-muted"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+            <a (click)='redirectionFromagesMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
+                            <img src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Fromages</b>
+                            <p class="text-muted"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+            <a (click)='redirectionVinsMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
+                            <img src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Vins</b>
+                            <p class="text-muted"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+            <a (click)='redirectionBieresMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
+                            <img src="https://freepngimg.com/thumb/beer/8-beer-png-image.png" alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Bières</b>
+                            <p class="text-muted"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+            <a (click)='redirectionAutresMenu()'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+                        <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
+                            <img src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
+                                alt="">
+                        </div>
+                        <div class="d-flex flex-column"> <b>Autres</b>
+                            <p class="text-muted"></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4"></div>
 
-            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-                <a (click)='redirectionFruitsMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
+        <div class="col-sm-4">
+            <button type="button" (click)='retourMenuProd()'
+                class="btn btn-default btn-default:hover btn-block btn-primary">
+                <font size="6">Retour</font>
+            </button>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 my-lg-2" style="background-color: green; border: green;">
+            <button type="button" class="btn btn-default btn-default:hover btn-block btn-primary" data-toggle="modal"
+                data-target="#ajouter" data-whatever="@mdo">Ajouter un produit</button>
+            <button type="button" class="btn btn-default btn-default:hover btn-block btn-primary" data-toggle="modal"
+                data-target="#modifier" data-whatever="@mdo">Modifier un produit</button>
+            <button type="button" class="btn btn-default btn-default:hover btn-block btn-primary" data-toggle="modal"
+                data-target="#exampleModal" data-whatever="@mdo">Supprimer un produit</button>
+        </div>
 
-                            <div
-                                class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                                <img src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
+        <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Ajouter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form #fAjout="ngForm">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nom du produit :</label>
+                                <input type="text" class="form-control" ngModel required name="name" />
                             </div>
-                            <div class="d-flex flex-column"> <b>Fruits</b>
-                                <p class="text-muted"></p>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Prix :</label>
+                                <input type="float" class="form-control" ngModel required name="prix" />
                             </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Quantité :</label>
+                                <input type="number" class="form-control" ngModel required name="quantite" />
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Description :</label>
+                                <input type="text" class="form-control" ngModel required name="description" />
+                            </div>
+                            <div class="modal-footer">
+                                <button (click)='ajoutProduit(fAjout.value)' type="submit"
+                                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                    data-dismiss="modal">Accepter</button>
 
-                        </div>
+                                <button type="button"
+                                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                    data-dismiss="modal">Retour</button>
+                            </div>
+                        </form>
+
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-                <a (click)='redirectionLegumesMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
-                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                <img src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png" alt="">
-                            </div>
-                            <div class="d-flex flex-column"> <b>Légumes</b>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
+
+        </div>
+        <div class="modal fade" id="modifier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">Modifier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-                <a (click)='redirectionFromagesMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
-                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png" alt="">
+                    <div class="modal-body">
+                        <form #fModifie="ngForm">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Nom du produit :</label>
+                                <input type="text" class="form-control" ngModel required name="name" />
                             </div>
-                            <div class="d-flex flex-column"> <b>Fromages</b>
-                                <p class="text-muted"></p>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Prix :</label>
+                                <input type="float" class="form-control" ngModel required name="prix" />
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Quantité :</label>
+                                <input type="number" class="form-control" ngModel required name="quantite" />
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Description :</label>
+                                <input type="text" class="form-control" ngModel required name="description" />
+                            </div>
+                            <div class="modal-footer">
+                                <button (click)='modifierProduit(fModifie.value)' type="submit"
+                                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                    data-dismiss="modal">Accepter</button>
+
+                                <button type="button"
+                                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                    data-dismiss="modal">Retour</button>
+                            </div>
+                        </form>
+
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-                <a (click)='redirectionVinsMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
-                            <div
-                                class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
-                                <img src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png" alt="">
-                            </div>
-                            <div class="d-flex flex-column"> <b>Vins</b>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-                <a (click)='redirectionBieresMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
-                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                <img src="https://freepngimg.com/thumb/beer/8-beer-png-image.png" alt="">
-                            </div>
-                            <div class="d-flex flex-column"> <b>Bières</b>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-                <a (click)='redirectionAutresMenu()'>
-                    <div class="box bg-white">
-                        <div class="d-flex align-items-center">
-                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
-                                    alt="">
-                            </div>
-                            <div class="d-flex flex-column"> <b>Autres</b>
-                                <p class="text-muted"></p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+
         </div>
     </div>

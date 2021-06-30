@@ -1,0 +1,16 @@
+<div class="container">
+    <form #fAjoutProduit="ngForm" (ngSubmit)='ajoutProduit(fAjoutProduit.value)'>
+        <div class="form-group">
+            <label class="label-perso"></label>
+            <input type='text' name='contenu' class='form-control' ngModel=''>
+        </div>
+        <div class="form-group">
+            <select name="prive">
+                <option value="true"selected>Prive</option>
+                <option value="false">Public</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-primary ">Valider</button>
+    </form>
+</div>
