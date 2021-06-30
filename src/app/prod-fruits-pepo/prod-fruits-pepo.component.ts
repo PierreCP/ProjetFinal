@@ -24,12 +24,19 @@ export class ProdFruitsPepoComponent implements OnInit {
     this.route.navigateByUrl('prod-fruits');
   }
 
-  getSousCategorieByProducteur(sousCategorie: String): void{
-    this.user=this.authService.getUserInLocalStorage();
+  getSousCategorieByProducteur(sousCategorie: String): void {
+    this.user = this.authService.getUserInLocalStorage();
     this.http.get('http://localhost:8082/person/produit/' + this.user.id + '/' + sousCategorie).subscribe({
-      next: (data)=> (this.liste = data),
-      error: (err)=> (console.log(err))
-    });
+      next: (data) => {
+        this.liste = data;
+        if (this.liste == "") {
+          this.route.navigateByUrl('prod-fruits');
+        }
+
+      },
+      error: (err) => { console.log(err) }
+
+    })
   }
 
 }
