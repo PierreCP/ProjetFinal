@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AccessService } from '../access.service';
+import { AjoutProduitComponent } from '../ajout-produit/ajout-produit.component';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-etal',
@@ -8,8 +13,12 @@ import { Router } from '@angular/router';
 })
 export class EtalComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private http: HttpClient, public authService: AuthService, private route: Router, private access: AccessService) { }
 
+  liste: any;
+  liste2: any;
+  user: any;
+  MsgErr: any;
   ngOnInit(): void {
   }
 
@@ -36,4 +45,14 @@ export class EtalComponent implements OnInit {
     this.route.navigateByUrl('etal');
   }
 
+  retourMenuProd(): void {
+    this.route.navigateByUrl('menu-prod');
+  }
+
+
+
 }
+
+
+
+

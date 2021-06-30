@@ -61,6 +61,9 @@ import { MessagerieComponent } from './messagerie/messagerie.component';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 import { BoiteReceptionComponent } from './boite-reception/boite-reception.component';
 import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
+import { PanierComponent } from './panier/panier.component';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -114,6 +117,9 @@ import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
     NouveauMessageComponent,
     BoiteReceptionComponent,
     BoiteEnvoiComponent,
+    PanierComponent,
+    AjoutProduitComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

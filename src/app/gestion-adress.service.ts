@@ -79,25 +79,14 @@ export class GestionAdressService {
 
 
   getDistance(id1: any, id2: any): any {
-    var p1: any;
-    var p2: any;
-
-    this.http.get(this.access.getBackURL() + 'person/' + id1).subscribe({
-      next: (data) => { 
-        p1 = data
-        this.http.get(this.access.getBackURL() + 'person/' + id2).subscribe({
-          next: (data) => { 
-            p2 = data 
-            console.log("Distance : " + Math.sqrt( Math.pow(p1.adresse.x - p2.adresse.x, 2) + Math.pow(p1.adresse.y - p2.adresse.y, 2)))
-            return Math.sqrt( Math.pow(p1.adresse.x - p2.adresse.x, 2) + Math.pow(p1.adresse.y - p2.adresse.y, 2)) 
-          },
-          error: (err) => { console.log("get coordinate error", err) }
-        }) 
-      },
+    var dist: any;
+    this.http.get(this.access.getBackURL() + "dist/" + id1 + "/" + id2).subscribe({
+      next: (data) => {
+        console.log("requette");
+        dist = data;
+        return dist},
       error: (err) => { console.log("get coordinate error", err) }
     })
-     
-
   }
 
   updateCoordinates(idPerson: any): void{
