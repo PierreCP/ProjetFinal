@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 })
 export class EtalComponent implements OnInit {
 
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router, private access: AccessService) { }
+  constructor(private http: HttpClient, public authService: AuthService, private route: Router, private access: AccessService) { }
 
   liste: any;
   liste2: any;
@@ -49,24 +49,6 @@ export class EtalComponent implements OnInit {
     this.route.navigateByUrl('menu-prod');
   }
 
-  ajoutProduit(m: any): void {
-    this.user = this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/' + this.user.id + '/produit/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
-      next: (data) => { this.liste2 = data },
-      error: (err) => { console.log(err) }
-    })
-    this.MsgErr = 'Ajout du produit impossible.'
-  }
-
-  modifierProduit(m: any): void {
-    console.log('Ici on débute');
-    this.user=this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
-      next: (data) => { this.liste2 = data},
-      error: (err) => { console.log(err) }
-    })
-          this.MsgErr = 'Ajout du produit impossible.'
-        }
 
 
 }
