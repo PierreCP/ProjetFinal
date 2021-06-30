@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class AuthService {
   liste: any;
 
 
-  constructor(private route: Router, private http: HttpClient) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog ) { }
 
   setUserInLocalStorage(u: any): void{
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -45,5 +47,16 @@ export class AuthService {
     }
   }
 
+  goBack(): void{
+    this.route.navigateByUrl('login');
+  }
+
+  messagerie(): void{
+    this.route.navigateByUrl('messagerie')
+  }
+
+  nouveauMessage(): any{
+    const myDialog = this.dialog.open(NouveauMessageComponent)
+  }
 
 }

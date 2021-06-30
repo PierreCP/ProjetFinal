@@ -18,6 +18,7 @@ import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
+import {MatDialogModule} from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -56,6 +57,10 @@ import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.com
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { MessagerieComponent } from './messagerie/messagerie.component';
+import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
+import { BoiteReceptionComponent } from './boite-reception/boite-reception.component';
+import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
 
 
 
@@ -104,7 +109,11 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     ProdFruitsPepoComponent,
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    MessagerieComponent,
+    NouveauMessageComponent,
+    BoiteReceptionComponent,
+    BoiteEnvoiComponent,
   ],
   imports: [
     BrowserModule,
@@ -122,6 +131,12 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     MatSelectModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
+  ],
+  entryComponents: [
+    NouveauMessageComponent,
+    BoiteEnvoiComponent,
+    BoiteReceptionComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

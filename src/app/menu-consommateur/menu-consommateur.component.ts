@@ -37,5 +37,5 @@ export class MenuConsommateurComponent implements OnInit {
     this.adress.getDistance(22, 25);
   }
 
-  
+   
 }
