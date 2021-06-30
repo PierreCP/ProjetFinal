@@ -57,6 +57,7 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { TestComponent } from './test/test.component';
 
 
 
@@ -106,7 +107,11 @@ import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
     ImageUploaderComponent,
+<<<<<<< HEAD
     AjoutProduitComponent
+=======
+    TestComponent
+>>>>>>> e72eedfbfd04189a3d170d6d0dddb6fd19a99244
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export class InscriptionComponent implements OnInit {
     let address = {numeroRue: u.numeroRue, nomRue: u.nomRue, nomCommune: u.nomCommune, codePostal: u.codePostal};
     let personne = {login: u.login, mdp: u.mdp, nom: u.nom, prenom: u.prenom, age: u.age, adresse: address};
     
-    let inscrit = {person: personne};
+    let inscrit = {nomMagasin: u.nomMagasin, person: personne};
 
     
     this.http.post(this.access.getBackURL() + this.type + '/', inscrit).subscribe({
