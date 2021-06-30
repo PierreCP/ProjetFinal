@@ -11,9 +11,6 @@ body {
     background-color: #f8f8f8
 }
 
-
-
-
 .container {
     margin-top: 20px;
     padding: 40px 20px
@@ -28,6 +25,7 @@ body {
 .box:hover {
     box-shadow: 2px 2px 10px #a5a5a5;
     transform: scale(1.03)
+    
 }
 
 a:hover {
@@ -96,4 +94,25 @@ b {
     margin-top: 120px;
 }
 
-
+.btn-default
+ 
+{
+ 
+background-color: whitesmoke;
+ 
+color:black;
+ 
+border-color: #2F3E48;
+ 
+}
+ 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+ 
+ 
+ 
+background-color: #18cf12;
+ 
+color:#FFF;
+ 
+border-color: #31347B;
+}
