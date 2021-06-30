@@ -4,7 +4,7 @@
             <font size="7">Mes fruits drupes</font>
         </p>
     </div>
-  
+
 
     <div class="row">
 
@@ -14,8 +14,12 @@
                     <div
                         class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
                     </div>
-                    <div class="d-flex flex-column"> <b>{{d.nom}}</b>
-                        <p class="text-muted">Prix : {{d.prix}}</p> <p class="text-muted">Quantité : {{d.prix}}</p> <p class="text-muted">Description : {{d.description}}</p> 
+                    <div class="col-sm-6">
+                        <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                            <p class="text-muted">Prix : {{d.prix}}</p>
+                            <p class="text-muted">Quantité : {{d.prix}}</p>
+                        </div>
+                        <div class="col-sm-12"><p class="text-muted">Description : {{d.description}}</p></div>
                     </div>
                 </div>
             </div>

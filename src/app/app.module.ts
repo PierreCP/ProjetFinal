@@ -107,11 +107,8 @@ import { TestComponent } from './test/test.component';
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
     ImageUploaderComponent,
-<<<<<<< HEAD
-    AjoutProduitComponent
-=======
+    AjoutProduitComponent,
     TestComponent
->>>>>>> e72eedfbfd04189a3d170d6d0dddb6fd19a99244
   ],
   imports: [
     BrowserModule,
