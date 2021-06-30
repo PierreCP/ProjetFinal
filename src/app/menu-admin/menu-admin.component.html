@@ -7,32 +7,29 @@ height: 150px;
 <div class="above-banniere">
 -->
 
-<div class="" >
-    <mat-drawer-container class="drawer-container general-background" hasBackdrop="true">
-      <mat-drawer class="sidenav" #drawer mode="over">
-        <div class="container pt-3 myFont-title">
-          
-          <h1 class="myFont-head">Menu principal</h1>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">Médiation</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">Tribunal</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">(Dés)Activation</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">Messagerie</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">Nous contacter</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button  class="btn btn-block">Deconnexion</button>
-          </div>
-    
-                          <!--
+<div class="">
+  <mat-drawer-container class="drawer-container general-background" hasBackdrop="true">
+    <mat-drawer class="sidenav" #drawer mode="over">
+      <div class="container pt-3 myFont-title">
+
+        <h1 class="myFont-head">Menu principal</h1>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Arbitrage</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Tribunal</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">(Dés)Activation</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Messagerie</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Deconnexion</button>
+        </div>
+
+        <!--
                               <mat-form-field appearance="fill">
           <mat-label>Has backdrop</mat-label>
           <mat-select #hasBackdrop>
@@ -42,16 +39,16 @@ height: 150px;
             </mat-form-field>
           </mat-select>
     -->
-          <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
-    
-        
-        </div>
-    
-        
-      </mat-drawer>
-      <mat-drawer-content>
-    
-        <div class="col-sm-2">
+        <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
+
+
+      </div>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+      <div class="col-sm-2">
         <div>
           <mat-card class="sans-fond" (click)="doStuff()">
             <mat-card-header></mat-card-header>
@@ -59,13 +56,15 @@ height: 150px;
             <mat-card-content></mat-card-content>
           </mat-card>
         </div>
-        <div class="above-banniere" >
-            <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn"><mat-icon>list</mat-icon></button>
+        <div class="above-banniere">
+          <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn">
+            <mat-icon>list</mat-icon>
+          </button>
         </div>
       </div>
-        <div class="custom-margin-left row d-flex justify-content-around">
+      <div class="custom-margin-left row d-flex justify-content-around">
         <div class="container-fluid col-sm-4 my-pad-bot">
-        <mat-card class="example-card example-card:hover" (click)="doStuff()">
+          <mat-card class="example-card example-card:hover" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Arbitrage</mat-card-title>
@@ -73,14 +72,14 @@ height: 150px;
             <img class="container mt-3" mat-card-image src="/assets/img/arbitrage.jpg" alt="Etale">
             <mat-card-content>
               <p class="align-middle">
-                Arbitrez les cas de messages signalés. 
+                Arbitrez les cas de messages signalés.
               </p>
             </mat-card-content>
           </mat-card>
         </div>
-    
+
         <div class="container-fluid col-sm-4 my-pad-bot">
-        <mat-card class="example-card" (click)="doStuff()">
+          <mat-card class="example-card" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Tribunal</mat-card-title>
@@ -88,78 +87,63 @@ height: 150px;
             <img class="container mt-3" mat-card-image src="/assets/img/tribunal.jpg" alt="produits">
             <mat-card-content>
               <p class="align-text-middle">
-                Prononcez le bannissement d'un utilisateur. 
+                Prononcez le bannissement d'un utilisateur.
               </p>
             </mat-card-content>
           </mat-card>
         </div>
-    
+
         <div class="container-fluid col-sm-4 my-pad-bot">
-            <mat-card class="example-card" (click)="doStuff()">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>(Dés)Activation</mat-card-title>
-                </mat-card-header>
-                <img class="container mt-3" mat-card-image src="/assets/img/onoff.jpg" alt="Etale">
-                <mat-card-content>
-                  <p class="align-text-middle">
-                    Activez/Désactivez des comptes.  
-                  </p>
-                </mat-card-content>
-              </mat-card>
-            </div>
-    
-            <div class="container-fluid col-sm-4 my-pad-bot">
-                <mat-card class="example-card" (click)="doStuff()">
-                    <mat-card-header>
-                      <div mat-card-avatar class="example-header-image"></div>
-                      <mat-card-title>Messagerie</mat-card-title>
-                    </mat-card-header>
-                    <img class="container mt-3" mat-card-image src="/assets/img/messagerie.jpg" alt="Etale">
-                    <mat-card-content>
-                      <p class="align-text-middle">
-                        Accedez à votre messagerie  
-                      </p>
-                    </mat-card-content>
-                  </mat-card>
-                </div>
-    
-                <div class="container-fluid col-sm-4 my-pad-bot">
-                  <mat-card class="example-card" (click)="doStuff()">
-                      <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Nous contacter</mat-card-title>
-                      </mat-card-header>
-                      <img class="container mt-3" mat-card-image src="/assets/img/contact.png" alt="Etale">
-                      <mat-card-content>
-                        <p class="align-text-middle">
-                          Cet outil est le votre, vos remarques sont précieuses 
-                        </p>
-                      </mat-card-content>
-                    </mat-card>
-                  </div>
-    
-                <div class="container-fluid col-sm-4 my-pad-bot">
-                    <mat-card class="example-card" (click)="doStuff()">
-                        <mat-card-header>
-                          <div mat-card-avatar class="example-header-image"></div>
-                          <mat-card-title>Déconnexion</mat-card-title>
-                        </mat-card-header>
-                        <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
-                        <mat-card-content>
-                          <p class="align-text-middle">
-                            On se retrouve très vite !  
-                          </p>
-                        </mat-card-content>
-                      </mat-card>
-                    </div>
-                </div>
-    
-    
-            
-        <!---->
-    
-      </mat-drawer-content>
-    </mat-drawer-container>
-    
-    </div>
+          <mat-card class="example-card" (click)="lienActivation()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>(Dés)Activation</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/onoff.jpg" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Activez/Désactivez des comptes.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="doStuff()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Messagerie</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/messagerie.jpg" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Accedez à votre messagerie
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="doStuff()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Déconnexion</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                On se retrouve très vite !
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+
+
+      <!---->
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+</div>

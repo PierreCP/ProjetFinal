@@ -38,12 +38,21 @@ import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-ag
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { ImagePrinterComponent } from './image-printer/image-printer.component';
+import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
   { component: ImageUploaderComponent, path: 'uploader' },
+  { component: ImagePrinterComponent, path: 'printer' },
+  { component: ImageGestionComponent, path: 'image' },
   
+  { component: MenuAdminComponent, path: 'menu-admin'},
+  { component: AdminActivationComponent, path: 'admin-activation'},
+
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },

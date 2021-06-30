@@ -19,4 +19,8 @@ export class MenuAdminComponent implements OnInit {
     this.route.navigateByUrl('menu-prod')
   }
 
+  lienActivation(): void {
+    this.route.navigateByUrl('admin-activation')
+  }
+
 }

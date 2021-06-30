@@ -19,14 +19,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
@@ -55,6 +56,8 @@ import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.com
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 
 
@@ -103,7 +106,9 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     ProdFruitsTropicauxComponent,
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
-    ImageUploaderComponent
+    ImageUploaderComponent,
+    AdminActivationComponent,
+    ImageGestionComponent
   ],
   imports: [
     BrowserModule,
@@ -121,8 +126,14 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
     MatSelectModule,
     MatListModule,
     MatCardModule,
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

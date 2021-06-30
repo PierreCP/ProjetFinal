@@ -1,0 +1,25 @@
+<div class="container">
+    <button (click)='addImg()' mat-mini-fab aria-label="" color="primary">
+        <mat-icon>photo</mat-icon>
+    </button>
+    <br><br>
+    <div class="row">
+        <div *ngFor="let i of images" class="col-sm-4 my-font-family">
+            <div *ngIf='mediaExist(i.img)'>
+                <mat-card class="example-card example-card:hover" (click)="doStuff()">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{i.titre}}</mat-card-title>
+                    </mat-card-header>
+                    <img class="container mt-3" mat-card-image [src]="changeFormatMedia(i.img)" alt="marche pas">
+                    <mat-card-content>
+                        <p class="align-middle">
+                            {{i.commentaire}}
+                        </p>
+                    </mat-card-content>
+                </mat-card>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
