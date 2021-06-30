@@ -20,15 +20,11 @@ export class ImageGestionComponent implements OnInit {
   constructor(private http: HttpClient, private route:Router, private dialog: MatDialog, private access: AccessService, public authService: AuthService) { }
 
   ngOnInit(): void {
-    this.getImg(74);
+    // l'api qui get toutes les images (à modifier plus tard par une api ne prenant que les images de la page en question par id)
     this.http.get(this.access.getBackURL()+ 'image').subscribe({
       next: (data) => {this.images = data},
       error: (err) => {console.log(err);}
     });
-  }
-
-  doStuff(): void {
-    this.route.navigateByUrl('menu-prod')
   }
 
   addImg(): any {
@@ -59,6 +55,10 @@ export class ImageGestionComponent implements OnInit {
       },
       error: (err) => { console.log(err) }
     });
+  }
+
+  doStuff(): void {
+    this.route.navigateByUrl('menu-prod')
   }
 
 }

@@ -1,11 +1,11 @@
 <div class="container">
-    <button (click)='addImg()' mat-mini-fab aria-label="" color="primary">
+    <button (click)='addImg()' class="btn btn-primary" color="primary">
         <mat-icon>photo</mat-icon>
     </button>
     <br><br>
     <div class="row">
         <div *ngFor="let i of images" class="col-sm-4 my-font-family">
-            <div *ngIf='mediaExist(i.img)'>
+            <div>
                 <mat-card class="example-card example-card:hover" (click)="doStuff()">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image"></div>

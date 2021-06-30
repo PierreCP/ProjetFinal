@@ -40,14 +40,12 @@ import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruit
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { AdminActivationComponent } from './admin-activation/admin-activation.component';
-import { ImagePrinterComponent } from './image-printer/image-printer.component';
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
   { component: ImageUploaderComponent, path: 'uploader' },
-  { component: ImagePrinterComponent, path: 'printer' },
   { component: ImageGestionComponent, path: 'image' },
   
   { component: MenuAdminComponent, path: 'menu-admin'},

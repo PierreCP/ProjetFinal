@@ -11,13 +11,13 @@
         </div>
 
         <div>
-          <button mat-icon-button class="btn btn-block" (click)="file.click()">
+          <button mat-icon-button type="button" class="btn btn-block" (click)="file.click()">
               <mat-icon>add_photo_alternate</mat-icon>
           </button>
         </div>
 
         <input type="file" [hidden]='true' #file accept="image/*" required ngModel="" name="img" (change)='onFileChanged($event)'> 
-        <div>
+        <div class="text-center">
           <img [src]="mediaUrl" alt="imgUpl" class="center" width="20%" *ngIf="mediaUrl">
         </div>
 
