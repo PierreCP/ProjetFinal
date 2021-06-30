@@ -18,7 +18,7 @@ export class GestionAdressService {
     this.adressFormatee = '';
   }
 
-  updateCoordinates(a: any): void {
+  getCoordinates(a: any): void {
     this.http.get(this.access.getBackURL() + 'nullAdress').subscribe({
       next: (data) => {
         this.adress = data;
@@ -96,11 +96,43 @@ export class GestionAdressService {
       },
       error: (err) => { console.log("get coordinate error", err) }
     })
-    
-    
+     
 
   }
 
+  updateCoordinates(idPerson: any): void{
+    var p: any;
+    this.http.get(this.access.getBackURL() + 'person/' + idPerson).subscribe({
+      next: (data) => { 
+        p = data
+        console.log(p);
+        this.adressFormatee = '';
+        this.adressFormatee += "https://api-adresse.data.gouv.fr/search/?q=";
+        this.adressFormatee += p.adresse.numeroRue.toString() + "+";
+        this.adressFormatee += p.adresse.nomRue.replace(/ /gi, "+") + "&postcode=";
+        this.adressFormatee += p.adresse.codePostal.toString();
+
+        this.http.get(this.adressFormatee).subscribe({
+          next: (data) => {
+            console.log(this.stockAPI);
+            this.stockAPI = data;
+
+
+            p.adresse.x = this.stockAPI.features[0].properties.x;
+            p.adresse.y = this.stockAPI.features[0].properties.y;
+            p.adresse.nomCommune = this.stockAPI.features[0].properties.city;
+
+            this.http.put(this.access.getBackURL() + "person/" + idPerson, p).subscribe({
+              next: (data) => {},
+              error: (err) => { console.log("put error", err) }
+            })
+
+          },
+          error: (err) => { console.log("get coordinate error", err) }
+        })
+      },
+        error: (err) => { console.log("no person found : ", err) }})
+  }
 
 
 }
