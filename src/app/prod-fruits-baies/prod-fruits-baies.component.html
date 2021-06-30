@@ -1,1 +1,32 @@
-<p>prod-fruits-baies works!</p>
+<div class="container-fluid bg-light rounded foo">
+    <div class="h4 font-weight-bold text-center py-3">
+        <p class="mt-120" style="color: white">
+            <font size="7">Mes fruits baies</font>
+        </p>
+    </div>
+    <hr>
+
+    <div class="row">
+
+        <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
+            <div class="box bg-white">
+                <div class="d-flex align-items-center">
+                    <div
+                        class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+                    </div>
+                    <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                        <p class="text-muted">Prix : {{d.prix}}</p> <p class="text-muted">Quantité : {{d.quantite}}</p> <p class="text-muted">Description : {{d.description}}</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid my-lg-3 my-3">
+        <button type="button" (click)='retourFruitsMenu()'
+            class="btn btn-default btn-default:hover btn-block btn-primary">
+            <font size="6">Retour</font>
+        </button>
+    </div>
+</div>
