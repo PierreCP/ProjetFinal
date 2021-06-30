@@ -15,7 +15,7 @@ export class ListeProducteurComponent implements OnInit {
   user: any;
 
 
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router, private producteurService: ProducteurService, private access: AccessService) { }
+  constructor(private http: HttpClient, public authService: AuthService, private route: Router, private producteurService: ProducteurService, private access: AccessService) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUserInLocalStorage();
@@ -43,5 +43,10 @@ export class ListeProducteurComponent implements OnInit {
     return "test";
   //return this.adress.getDistance(this.user.id, idProd);
   }
+
+  goHome(): void{
+    this.route.navigateByUrl('menu-cons');
+  }
+
 
 }

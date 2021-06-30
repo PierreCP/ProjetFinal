@@ -45,5 +45,12 @@ export class AuthService {
     }
   }
 
+  goHomeCons(): any{
+    this.route.navigateByUrl('menu-cons');
+  }
+
+  goRechercheProd(): any{
+    this.route.navigateByUrl('liste-prod');
+  }
 
 }
