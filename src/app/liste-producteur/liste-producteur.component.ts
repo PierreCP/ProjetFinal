@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { access } from 'fs';
 import { AuthService } from '../auth.service';
+import { GestionAdressService } from '../gestion-adress.service';
 import { ProducteurService } from '../producteur.service';
 
 @Component({
@@ -11,7 +13,7 @@ import { ProducteurService } from '../producteur.service';
 })
 export class ListeProducteurComponent implements OnInit {
   prdt: any;
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router, private producteurService: ProducteurService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private route: Router, private producteurService: ProducteurService, private adress: GestionAdressService) { }
 
   ngOnInit(): void {
     this.getProducteurs();
@@ -27,6 +29,11 @@ export class ListeProducteurComponent implements OnInit {
   redirectionFicheProducteur(prdt: any): any{
     this.producteurService.producteur = prdt;
     this.route.navigateByUrl('mur');
+  }
+
+  getDist(idProd: any){
+    var u: any = this.authService.getUserInLocalStorage;
+    this.adress.getDistance(u.id, idProd)
   }
 
 }
