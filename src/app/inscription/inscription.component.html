@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="label-perso">Type d'utilisateur:</label>
                         <br>
-                        <mat-select (selectionChange)="changeType($event)">
+                        <mat-select (selectionChange)="changeType($event)" ngModel="typeBox">
                             <mat-option value="">-- Veuillez choisir une catégorie --</mat-option>
                             <mat-option value="consommateur">Consommateur</mat-option>
                             <mat-option value="producteur">Producteur</mat-option>
@@ -43,6 +43,10 @@
                     <div class="form-group">
                         <label class="label-perso">Age : </label>
                         <input type="text" name="age" ngModel='' class="form-control" />
+                    </div>
+                    <div class="form-group" *ngIf="type == 'producteur'">
+                        <label class="label-perso">Nom de votre Magasin : </label>
+                        <input type="text" name="nomMagasin" ngModel='' class="form-control" />
                     </div>
                     <div class="form-group">
                         <label class="label-perso">Numéro de Rue : </label>
