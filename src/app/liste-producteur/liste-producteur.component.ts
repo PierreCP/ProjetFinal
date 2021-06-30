@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { access } from 'fs';
 import { AuthService } from '../auth.service';
 import { GestionAdressService } from '../gestion-adress.service';
 import { ProducteurService } from '../producteur.service';
@@ -32,7 +31,7 @@ export class ListeProducteurComponent implements OnInit {
   }
 
   getDist(idProd: any){
-    var u: any = this.authService.getUserInLocalStorage;
+    var u: any = this.authService.getUserInLocalStorage();
     this.adress.getDistance(u.id, idProd)
   }
 
