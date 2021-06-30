@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
+import { ProducteurService } from '../producteur.service';
 
 @Component({
   selector: 'app-liste-producteur',
@@ -9,23 +11,42 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./liste-producteur.component.css']
 })
 export class ListeProducteurComponent implements OnInit {
+  prdt: any;
+  user: any;
 
-  producteur: any;
-  constructor(private http: HttpClient, private authService: AuthService, private route: Router) { }
+
+  constructor(private http: HttpClient, public authService: AuthService, private route: Router, private producteurService: ProducteurService, private access: AccessService) { }
 
   ngOnInit(): void {
+    this.user = this.authService.getUserInLocalStorage();
     this.getProducteurs();
+    
+    
   }
 
   getProducteurs(): void{
-    this.http.get('http://localhost:8082/producteur').subscribe({
-      next: (data)=> (this.producteur = data),
+    var p: any
+    this.http.get(this.access.getBackURL() + 'producteurWithDist/' + this.user.id).subscribe({
+      next: (data)=> {
+        this.prdt = data;
+        console.log(this.prdt)},
       error: (err)=> (console.log(err))
     });
   }
 
-  redirectionFicheProducteur(): void{
+  redirectionFicheProducteur(prdt: any): any{
+    this.producteurService.producteur = prdt;
     this.route.navigateByUrl('mur');
   }
+
+  getDist(idProd: any): any{
+    return "test";
+  //return this.adress.getDistance(this.user.id, idProd);
+  }
+
+  goHome(): void{
+    this.route.navigateByUrl('menu-cons');
+  }
+
 
 }

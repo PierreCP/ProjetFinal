@@ -14,7 +14,7 @@ height: 150px;
       
       <h1 class="myFont-head">Menu principal</h1>
       <div class="container">
-        <button mat-raised-button  class="btn btn-block">Rechercher des producteurs</button>
+        <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn btn-block">Rechercher des producteurs</button>
       </div>
       <div class="container">
         <button mat-raised-button  class="btn btn-block">Rechercher des produits</button>
@@ -29,10 +29,10 @@ height: 150px;
         <button mat-raised-button  class="btn btn-block">Nous contacter</button>
       </div>
       <div class="container">
-        <button mat-raised-button  class="btn btn-block">Deconnexion</button>
+        <button mat-raised-button (click)='authService.deconnexion()'  class="btn btn-block">Deconnexion</button>
       </div>
       <div class="container">
-        <button mat-raised-button (click)="getAdress()" class="btn btn-block">test</button>
+        <button mat-raised-button (click)="adress.updateCoordinates(59)" class="btn btn-block">test</button>
       </div>
 
                       <!--
@@ -56,7 +56,7 @@ height: 150px;
 
     <div class="col-sm-2">
     <div>
-      <mat-card class="sans-fond" (click)="doStuff()">
+      <mat-card class="sans-fond" (click)="authService.goHomeCons()">
         <mat-card-header></mat-card-header>
         <img class="container mt-3" mat-card-image src="/assets/img/logo_sans_fond.png" alt="Etale">
         <mat-card-content></mat-card-content>
@@ -68,7 +68,7 @@ height: 150px;
   </div>
     <div class="custom-margin-left row d-flex justify-content-around">
     <div class="container-fluid col-sm-4 my-pad-bot">
-    <mat-card class="example-card example-card:hover" (click)="doStuff()">
+    <mat-card class="example-card example-card:hover" (click)="authService.goRechercheProd()">
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
           <mat-card-title>Rechercher des producteurs</mat-card-title>
@@ -143,7 +143,7 @@ height: 150px;
               </div>
 
             <div class="container-fluid col-sm-4 my-pad-bot">
-                <mat-card class="example-card" (click)="doStuff()">
+                <mat-card class="example-card" (click)='authService.deconnexion()'>
                     <mat-card-header>
                       <div mat-card-avatar class="example-header-image"></div>
                       <mat-card-title>Déconnexion</mat-card-title>

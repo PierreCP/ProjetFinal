@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-menu-admin',
@@ -10,7 +11,7 @@ export class MenuAdminComponent implements OnInit {
 
   hover: boolean = false;
 
-  constructor(private route:Router) { }
+  constructor(private route:Router, public authService: AuthService) { }
 
   ngOnInit(): void {
   }
