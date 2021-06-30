@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
 import { ImageUploaderComponent } from '../image-uploader/image-uploader.component';
-import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../auth.service';
 
 @Component({
