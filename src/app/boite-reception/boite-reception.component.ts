@@ -24,8 +24,18 @@ export class BoiteReceptionComponent implements OnInit {
           this.Msg += 'Emetteur: ' + this.liste[i].emetteur.prenom + ' ' + this.liste[i].emetteur.nom; 
           this.Msg += '\r\n' + 'Contenu: ' + this.liste[i].contenu + '\r\n' +'\r\n';
         }
+        console.log(this.Msg);
       },
       error: (err) => { console.log(err) }
+    })
+  }
+
+  deleteMessage(id: any): void{
+    this.http.delete(this.access.getBackURL() + 'deleteMessage/' + id).subscribe({
+      next: (data) =>{
+
+      },
+      error: (err) => { console.log (err) }
     })
   }
 

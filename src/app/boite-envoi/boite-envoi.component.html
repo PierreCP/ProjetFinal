@@ -1,5 +1,15 @@
-<div class="container">
+<div class="container" style="width: 1200px;">
     <h1 class="text-center container myFont-head"><b>Boîte d'Envoi</b> </h1>
-    <br><br>
-    <p> {{ Msg }} </p>
+    <table class="table table-bordered table-condensed" >
+        <tbody>
+            <tr class="myFont-text">
+                <td>Auteur</td>
+                <td>Contenu</td>
+            </tr>
+            <tr *ngFor="let message of liste">
+                <td style="width: 20%">{{message.receveur.prenom + ' ' + message.receveur.nom}}</td>
+                <td style="width: 80%">{{message.contenu}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
