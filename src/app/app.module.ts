@@ -19,7 +19,6 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
 import { MatSliderModule } from '@angular/material/slider';
-<<<<<<< HEAD
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -29,17 +28,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
-=======
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatListModule } from '@angular/material/list';
-import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
->>>>>>> a9325c0374fefd0c6874eba9168bf350bfff039b
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
