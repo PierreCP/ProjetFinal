@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class Test123Component implements OnInit {
 
   events: string[] = [];
-  opened: boolean = true;
+  opened: boolean = false;
   msgErr = '';
   
 
@@ -25,8 +25,8 @@ export class Test123Component implements OnInit {
   ngOnInit(): void {
   }
 
-  toggleSidenav(): void {
-    this.opened = !this.opened
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
   }
 
   uploader(): void {

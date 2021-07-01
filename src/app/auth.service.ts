@@ -76,23 +76,29 @@ export class AuthService {
   }
 
   modifierProduit(m: any): void {
-    console.log('Ici on débute');
     this.user = this.getUserInLocalStorage();
     this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
       next: (data) => { this.liste = data },
       error: (err) => { console.log(err) }
     })
-    this.MsgErr = 'Ajout du produit impossible.'
+    this.MsgErr = 'Modification du produit impossible.'
   }
 
   supprimerProduit(m: any): void {
-    console.log('Ici on débute');
     this.user = this.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+    this.http.get('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
       next: (data) => { this.liste = data },
       error: (err) => { console.log(err) }
     })
-    this.MsgErr = 'Ajout du produit impossible.'
+    this.MsgErr = 'Suppression du produit impossible.'
 
+  }
+
+  messageAdmin(m: any): void {
+    this.user = this.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/getMessage/admin/' + this.user.id + '/' + m.message).subscribe({
+      next: (data) => {this.liste=data, console.log("ICI")},
+      error: (err) => {console.log(err)}
+    })
   }
 }

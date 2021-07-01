@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TestComponent implements OnInit {
 
+  Selection: any = "Bienvenu sur Court-Circuit";
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  Text(Message: any):any{
+    this.Selection= Message;
+  }
 }

@@ -75,7 +75,7 @@ height: 150px;
       </div>
       <div class="custom-margin-left row d-flex justify-content-around">
         <div class="container-fluid col-sm-4 my-pad-bot">
-          <mat-card class="example-card" (click)="doStuff()">
+          <mat-card class="example-card" (click)="redirectionEtal()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Mon étal</mat-card-title>
@@ -202,28 +202,18 @@ height: 150px;
           </button>
         </div>
         <div class="modal-body">
-          <form #fAjout="ngForm">
-            <div class="form-row">
-              <div class="col-md-6 form-group">
-                <label for="recipient-name" class="col-form-label">Nom :</label>
-                <input type="text" class="form-control" ngModel required name="nom" placeholder="Votre nom" />
-              </div>
-              <div class="col-md-6 form-group">
-                <label for="recipient-name" class="col-form-label">Prénom :</label>
-                <input type="text" class="form-control" ngModel required name="prenom" placeholder="Votre prénom" />
-              </div>
-            </div>
+          <form #fMessageAdminProd="ngForm">
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Objet :</label>
-              <input type="text" class='form-control' ngModel required name="objet" placeholder="Objet" />
+              <input type="text" class='form-control' ngModel required name="objet" placeholder="Objet"/>
             </div>
             <div class="form-group">
               <label for="recipient-name" class="col-form-label">Message :</label>
-              <textarea class="form-control" ngModel required name="Message" rows="5"
-                placeholder="Votre message"></textarea>
+              <textarea class="form-control" ngModel required name="message" rows="5" placeholder="Votre message"></textarea>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+              <button (click)='this.authService.messageAdmin(fMessageAdminProd.value)' type="submit"
+                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
                 data-dismiss="modal">Envoyer</button>
               <button type="button" class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
                 data-dismiss="modal">Retour</button>

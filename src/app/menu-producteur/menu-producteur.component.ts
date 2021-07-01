@@ -20,4 +20,8 @@ export class MenuProducteurComponent implements OnInit {
   doStuff():void{
     this.route.navigateByUrl('menu-prod')
   }
+  
+  redirectionEtal(): void {
+    this.route.navigateByUrl('etal')
+  }
 }
