@@ -1,26 +1,28 @@
 
 
-<span><span></span></span>
+  <span><span></span></span>
 <div>
   <p class="text-selection text-center"> {{ Selection }} </p>
 </div>
 <div class="wrap">
-  <a (mouseover)='Text("Mon étal")' (mouseout)='Text("")' href="#">
+  <a (mouseover)='Text("Mon étal")' (mouseout)='Text("")'>
     <div></div>
   </a>
-  <a (mouseover)='Text("Mes commandes")' (mouseout)='Text("")' href="#">
+  <a (mouseover)='Text("Mes commandes")' (mouseout)='Text("")'>
     <div></div>
   </a>
-  <a (mouseover)='Text("Ma messagerie")' (mouseout)='Text("")' href="#">
+  <a (mouseover)='Text("Ma messagerie")' (mouseout)='Text("")'>
     <div></div>
   </a>
-  <a (mouseover)='Text("Nous contacter")' (mouseout)='Text("")' href="#">
+  <a (mouseover)='Text("Nous contacter")' (mouseout)='Text("")'>
     <div></div>
   </a>
-  <a (mouseover)='Text("Mon mur")' (mouseout)='Text("")' href="#">
+  <a (mouseover)='Text("Mon mur")' (mouseout)='Text("")' (click)='affichageProd.toggleMur(); this.affichageProd.toggleMenu();'>
     <div></div>
   </a>
 </div>
+
+
 
 
 

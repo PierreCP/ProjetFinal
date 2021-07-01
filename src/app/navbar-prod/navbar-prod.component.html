@@ -50,6 +50,9 @@
           <div class="container">
             <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
           </div>
+          <div class="container">
+            <button mat-raised-button (click)='affichageProd.toggleMenu()' class="btn myFont-title">Test</button>
+          </div>
         </div>
   
   
@@ -57,7 +60,8 @@
       <mat-drawer-content>
   
   
-        <app-menu-producteur></app-menu-producteur>
+        <app-menu-producteur *ngIf='affichageProd.menuVisible'></app-menu-producteur>
+        <app-mur-producteur *ngIf='affichageProd.murVisible'></app-mur-producteur>
   
       </mat-drawer-content>
     </mat-drawer-container>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 import { ProducteurService } from '../producteur.service';
 
@@ -12,9 +13,10 @@ export class MurProducteurComponent implements OnInit {
 
   producteur: any;
   produit:any;
-  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
+    
     this.getProductFromProducteur();
     this.producteur = this.producteurService.producteur;
   }
