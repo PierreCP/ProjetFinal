@@ -25,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
@@ -64,6 +65,7 @@ import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
 import { PanierComponent } from './panier/panier.component';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { TestComponent } from './test/test.component';
+
 
 
 
@@ -138,6 +140,7 @@ import { TestComponent } from './test/test.component';
     MatListModule,
     MatCardModule,
     MatDialogModule,
+    MatMenuModule
   ],
   entryComponents: [
     NouveauMessageComponent,
