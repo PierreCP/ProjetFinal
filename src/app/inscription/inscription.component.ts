@@ -13,6 +13,7 @@ export class InscriptionComponent implements OnInit {
 
   MsgErr = '';
   type ='type';
+  panier: any;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
