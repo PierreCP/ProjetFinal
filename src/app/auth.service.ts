@@ -86,7 +86,7 @@ export class AuthService {
 
   supprimerProduit(m: any): void {
     this.user = this.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+    this.http.get('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
       next: (data) => { this.liste = data },
       error: (err) => { console.log(err) }
     })
