@@ -42,16 +42,16 @@ height: 150px;
             </mat-form-field>
           </mat-select>
     -->
-          <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
-    
-        
-        </div>
-    
-        
-      </mat-drawer>
-      <mat-drawer-content>
-    
-        <div class="col-sm-2">
+        <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
+
+
+      </div>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+      <div class="col-sm-2">
         <div>
           <mat-card class="sans-fond" (click)="doStuff()">
             <mat-card-header></mat-card-header>
@@ -59,13 +59,15 @@ height: 150px;
             <mat-card-content></mat-card-content>
           </mat-card>
         </div>
-        <div class="above-banniere" >
-            <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn"><mat-icon>list</mat-icon></button>
+        <div class="above-banniere">
+          <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn">
+            <mat-icon>list</mat-icon>
+          </button>
         </div>
       </div>
-        <div class="custom-margin-left row d-flex justify-content-around">
+      <div class="custom-margin-left row d-flex justify-content-around">
         <div class="container-fluid col-sm-4 my-pad-bot">
-        <mat-card class="example-card example-card:hover" (click)="doStuff()">
+          <mat-card class="example-card example-card:hover" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Arbitrage</mat-card-title>
@@ -73,14 +75,14 @@ height: 150px;
             <img class="container mt-3" mat-card-image src="/assets/img/arbitrage.jpg" alt="Etale">
             <mat-card-content>
               <p class="align-middle">
-                Arbitrez les cas de messages signalés. 
+                Arbitrez les cas de messages signalés.
               </p>
             </mat-card-content>
           </mat-card>
         </div>
-    
+
         <div class="container-fluid col-sm-4 my-pad-bot">
-        <mat-card class="example-card" (click)="doStuff()">
+          <mat-card class="example-card" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Tribunal</mat-card-title>
@@ -88,12 +90,27 @@ height: 150px;
             <img class="container mt-3" mat-card-image src="/assets/img/tribunal.jpg" alt="produits">
             <mat-card-content>
               <p class="align-text-middle">
-                Prononcez le bannissement d'un utilisateur. 
+                Prononcez le bannissement d'un utilisateur.
               </p>
             </mat-card-content>
           </mat-card>
         </div>
-    
+
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="lienActivation()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>(Dés)Activation</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/onoff.jpg" alt="Etale">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Activez/Désactivez des comptes.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
         <div class="container-fluid col-sm-4 my-pad-bot">
             <mat-card class="example-card" (click)="doStuff()">
                 <mat-card-header>
