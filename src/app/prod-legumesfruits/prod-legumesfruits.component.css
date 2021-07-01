@@ -10,7 +10,9 @@
 body {
     background-color: #f8f8f8
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 .container {
     margin-top: 20px;
     padding: 40px 20px
