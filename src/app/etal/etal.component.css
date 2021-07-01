@@ -27,7 +27,9 @@ body {
     transform: scale(1.03)
     
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 a:hover {
     text-decoration: none
 }

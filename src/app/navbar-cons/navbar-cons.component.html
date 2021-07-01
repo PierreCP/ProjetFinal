@@ -1,0 +1,69 @@
+<div *ngIf='authService.isConnected()'>
+    <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+      <div class="container-fluid">
+        <div class="d-flex flex-row">
+          <button mat-icon-button class="mr-5 menu-button" (click)='toggleSidenav()'>
+            <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+          </button>
+  
+  
+        </div>
+        <div><a class="navbar-brand margin-brand-img"><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+  
+  
+        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
+            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+          </a>
+          <a class="nav-item nav-link mr-3">
+            <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+          </a>
+          <a class="nav-item nav-link mr-3">
+            <mat-icon style="font-size: 40px; color: green;"> shopping_cart</mat-icon>
+          </a>
+          <a class="nav-item nav-link mr-3">
+            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="">
+    <mat-drawer-container class="drawer-container" hasBackdrop="true">
+      <mat-drawer class="sidenav" [(opened)]='opened' mode="over">
+        <div class="container pt-3 myFont-title">
+  
+          <h1 class="myFont-head mb-5">Menu principal</h1>
+          <div class="">
+            <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
+              producteurs</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button class="btn myFont-title">Rechercher des produits</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button class="btn myFont-title">Modifier le profil</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button class="btn myFont-title">Messagerie</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button class="btn myFont-title">Nous contacter</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+          </div>
+        </div>
+  
+  
+      </mat-drawer>
+      <mat-drawer-content>
+  
+  
+        <app-menu-consommateur></app-menu-consommateur>
+  
+      </mat-drawer-content>
+    </mat-drawer-container>
+  
+  </div>

@@ -15,7 +15,9 @@ body {
     margin-top: 20px;
     padding: 40px 20px
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 .box {
     padding: 40px 30px;
     transition: all .4s ease-in-out;

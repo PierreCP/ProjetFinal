@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 export class MenuAdminComponent implements OnInit {
 
   hover: boolean = false;
+  Selection: any = "Bienvenu sur Court-Circuit";
 
   constructor(private route:Router, public authService: AuthService) { }
 
@@ -22,6 +23,10 @@ export class MenuAdminComponent implements OnInit {
 
   lienActivation(): void {
     this.route.navigateByUrl('admin-activation')
+  }
+  
+  Text(Message: any):any{
+    this.Selection= Message;
   }
 
 }

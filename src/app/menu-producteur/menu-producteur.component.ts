@@ -12,6 +12,8 @@ import { AuthService } from '../auth.service';
 })
 export class MenuProducteurComponent implements OnInit {
 
+  Selection: any = "Menu producteur";
+
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
@@ -24,4 +26,8 @@ export class MenuProducteurComponent implements OnInit {
   redirectionEtal(): void {
     this.route.navigateByUrl('etal')
   }
+  Text(Message: any):any{
+    this.Selection= Message;
+  }
+  
 }

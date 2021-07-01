@@ -96,8 +96,9 @@ export class AuthService {
 
   supprimerProduit(m: any): void {
     this.user = this.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
-      next: (data) => { this.liste = data },
+    console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name);
+    this.http.delete('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
+      next: (data) => { this.liste = data, console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name) },
       error: (err) => { console.log(err) }
     })
     this.MsgErr = 'Suppression du produit impossible.'
@@ -107,7 +108,7 @@ export class AuthService {
   messageAdmin(m: any): void {
     this.user = this.getUserInLocalStorage();
     this.http.get('http://localhost:8082/getMessage/admin/' + this.user.id + '/' + m.message).subscribe({
-      next: (data) => {this.liste=data, console.log("ICI")},
+      next: (data) => {this.liste=data},
       error: (err) => {console.log(err)}
     })
   }

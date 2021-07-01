@@ -76,7 +76,9 @@ b {
 .pale-pink {
     background-color: #ffe4e4
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 .pale-pale {
     background-color: #f4eeff
 }
