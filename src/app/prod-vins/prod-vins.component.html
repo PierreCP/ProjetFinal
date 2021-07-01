@@ -1,72 +1,81 @@
-<div class="container-fluid bg-light rounded foo"
-    style="background-image: url('assets/img/background accueil3.png'); height: 100%">
-    <div class="h4 font-weight-bold text-center py-3">
-        <p class="mt-120" style="color: white">
-            <font size="7">Mes vins</font>
-        </p>
-    </div>
-    <div class="row co">
-        <div class="col-sm-12">
-            <br> <br>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid bg-light rounded">
+        <div class="h4 font-weight-bold text-center py-3">
+            <p class="mt-120" style="color: rgb(51, 172, 3)">
+                <font size="7">Mes vins</font>
+            </p>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionRougesMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div
-                        class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                        <img src="/assets/img/vin rouge.png" alt="">
+        <div class="row co">
+            <div class="col-sm-12">
+                <br> <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionRougesMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div
+                                class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+                                <img src="/assets/img/vin rouge.png" alt="">
+                            </div>
+                            <div class="d-flex flex-column"> <b>Vins rouges</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex flex-column"> <b>Vins rouges</b>
-                            <p class="text-muted"></p>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionBlancsMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
+                                <img src="/assets/img/vin blanc.png" alt=""> </div>
+                            <div class="d-flex flex-column"> <b>Vins blancs</b>
+                                <p class="text-muted"></p>
+                            </div>
                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionBlancsMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan"> <img
-                            src="/assets/img/vin blanc.png" alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Vins blancs</b>
-                            <p class="text-muted"></p>
-                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3">
-            <a (click)='redirectionRosesMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink"> <img
-                            src="/assets/img/vin rosé.png"
-                            alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Vins rosés</b>
-                            <p class="text-muted"></p>
-                         </div>
-                </div>
-            </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 my-lg-3 my-3">
-            <a (click)='redirectionChampagnesMenu()'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple"> <img
-                            src="/assets/img/champagnes.png"
-                            alt=""> </div>
-                    <div class="d-flex flex-column"> <b>Champagnes</b>
-                            <p class="text-muted"></p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3">
+                <a (click)='redirectionRosesMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
+                                <img src="/assets/img/vin rosé.png" alt=""> </div>
+                            <div class="d-flex flex-column"> <b>Vins rosés</b>
+                                <p class="text-muted"></p>
+                            </div>
                         </div>
-                </div>
-            </div></a>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-6 my-lg-3 my-3">
+                <a (click)='redirectionChampagnesMenu()'>
+                    <div class="box bg-white">
+                        <div class="d-flex align-items-center">
+                            <div
+                                class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
+                                <img src="/assets/img/champagnes.png" alt=""> </div>
+                            <div class="d-flex flex-column"> <b>Champagnes</b>
+                                <p class="text-muted"></p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="container-fluid">
+                <button type="button" (click)='retourEtal()'
+                    class="btn btn-default btn-default:hover btn-block btn-primary">
+                    <font size="6">Retour</font>
+                </button>
+            </div>
         </div>
-        <div class="container-fluid">
-            <button type="button" (click)='retourEtal()' class="btn btn-default btn-default:hover btn-block btn-primary">
-                <font size="6">Retour</font>
-            </button>
     </div>
-    </div>
-</div>
+</body>

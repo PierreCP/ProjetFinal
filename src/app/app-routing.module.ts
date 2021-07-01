@@ -40,6 +40,7 @@ import { ProdFruitsAgrumesComponent } from './prod-fruits-agrumes/prod-fruits-ag
 import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.component';
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { MessagerieComponent } from './messagerie/messagerie.component';
 import { PanierComponent } from './panier/panier.component';
 
 import { TestComponent } from './test/test.component';
@@ -105,6 +106,7 @@ const routes: Routes = [
   {component: ProdFruitsPepoComponent, path: 'prod-pepos'},
   {component: ProdFruitsTropicauxComponent, path: 'prod-tropicaux'},
   {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
+  {component: MessagerieComponent, path: 'messagerie'},
   {component: PanierComponent, path: 'panier'},
 
 

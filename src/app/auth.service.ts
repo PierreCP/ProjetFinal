@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 
 @Injectable({
   providedIn: 'root'
@@ -13,31 +14,31 @@ export class AuthService {
   liste: any;
 
 
-  constructor(private route: Router, private http: HttpClient) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog ) { }
 
-  setUserInLocalStorage(u: any): void{
+  setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
   }
 
-  getUserInLocalStorage(): any{
+  getUserInLocalStorage(): any {
     this.user = localStorage.getItem('userConnect');
     return JSON.parse(this.user);
   }
 
-  verif(): void{
+  verif(): void {
     if (this.getUserInLocalStorage() == null) {
       this.route.navigateByUrl('login');
       this.MsgErr = "Veuillez vous connecter"
     }
   }
 
-  deconnexion(): void{
+  deconnexion(): void {
     localStorage.clear();
     this.route.navigateByUrl('login');
     this.MsgErr = 'À bientôt !'
   }
 
-  isConnected(): boolean{
+  isConnected(): boolean {
     if (this.getUserInLocalStorage() == null) {
       return false;
     } else {
@@ -45,12 +46,53 @@ export class AuthService {
     }
   }
 
-  goHomeCons(): any{
+  goBack(): void{
+    this.route.navigateByUrl('login');
+  }
+
+  messagerie(): void{
+    this.route.navigateByUrl('messagerie')
+  }
+
+  nouveauMessage(): any{
+    const myDialog = this.dialog.open(NouveauMessageComponent)
+  }
+  
+  goHomeCons(): any {
     this.route.navigateByUrl('menu-cons');
   }
 
-  goRechercheProd(): any{
+  goRechercheProd(): any {
     this.route.navigateByUrl('liste-prod');
   }
 
+  ajoutProduit(m: any): void {
+    this.user = this.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/person/' + this.user.id + '/produit/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+      next: (data) => { this.liste = data },
+      error: (err) => { console.log(err) }
+    })
+    this.MsgErr = 'Ajout du produit impossible.'
+  }
+
+  modifierProduit(m: any): void {
+    console.log('Ici on débute');
+    this.user = this.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+      next: (data) => { this.liste = data },
+      error: (err) => { console.log(err) }
+    })
+    this.MsgErr = 'Ajout du produit impossible.'
+  }
+
+  supprimerProduit(m: any): void {
+    console.log('Ici on débute');
+    this.user = this.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+      next: (data) => { this.liste = data },
+      error: (err) => { console.log(err) }
+    })
+    this.MsgErr = 'Ajout du produit impossible.'
+
+  }
 }

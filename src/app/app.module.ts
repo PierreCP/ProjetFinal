@@ -57,6 +57,10 @@ import { ProdFruitsPepoComponent } from './prod-fruits-pepo/prod-fruits-pepo.com
 import { ProdFruitsTropicauxComponent } from './prod-fruits-tropicaux/prod-fruits-tropicaux.component';
 import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
+import { MessagerieComponent } from './messagerie/messagerie.component';
+import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
+import { BoiteReceptionComponent } from './boite-reception/boite-reception.component';
+import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
 import { PanierComponent } from './panier/panier.component';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { TestComponent } from './test/test.component';
@@ -111,6 +115,10 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
     ProdFruitsTropicauxComponent,
     MenuAdminComponent,
     ImageUploaderComponent,
+    MessagerieComponent,
+    NouveauMessageComponent,
+    BoiteReceptionComponent,
+    BoiteEnvoiComponent,
     PanierComponent,
     AjoutProduitComponent,
     TestComponent,
@@ -132,13 +140,18 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
     MatSelectModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [
     {
       provide: MatDialogRef,
       useValue: {}
     },
+  ],
+  entryComponents: [
+    NouveauMessageComponent,
+    BoiteEnvoiComponent,
+    BoiteReceptionComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -166,26 +166,56 @@ height: 150px;
         </div>
 
         <div class="container-fluid col-sm-4 my-pad-bot">
-          <mat-card class="example-card" (click)='authService.deconnexion()'>
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Déconnexion</mat-card-title>
-            </mat-card-header>
-            <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
-            <mat-card-content>
-              <p class="align-text-middle">
-                On se retrouve très vite !
-              </p>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
+            <mat-card class="example-card" (click)='authService.messagerie()'>
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Messagerie</mat-card-title>
+                </mat-card-header>
+                <img class="container mt-3" mat-card-image src="/assets/img/messagerie.jpg" alt="Etale">
+                <mat-card-content>
+                  <p class="align-text-middle">
+                    Accedez à votre messagerie  
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <div class="container-fluid col-sm-4 my-pad-bot">
+              <mat-card class="example-card" (click)="doStuff()">
+                  <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Nous contacter</mat-card-title>
+                  </mat-card-header>
+                  <img class="container mt-3" mat-card-image src="/assets/img/contact.png" alt="Etale">
+                  <mat-card-content>
+                    <p class="align-text-middle">
+                      Cet outil est le votre, vos remarques sont précieuses 
+                    </p>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+
+            <div class="container-fluid col-sm-4 my-pad-bot">
+                <mat-card class="example-card" (click)='authService.deconnexion()'>
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>Déconnexion</mat-card-title>
+                    </mat-card-header>
+                    <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
+                    <mat-card-content>
+                      <p class="align-text-middle">
+                        On se retrouve très vite !  
+                      </p>
+                    </mat-card-content>
+                  </mat-card>
+                </div>
+            </div>
 
 
+        
+    <!---->
 
-      <!---->
-
-    </mat-drawer-content>
-  </mat-drawer-container>
+  </mat-drawer-content>
+</mat-drawer-container>
 
 </div>
