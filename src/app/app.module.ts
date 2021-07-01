@@ -124,7 +124,7 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
     PanierComponent,
     AjoutProduitComponent,
     TestComponent,
-    ImageGestionComponent
+    ImageGestionComponent,
   ],
   imports: [
     BrowserModule,

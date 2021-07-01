@@ -9,6 +9,7 @@
             <tr *ngFor="let message of liste">
                 <td style="width:20%">{{message.emetteur.prenom + ' ' + message.emetteur.nom}}</td>
                 <td style="width:80%">{{message.contenu}}</td>
+                <td><button (click)='receptionReponse(message.emetteur)' class="btn btn-block myFont-title">Répondre</button></td>
                 <td><a class="nav-item nav-link" (click)='deleteMessage(message.id)'> <i style="color: tomato" class="fa fa-trash fa-3x"></i></a></td>
             </tr>
         </tbody>

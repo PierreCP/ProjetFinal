@@ -13,7 +13,7 @@ export class BoiteReceptionComponent implements OnInit {
   Msg = '';
   liste: any;
 
-  constructor(private http: HttpClient, private access: AccessService, private authService: AuthService) { }
+  constructor(private http: HttpClient, private access: AccessService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.http.get(this.access.getBackURL() + 'messagerie/boiteReception/' + this.authService.getUserInLocalStorage().id).subscribe({
@@ -24,7 +24,6 @@ export class BoiteReceptionComponent implements OnInit {
           this.Msg += 'Emetteur: ' + this.liste[i].emetteur.prenom + ' ' + this.liste[i].emetteur.nom; 
           this.Msg += '\r\n' + 'Contenu: ' + this.liste[i].contenu + '\r\n' +'\r\n';
         }
-        console.log(this.Msg);
       },
       error: (err) => { console.log(err) }
     })
@@ -37,6 +36,11 @@ export class BoiteReceptionComponent implements OnInit {
       },
       error: (err) => { console.log (err) }
     })
+  }
+
+  receptionReponse(receveur: any): void{
+    this.authService.setRecInLocalStorage(receveur);
+    this.authService.nouveauMessage();
   }
 
 }
