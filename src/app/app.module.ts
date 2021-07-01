@@ -18,16 +18,16 @@ import { ProdFromagesComponent } from './prod-fromages/prod-fromages.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
-import {MatListModule} from '@angular/material/list';
-import {MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ListeProducteurComponent } from './liste-producteur/liste-producteur.component';
@@ -64,6 +64,8 @@ import { BoiteEnvoiComponent } from './boite-envoi/boite-envoi.component';
 import { PanierComponent } from './panier/panier.component';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { TestComponent } from './test/test.component';
+import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 
 
@@ -119,7 +121,8 @@ import { TestComponent } from './test/test.component';
     BoiteEnvoiComponent,
     PanierComponent,
     AjoutProduitComponent,
-    TestComponent
+    TestComponent,
+    ImageGestionComponent
   ],
   imports: [
     BrowserModule,
@@ -139,12 +142,17 @@ import { TestComponent } from './test/test.component';
     MatCardModule,
     MatDialogModule,
   ],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+  ],
   entryComponents: [
     NouveauMessageComponent,
     BoiteEnvoiComponent,
     BoiteReceptionComponent
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

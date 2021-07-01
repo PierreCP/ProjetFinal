@@ -1,5 +1,5 @@
-<div class="container" style="margin-top: 300px;">
-    <div class="my-font-family mt-60">
+<div class="container">
+    <div class="my-font-family">
       <form #upload='ngForm' (ngSubmit)='uploadImg(upload.value)'>
         <div class="form-group">
           <label for="" class="text-secondary">Titre</label>
@@ -11,13 +11,13 @@
         </div>
 
         <div>
-          <button type="button" mat-icon-button class="btn btn-block" (click)="file.click()">
+          <button mat-icon-button type="button" class="btn btn-block" (click)="file.click()">
               <mat-icon>add_photo_alternate</mat-icon>
           </button>
         </div>
 
         <input type="file" [hidden]='true' #file accept="image/*" required ngModel="" name="img" (change)='onFileChanged($event)'> 
-        <div>
+        <div class="text-center">
           <img [src]="mediaUrl" alt="imgUpl" class="center" width="20%" *ngIf="mediaUrl">
         </div>
 

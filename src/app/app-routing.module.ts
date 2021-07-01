@@ -44,12 +44,18 @@ import { MessagerieComponent } from './messagerie/messagerie.component';
 import { PanierComponent } from './panier/panier.component';
 
 import { TestComponent } from './test/test.component';
+import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
   { component: InscriptionComponent, path: 'inscription'},
   { component: ImageUploaderComponent, path: 'uploader' },
+  { component: ImageGestionComponent, path: 'image' },
   
+  { component: MenuAdminComponent, path: 'menu-admin'},
+  { component: AdminActivationComponent, path: 'admin-activation'},
+
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
     { component: ProdVinsComponent, path: 'prod-vins' },
