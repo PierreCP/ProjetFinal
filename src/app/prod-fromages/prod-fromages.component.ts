@@ -11,7 +11,7 @@ import { AuthService } from '../auth.service';
 })
 export class ProdFromagesComponent implements OnInit {
 
-  constructor(private http: HttpClient, private access: AccessService, public authService: AuthService, private route: Router) { }
+  constructor(public http: HttpClient, private access: AccessService, public authService: AuthService, private route: Router) { }
   
   user: any;
   liste: any;
