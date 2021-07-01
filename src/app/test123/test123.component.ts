@@ -29,4 +29,7 @@ export class Test123Component implements OnInit {
     return this.opened = !this.opened
   }
 
+  uploader(): void {
+    this.route.navigateByUrl('uploader');
+  }
 }
