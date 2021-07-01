@@ -36,7 +36,9 @@ img {
     width: 35px;
     height: 35px
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 p.text-muted {
     margin: 0;
     font-size: 0.9rem

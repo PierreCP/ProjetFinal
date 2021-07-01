@@ -30,7 +30,9 @@ body {
 a:hover {
     text-decoration: none
 }
-
+.fa:hover{
+    transform: scale(1.15)
+}
 img {
     object-fit: contain;
     width: 35px;

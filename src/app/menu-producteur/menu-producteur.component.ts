@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
+import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -12,7 +13,9 @@ import { AuthService } from '../auth.service';
 })
 export class MenuProducteurComponent implements OnInit {
 
-  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog) { }
+  Selection: any = "Menu producteur";
+
+  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
   }
@@ -24,4 +27,8 @@ export class MenuProducteurComponent implements OnInit {
   redirectionEtal(): void {
     this.route.navigateByUrl('etal')
   }
+  Text(Message: any):any{
+    this.Selection= Message;
+  }
+  
 }

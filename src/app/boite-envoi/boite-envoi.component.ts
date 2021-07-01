@@ -12,7 +12,7 @@ export class BoiteEnvoiComponent implements OnInit {
 
   Msg = '';
   liste: any;
-  constructor(private http: HttpClient, private access: AccessService, private authService: AuthService) { }
+  constructor(private http: HttpClient, private access: AccessService, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.http.get(this.access.getBackURL() + 'messagerie/boiteEnvoi/' + this.authService.getUserInLocalStorage().id).subscribe({
@@ -23,6 +23,7 @@ export class BoiteEnvoiComponent implements OnInit {
           this.Msg += 'Receveur: ' + this.liste[i].receveur.prenom + ' ' + this.liste[i].receveur.nom; 
           this.Msg += '\r\n' + 'Contenu: ' + this.liste[i].contenu + '\r\n' +'\r\n';
         }
+        console.log(this.Msg);
       },
       error: (err) => { console.log(err) }
     })

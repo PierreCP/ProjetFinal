@@ -1,3 +1,43 @@
+<span><span></span></span>
+<div>
+  <p class="text-selection text-center"> {{ Selection }} </p>
+</div>
+<div class="wrap">
+  <a (mouseover)='Text("Rechercher des producteurs")' (mouseout)='Text("")' href="#">
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Acceder à la messagerie")' (mouseout)='Text("")' href="#">
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Modifier mon profil")' (mouseout)='Text("")' href="#">
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Nous contacter")' (mouseout)='Text("")' href="#">
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Rechercher des produits")' (mouseout)='Text("")' href="#">
+    <div></div>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--
 <div class="bg-image" style="
 background-image: url('assets/img/banniere.jpg');
@@ -5,35 +45,36 @@ height: 150px;
 ">
 
 <div class="above-banniere">
--->
 
-<div class="" >
-<mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
-  <mat-drawer class="sidenav" #drawer mode="over">
-    <div class="container pt-3 myFont-title">
-      
-      <h1 class="myFont-head">Menu principal</h1>
-      <div class="container">
-        <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn btn-block">Rechercher des producteurs</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button  class="btn btn-block">Rechercher des produits</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button  class="btn btn-block">Modifier le profil</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button  class="btn btn-block">Messagerie</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button  class="btn btn-block">Nous contacter</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button (click)='authService.deconnexion()'  class="btn btn-block">Deconnexion</button>
-      </div>
-      <div class="container">
-        <button mat-raised-button (click)="adress.updateCoordinates(59)" class="btn btn-block">test</button>
-      </div>
+
+<div class="">
+  <mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
+    <mat-drawer class="sidenav" #drawer mode="over">
+      <div class="container pt-3 myFont-title">
+
+        <h1 class="myFont-head">Menu principal</h1>
+        <div class="container">
+          <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn btn-block">Rechercher des
+            producteurs</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Rechercher des produits</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Modifier le profil</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Messagerie</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button class="btn btn-block">Nous contacter</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.deconnexion()' class="btn btn-block">Deconnexion</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)="adress.updateCoordinates(59)" class="btn btn-block">test</button>
+        </div>
 
         <h1 class="myFont-head">Menu principal</h1>
         <div class="container">
@@ -58,7 +99,7 @@ height: 150px;
           <button mat-raised-button (click)="getAdress()" class="btn btn-block">test</button>
         </div>
 
-        <!--
+
                           <mat-form-field appearance="fill">
       <mat-label>Has backdrop</mat-label>
       <mat-select #hasBackdrop>
@@ -67,61 +108,61 @@ height: 150px;
         <mat-option [value]="false">False</mat-option>
         </mat-form-field>
       </mat-select>
--->
-      <!-- AJOUTER LE CONTENU DE LA SIDEBAR ICI, EXEMPLE DE MENU DEROULANT AU DESSUS-->
 
-    
-    </div>
 
-    
-  </mat-drawer>
-  <mat-drawer-content>
+      </div>
 
-    <div class="col-sm-2">
-    <div>
-      <mat-card class="sans-fond" (click)="authService.goHomeCons()">
-        <mat-card-header></mat-card-header>
-        <img class="container mt-3" mat-card-image src="/assets/img/logo_sans_fond.png" alt="Etale">
-        <mat-card-content></mat-card-content>
-      </mat-card>
-    </div>
-    <div class="above-banniere" >
-        <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn"><mat-icon>list</mat-icon></button>
-    </div>
-  </div>
-    <div class="custom-margin-left row d-flex justify-content-around">
-    <div class="container-fluid col-sm-4 my-pad-bot">
-    <mat-card class="example-card example-card:hover" (click)="authService.goRechercheProd()">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Rechercher des producteurs</mat-card-title>
-        </mat-card-header>
-        <img class="container mt-3" mat-card-image src="/assets/img/producteur.png" alt="Etale">
-        <mat-card-content>
-          <p class="align-middle">
-            Recherchez des producteurs proches de chez vous ! 
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
 
-    <div class="container-fluid col-sm-4 my-pad-bot">
-    <mat-card class="example-card" (click)="doStuff()">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Rechercher des produits</mat-card-title>
-        </mat-card-header>
-        <img class="container mt-3" mat-card-image src="/assets/img/produits.jpg" alt="produits">
-        <mat-card-content>
-          <p class="align-text-middle">
-            Recherchez des produits locaux ! 
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+    </mat-drawer>
+    <mat-drawer-content>
 
-    <div class="container-fluid col-sm-4 my-pad-bot">
-        <mat-card class="example-card" (click)="doStuff()">
+      <div class="col-sm-2">
+        <div>
+          <mat-card class="sans-fond" (click)="authService.goHomeCons()">
+            <mat-card-header></mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/logo_sans_fond.png" alt="Etale">
+            <mat-card-content></mat-card-content>
+          </mat-card>
+        </div>
+        <div class="above-banniere">
+          <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn">
+            <mat-icon>list</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="custom-margin-left row d-flex justify-content-around">
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card example-card:hover" (click)="authService.goRechercheProd()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Rechercher des producteurs</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/producteur.png" alt="Etale">
+            <mat-card-content>
+              <p class="align-middle">
+                Recherchez des producteurs proches de chez vous !
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="doStuff()">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Rechercher des produits</mat-card-title>
+            </mat-card-header>
+            <img class="container mt-3" mat-card-image src="/assets/img/produits.jpg" alt="produits">
+            <mat-card-content>
+              <p class="align-text-middle">
+                Recherchez des produits locaux !
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="container-fluid col-sm-4 my-pad-bot">
+          <mat-card class="example-card" (click)="doStuff()">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Modifier mon profil</mat-card-title>
@@ -136,7 +177,7 @@ height: 150px;
         </div>
 
         <div class="container-fluid col-sm-4 my-pad-bot">
-          <mat-card class="example-card" (click)="doStuff()">
+          <mat-card class="example-card" (click)='authService.messagerie()'>
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>Messagerie</mat-card-title>
@@ -214,7 +255,7 @@ height: 150px;
 
 
         
-    <!---->
+
 
   </mat-drawer-content>
 </mat-drawer-container>
@@ -251,3 +292,4 @@ height: 150px;
 </div>
 
 </div>
+-->

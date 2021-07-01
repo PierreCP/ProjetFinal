@@ -37,6 +37,7 @@ export class ListeProducteurComponent implements OnInit {
   redirectionFicheProducteur(prdt: any): any{
     this.producteurService.producteur = prdt;
     this.route.navigateByUrl('mur');
+    this.authService.setRecInLocalStorage(prdt.person);
   }
 
   getDist(idProd: any): any{
