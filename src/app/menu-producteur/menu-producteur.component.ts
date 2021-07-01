@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -9,7 +12,7 @@ import { AuthService } from '../auth.service';
 })
 export class MenuProducteurComponent implements OnInit {
 
-  constructor(private route: Router, public authService: AuthService) { }
+  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
