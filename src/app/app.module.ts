@@ -60,8 +60,8 @@ import { ImageUploaderComponent } from './image-uploader/image-uploader.componen
 import { PanierComponent } from './panier/panier.component';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { TestComponent } from './test/test.component';
-import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 import { AdminActivationComponent } from './admin-activation/admin-activation.component';
+import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 
 
 
@@ -113,7 +113,8 @@ import { AdminActivationComponent } from './admin-activation/admin-activation.co
     ImageUploaderComponent,
     PanierComponent,
     AjoutProduitComponent,
-    TestComponent
+    TestComponent,
+    ImageGestionComponent
   ],
   imports: [
     BrowserModule,
@@ -131,7 +132,7 @@ import { AdminActivationComponent } from './admin-activation/admin-activation.co
     MatSelectModule,
     MatListModule,
     MatCardModule,
-    MatDialogModule,
+    MatDialogModule
   ],
   providers: [
     {
