@@ -1,6 +1,7 @@
 
   body,html{margin:0;padding:0;height:100%;}
   body{background:#E3DFD2;box-shadow: inset 0 0 20vmin 0 #585247;}
+  /*
 .wrap{
   position:relative;
   width:80vmin; height:80vmin;
@@ -26,7 +27,7 @@ a div{
   border-radius:inherit;
 }
 a:nth-child(1){
-  border-radius:40vmin 0 0 0;
+  border-radius:20vmin 0 0 0;
   transform-origin: 110% 110%;
   transition:transform .4s .15s;
 }
@@ -34,7 +35,7 @@ a:nth-child(1) div{
   background-image:url('/assets/img/producteur.png');
 }
 a:nth-child(2){
-  border-radius:0 40vmin 0 0;
+  border-radius:0 20vmin 0 0;
   left:52.5%;
   transform-origin: -10% 110%;
   transition:transform .4s .2s;
@@ -43,7 +44,7 @@ a:nth-child(2) div{
   background-image:url('/assets/img/messagerie.jpg');
 }
 a:nth-child(3){
-  border-radius:0 0 0 40vmin;
+  border-radius:0 0 0 20vmin;
   top:52.5%;
   transform-origin: 110% -10%;
   transition:transform .4s .25s;
@@ -52,7 +53,7 @@ a:nth-child(3) div{
   background-image:url('/assets/img/utilisateur.png');
 }
 a:nth-child(4){
-  border-radius:0 0 40vmin 0;
+  border-radius:0 0 20vmin 0;
   top:52.5%; left:52.5%;
   transform-origin: -10% -10%;
   transition:transform .4s .3s;
@@ -88,29 +89,38 @@ span span{
   border-radius:0;
 }
 span span:after, span span:before{
-  content:'';
-  position:absolute;
-  left:0; top:-1.5vmin;
-  width:100%; height:100%;
-  background:inherit;
-}
+    content:'';
+    position:absolute;
+    left:0; top:-1.5vmin;
+    width:100%; height:100%;
+    background:inherit;
+  }
 span span:after{
   top:1.5vmin;
 }
+
+
 span:hover + .wrap, .wrap:hover{
-  transform:scale(.8) translateZ(0px);
-  opacity:1;
-}
-span:hover + .wrap a, .wrap:hover a{
-  transform:scale(1) translatez(0px);
-}
+    transform:scale(.8) translateZ(0px);
+    opacity:1;
+  }
+
+
+  span:hover + .wrap a, .wrap:hover a{
+    transform:scale(1) translatez(0px);
+  }
+
+
 a:hover div{
   opacity:1;
   transform:translatez(0px);
 }
 
+*/
+
 
 .text-selection{
+    padding-top: 50px;
     font-size: 70px;
     font-family: AmaticSC-Regular;
     font-style: italic;
@@ -118,3 +128,71 @@ a:hover div{
     color: rgb(165, 192, 138);
     
 }
+
+
+
+a{
+    position:absolute;
+    left:0; top:0;
+    width:47.5%; height:47.5%;
+    overflow:hidden;
+    transform:scale(.7) translateZ(0px);
+    background:#585247;
+  }
+  a div{
+    height:100%;
+    background-size:cover;
+    opacity:.5;
+    transition:opacity .5s;
+    border-radius:inherit;
+  }
+  a:nth-child(1){
+    border-radius:40vmin 0 0 0;
+    transform-origin: 110% 102%;
+    transition:transform .4s .15s;
+  }
+  a:nth-child(1) div{
+    background-image:url('/assets/img/producteur.png');
+  }
+  a:nth-child(2){
+    border-radius:0 40vmin 0 0;
+    left:52.5%;
+    transform-origin: -10% 102%;
+    transition:transform .4s .2s;
+  }
+  a:nth-child(2) div{
+    background-image:url('/assets/img/messagerie.jpg');
+  }
+  a:nth-child(3){
+    border-radius:0 0 0 40vmin;
+    top:52.5%;
+    transform-origin: 110% -2%;
+    transition:transform .4s .25s;
+  }
+  a:nth-child(3) div{
+    background-image:url('/assets/img/utilisateur.png');
+  }
+  a:nth-child(4){
+    border-radius:0 0 40vmin 0;
+    top:52.5%; left:52.5%;
+    transform-origin: -10% -2%;
+    transition:transform .4s .3s;
+  }
+  a:nth-child(4) div{
+    background-image: url('/assets/img/contact.png');
+  }
+  a:nth-child(5){
+    width:55%;height:55%;
+    left:22.5%; top:22.5%;
+    border-radius:50vmin;
+    box-shadow:0 0 0 5vmin #E3DFD2;
+    transform:scale(0.65);
+  }
+  a:nth-child(5) div{
+    background-image: url('/assets/img/pannier_legumes.jpg');
+  }
+  
+  a:hover div{
+    opacity:1;
+    transform:translatez(0px);
+  }
