@@ -7,4 +7,9 @@ export class PanierService {
 
   panier: any;
   constructor() { }
+
+  getPanierInLocalStorage(): any {
+    this.panier = localStorage.getItem('panier');
+    return JSON.parse(this.panier);
+  }
 }
