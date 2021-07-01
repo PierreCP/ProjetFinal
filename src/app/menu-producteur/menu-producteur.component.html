@@ -5,7 +5,7 @@
   <p class="text-selection text-center"> {{ Selection }} </p>
 </div>
 <div class="wrap">
-  <a (mouseover)='Text("Mon étal")' (mouseout)='Text("")'>
+  <a (mouseover)='Text("Mon étal")' (click)='redirectionEtal()' (mouseout)='Text("")'>
     <div></div>
   </a>
   <a (mouseover)='Text("Mes commandes")' (mouseout)='Text("")'>

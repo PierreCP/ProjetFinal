@@ -28,4 +28,8 @@ export class MurProducteurComponent implements OnInit {
     });
   }
 
+  contact(): void{
+    this.authService.nouveauMessage();
+  }
+
 }
