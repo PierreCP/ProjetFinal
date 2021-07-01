@@ -33,7 +33,7 @@ export class BoiteReceptionComponent implements OnInit {
   deleteMessage(id: any): void{
     this.http.delete(this.access.getBackURL() + 'deleteMessage/' + id).subscribe({
       next: (data) =>{
-
+        this.ngOnInit();
       },
       error: (err) => { console.log (err) }
     })

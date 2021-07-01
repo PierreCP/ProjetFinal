@@ -13,6 +13,7 @@ export class NouveauMessageComponent implements OnInit {
 
   test: any;
   MsgErr = '';
+  longueur = 0;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
@@ -39,5 +40,9 @@ export class NouveauMessageComponent implements OnInit {
       error: (err) => { console.log(err) }
     })
   }
+  
+  valueChange(u: any) {
+    this.longueur = u.contenu.length;
+   }
 
 }
