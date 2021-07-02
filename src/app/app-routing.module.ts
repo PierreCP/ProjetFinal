@@ -79,6 +79,7 @@ import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.com
 import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
+import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -152,7 +153,6 @@ const routes: Routes = [
   {component: ConsBieresBrunesComponent, path: 'cons-brunes'},
   {component: ConsBieresRoussesComponent, path: 'cons-rousses'},
   {component: ConsFromagesComponent, path: 'cons-fromages'},
-  {component: ConsFruitsAgrumesComponent, path: 'cons-fruits'},
   {component: ConsFruitsAgrumesComponent, path: 'cons-agrumes'},
   {component: ConsFruitsBaiesComponent, path: 'cons-baies'},
   {component: ConsFruitsDrupesComponent, path: 'cons-drupes'},
@@ -174,6 +174,7 @@ const routes: Routes = [
   {component: ConsVinsChampagnesComponent, path: 'cons-champagnes'},
   {component: ConsVinsRosesComponent, path: 'cons-roses'},
   {component: ConsVinsRougesComponent, path: 'cons-rouges'},
+  {component: ConsFruitsComponent, path: 'cons-fruits'}
 
 
 ];

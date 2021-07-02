@@ -6,56 +6,43 @@
     <div class="container-fluid bg-light rounded">
         <div class="h4 font-weight-bold text-center py-3">
             <p class="mt-120" style="color: rgb(51, 172, 3)">
-                <font size="7">Mes vins rouges</font>
+                <font size="7">Vins rouges</font>
             </p>
         </div>
 
-
+        <br>
+        <br>
         <div class="row">
-
             <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
                 <div class="box bg-white">
                     <div class="d-flex align-items-center">
-                        <div
-                            class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                        </div>
+
                         <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                            <p hidden>Id : {{d.id}}</p>
                             <p class="text-muted">Prix : {{d.prix}}</p>
-                            <p class="text-muted">Quantité : {{d.quantite}}</p>
                             <p class="text-muted">Description : {{d.description}}</p>
+                        </div>
+                        <div Class="col-6 text-right">
+                            <a (click)='addProduitToPanier(d)'> <i style="color: rgb(51, 172, 3)"
+                                    class="fa fa-shopping-basket fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        
     </div>
     <br>
     <br>
     <br>
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-sm-4"></div>
-            <div Class="col-1 text-center">
-                <a (click)='retourVinsMenu()'> <i style="color: rgb(51, 172, 3)" class="fa fa-rotate-left fa-4x"></i></a>
+            <div class="col-sm-5"></div>
+            <div Class="col-2 text-center">
+                <a (click)='retourVinsMenu()'> <i style="color: rgb(51, 172, 3)"
+                        class="fa fa-rotate-left fa-4x"></i></a>
             </div>
-            <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#ajouter" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                        class="fa fa-plus fa-4x"></i></a>
-            </div>
-            <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#modifier" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                        class="fa fa-pencil fa-4x"></i></a>
-            </div>
-            <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#supprimer" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                        class="fa fa-trash fa-4x"></i></a>
-            </div>
-            <div class="col-4"></div>
+            <div class="col-5"></div>
 
         </div>
     </div>
-      
 </body>

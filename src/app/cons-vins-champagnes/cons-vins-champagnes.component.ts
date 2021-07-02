@@ -33,7 +33,7 @@ export class ConsVinsChampagnesComponent implements OnInit {
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {
-          this.route.navigateByUrl('prod-vins');
+          this.route.navigateByUrl('cons-vins');
         }
 
       },
