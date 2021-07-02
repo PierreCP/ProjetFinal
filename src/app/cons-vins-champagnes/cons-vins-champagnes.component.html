@@ -18,11 +18,12 @@
                     <div class="d-flex align-items-center">
 
                         <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                            <p hidden>Id : {{d.id}}</p>
                             <p class="text-muted">Prix : {{d.prix}}</p>
                             <p class="text-muted">Description : {{d.description}}</p>
                         </div>
                         <div Class="col-6 text-right">
-                            <a (click)='retourVinsMenu()'> <i style="color: rgb(51, 172, 3)"
+                            <a (click)='addProduitToPanier(d)'> <i style="color: rgb(51, 172, 3)"
                                     class="fa fa-shopping-basket fa-2x"></i></a>
                         </div>
                     </div>
