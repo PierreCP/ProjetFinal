@@ -1,32 +1,73 @@
 <div class="">
-    <mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
-        <mat-drawer-content>
-            <div class="container mt-100">
-                <div class=" col-sm-12 my-pad-bot">
-                    <mat-card>
-                        <mat-card-header class="text-center">
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <div class="col-sm-10 align-middle">
-                                <mat-card-title>Votre Panier</mat-card-title>
+    <div class="row">
+        <div class="container mt-100 col-sm-8 my-font-family">
+            <div class=" col-sm-12 my-pad-bot">
+                <mat-card>
+                    <mat-card-header class="text-center">
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <div class="col-sm-10 align-middle">
+                            <mat-card-title>Votre Panier</mat-card-title>
+                        </div>
+                    </mat-card-header>
+                    <br>
+                    <mat-card-content class="container">
+                        <div class="row">
+                            <div class="col-sm-10"></div>
+                            <div class="col-sm-2">
+                                <label>Prix</label>
                             </div>
-                        </mat-card-header>
-                        <hr>
-                        <mat-card-content *ngFor='let p of panier'>
-                            <p class="text-center">{{p.nom}}</p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p class="text-center color-red">
-                                Votre panier est vide
-                            </p>
-                        </mat-card-content>
-                        <mat-card-footer>
-                            <button class="btn btn-block btn-secondary">Commander</button>
-                        </mat-card-footer>
-                    </mat-card>
-                </div>
-            </div>
+                            <hr>
+                            <div *ngFor='let p of panier'>
+                                <div class="row">
+                                    <div class="col-sm-2 mt-2">
+                                        <img src="assets/img/camembert.jpg" alt="" width="100%">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h3><strong>{{p.nom}}</strong></h3>
+                                        <p><i>{{p.description}}</i></p>
+                                        <div class="row">
+                                            <mat-form-field appearance="fill" class="col-sm-4">
+                                                <mat-label>Quantité</mat-label>
+                                                <mat-select matNativeControl (selectionChange)="changeValue($event)" required [(value)]="SelectedValue">
+                                                    <mat-option value="1">1</mat-option>
+                                                    <mat-option value="2">2</mat-option>
+                                                    <mat-option value="3">3</mat-option>
+                                                    <mat-option value="4">4</mat-option>
+                                                    <mat-option value="5">5</mat-option>
+                                                    <mat-option value="6">6</mat-option>
+                                                    <mat-option value="7">7</mat-option>
+                                                    <mat-option value="8">8+</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <button mat-icon-button color="secondary" onclick='deleteProduit()'>
+                                                <mat-icon>delete</mat-icon>
+                                              </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <h2><strong>{{p.prix}} €</strong></h2>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
 
-        </mat-drawer-content>
-    </mat-drawer-container>
+
+                    </mat-card-content>
+                    <mat-card-content>
+                        <p class="text-center color-red">
+                            Votre panier est vide
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <button class="btn btn-block btn-secondary">Commander</button>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
 
 </div>

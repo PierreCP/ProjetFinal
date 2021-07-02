@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
 import { NavComponent } from './nav/nav.component';
@@ -70,7 +70,7 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
 import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
-
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -149,7 +149,9 @@ import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
     MatListModule,
     MatCardModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatButtonModule
   ],
   providers: [
     {
