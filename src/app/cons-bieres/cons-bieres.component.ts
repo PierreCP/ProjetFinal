@@ -18,4 +18,16 @@ export class ConsBieresComponent implements OnInit {
     this.route.navigateByUrl('etal-cons');
 
   }
+  redirectionBlondesMenu(): void {
+    this.route.navigateByUrl('cons-blondes');
+  }
+  redirectionBrunesMenu(): void {
+    this.route.navigateByUrl('cons-brunes');
+  }
+  redirectionRoussesMenu(): void {
+    this.route.navigateByUrl('cons-rousses');
+  }
+  redirectionBlanchesMenu(): void {
+    this.route.navigateByUrl('cons-blanches');
+  }
 }

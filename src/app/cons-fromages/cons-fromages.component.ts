@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
+import { PanierService } from '../panier.service';
 
 @Component({
   selector: 'app-cons-fromages',
@@ -10,8 +12,9 @@ import { AuthService } from '../auth.service';
 })
 export class ConsFromagesComponent implements OnInit {
 
-  constructor(private route: Router, public authService: AuthService, private http: HttpClient) { }
-  user: any;
+  constructor(private route: Router, public authService: AuthService, private http: HttpClient, private accessService: AccessService, private panierService: PanierService) { }
+  panier: any;
+  liste2: any;user: any;
   liste: any;
   ngOnInit(): void {
     this.getAllProduitBySousCategorie('Fromages');
@@ -27,12 +30,23 @@ export class ConsFromagesComponent implements OnInit {
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {
-          this.route.navigateByUrl('prod-vins');
+          this.route.navigateByUrl('cons-fruits');
         }
 
       },
       error: (err) => { console.log(err) }
 
     })
+  }
+  
+  addProduitToPanier(idProd: any): any {
+    this.panier = this.panierService.getPanierInLocalStorage();
+    console.log(this.panier.id)
+    this.http.get(this.accessService.getBackURL() + 'panier/produit/' + this.panier.id +'/'+idProd.id).subscribe({
+      next: (data) => {this.liste2=data},
+      error: (err) => (console.log(err))
+    })
+    
+    
   }
 }
