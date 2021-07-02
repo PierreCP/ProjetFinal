@@ -15,7 +15,7 @@
                         <p>{{'Date de la commande : ' + c.date}}</p>
                         <p>{{'Quantité : ' + p.quantiteCons + '\t \t Prix : ' + p.prix * p.quantiteCons  + ' €'}}</p>
                     </div>
-                <td><button (click)='validate()' class="btn btn-block myFont-title">Valider</button></td>
+                <td><button (click)='validate(c.id)' class="btn btn-block myFont-title">Valider</button></td>
                 
             </tr>
         </tbody>

@@ -28,7 +28,7 @@ export class PanierComponent implements OnInit {
 
   getProductOfPanier(): void{
     var p:any;
-    this.http.get('http://localhost:8082/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+    this.http.get(this.accessService.getBackURL() + '/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
       next: (data)=> {
         this.produit = data;
         console.log(this.produit)
@@ -49,8 +49,7 @@ export class PanierComponent implements OnInit {
   }
 
   deleteProduit(prdt :any): any {
-    console.log(prdt);
-    this.http.delete('http://localhost:8082/panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+    this.http.delete(this.accessService.getBackURL() + 'panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
       next: (data)=>(
         prdt = data,
         this.ngOnInit()
@@ -61,12 +60,18 @@ export class PanierComponent implements OnInit {
   }
 
   Valider(){
-
+    console.log(this.panierService.getPanierInLocalStorage().id);
+    this.http.get(this.accessService.getBackURL() + 'validation-panier/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+      next: (data)=>(
+        this.authService.goHomeCons()
+        ),
+      
+      error: (err)=>(console.log(err))
+    })
   }
 
   RedirectionProduit(): void{
     this.route.navigateByUrl('etal-cons');
   }
-
 
 }
