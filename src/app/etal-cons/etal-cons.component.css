@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 * {
     padding: 0;
     margin: 0;
@@ -7,9 +6,6 @@
     font-family: 'Poppins', sans-serif
 }
 
-body {
-    background-color: #f8f8f8
-}
 
 .container {
     margin-top: 20px;
@@ -119,92 +115,4 @@ color:#FFF;
 border-color: #31347B;
 }
 
-.menu-button{
-    border: none important!;
-    background-color: inherit important!;
-}
-.margin-brand-img{
-    margin-left: 170px important!;
-  }
-
-  .sidenav{
-    background-color: rgb(221, 255, 96) important!;
-    width: 400px important!;
-    height: 100vh important!;
-    
-}
-.toolbar-style{
-    background-color: rgb(200, 255, 0) important!;
-    height: 100px important!;
-}
-
-.sidenav-container {
-    position: absolute important!;
-    top: 0 important!;
-    bottom: 0 important!;
-    left: 0 important!;
-    right: 0 important!;
-  }
-
-  .example-spacer {
-    flex: 1 1 auto important!;
-  }
-
-.flip-horizontally {
-    transform: scaleX(-1) important!;
-  }
-
-.myFont-head{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: xx-large;
-    color: rgb(40, 153, 40)
-  }
-
-.myFont-title{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: larger;
-    color: rgb(40, 153, 40);
-  }
-
-  .myFont-subtitle{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: large;
-    color: rgb(40, 153, 40)
-  }
-
-  .myFont-text{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
-    color: rgb(40, 153, 40)
-  }
-
-  .example-events {
-    width: 300px important!;
-    height: 200px important!;
-    overflow: auto important!;
-    border: 1px solid #555 important!;
-  }
-
-  .icon-size-1{
-    font-size: 50px important!;
-}
-
-
-.sidenav-btn {
-    width: 60px important!;
-    height: 60px important!;
-}
-.example-spacer {
-    flex: 1 1 auto important!;
-  }
-
-.home-icon{
-    font-size: 70px important!;
-}
-
-.above-banniere{
-    padding-top: 15px important!;
-    padding-left: 40px important!;
-    width: 100vw important!;
-}
 
