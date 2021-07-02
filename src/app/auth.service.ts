@@ -105,6 +105,9 @@ export class AuthService {
   goRechercheProd(): any {
     this.route.navigateByUrl('liste-prod');
   }
+  goRechercheProduit(): any {
+    this.route.navigateByUrl('etal-cons');
+  }
 
   ajoutProduit(m: any): void {
     this.user = this.getUserInLocalStorage();

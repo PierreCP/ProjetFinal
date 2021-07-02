@@ -31,4 +31,5 @@ export class NavbarConsComponent implements OnInit {
   uploader(): void {
     this.route.navigateByUrl('uploader');
   }
+
 }
