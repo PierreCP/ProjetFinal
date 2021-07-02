@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="my-font-family">
+      <form #produit='ngForm' (ngSubmit)='uploadPdt(produit.value)'>
+        <div class="form-group">
+          <label for="" class="text-secondary">Produit</label>
+          <input type="text" class="form-control" name='nom' ngModel="">
+        </div>
+        <div class="form-group">
+          <label for="" class="text-secondary">Description</label>
+          <input type="text" class="form-control" name='description' ngModel="">
+        </div>
+        <div class="form-group">
+          <label for="" class="text-secondary">Catégorie</label>
+          <input type="text" class="form-control" name='sousCategorie' ngModel="">
+        </div>
+        <div class="form-group">
+          <label for="" class="text-secondary">Quantité</label>
+          <input type="number" class="form-control" name='quantite' ngModel="">
+        </div>
+        <div class="form-group">
+          <label for="" class="text-secondary">Prix</label>
+          <input type="number" step="0.01" class="form-control" name='prix' ngModel="">
+        </div>
+        <div class="form-group">
+          <label for="" class="text-secondary">Saison</label>
+          <input type="text" class="form-control" name='saison' ngModel="">
+        </div>
+        <div>
+            <button mat-icon-button type="button" class="btn btn-block" (click)="file.click()">
+                <mat-icon>add_photo_alternate</mat-icon>
+            </button>
+          </div>
+  
+          <input type="file" [hidden]='true' #file accept="image/*" required ngModel="" name="image" (change)='onFileChanged($event)'> 
+          <div class="text-center">
+            <img [src]="mediaUrl" alt="imgUpl" class="center" width="20%" *ngIf="mediaUrl">
+          </div>
+        <button type="submit" class="btn btn-primary btn-block">Upload</button>
+      </form>
+    </div>
+  </div>

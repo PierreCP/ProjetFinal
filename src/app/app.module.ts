@@ -66,6 +66,8 @@ import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { TestComponent } from './test/test.component';
 import { AdminActivationComponent } from './admin-activation/admin-activation.component';
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
+import { NewProdGestionComponent } from './new-prod-gestion/new-prod-gestion.component';
+import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.component';
 
 
 
@@ -122,7 +124,9 @@ import { ImageGestionComponent } from './image-gestion/image-gestion.component';
     PanierComponent,
     AjoutProduitComponent,
     TestComponent,
-    ImageGestionComponent
+    ImageGestionComponent,
+    NewProdGestionComponent,
+    NewProdUploaderComponent
   ],
   imports: [
     BrowserModule,
