@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
 import { NavComponent } from './nav/nav.component';
@@ -72,6 +72,38 @@ import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.
 import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
 import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { EtalConsComponent } from './etal-cons/etal-cons.component';
+import { ConsAutresComponent } from './cons-autres/cons-autres.component';
+import { ConsBieresComponent } from './cons-bieres/cons-bieres.component';
+import { ConsBieresBlanchesComponent } from './cons-bieres-blanches/cons-bieres-blanches.component';
+import { ConsBieresBlondesComponent } from './cons-bieres-blondes/cons-bieres-blondes.component';
+import { ConsBieresBrunesComponent } from './cons-bieres-brunes/cons-bieres-brunes.component';
+import { ConsBieresRoussesComponent } from './cons-bieres-rousses/cons-bieres-rousses.component';
+import { ConsFromagesComponent } from './cons-fromages/cons-fromages.component';
+import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
+import { ConsFruitsAgrumesComponent } from './cons-fruits-agrumes/cons-fruits-agrumes.component';
+import { ConsFruitsBaiesComponent } from './cons-fruits-baies/cons-fruits-baies.component';
+import { ConsFruitsDrupesComponent } from './cons-fruits-drupes/cons-fruits-drupes.component';
+import { ConsFruitsPepoComponent } from './cons-fruits-pepo/cons-fruits-pepo.component';
+import { ConsFruitsPomesComponent } from './cons-fruits-pomes/cons-fruits-pomes.component';
+import { ConsFruitsTropicauxComponent } from './cons-fruits-tropicaux/cons-fruits-tropicaux.component';
+import { ConsLegumesComponent } from './cons-legumes/cons-legumes.component';
+import { ConsLegumesAromatiquesComponent } from './cons-legumes-aromatiques/cons-legumes-aromatiques.component';
+import { ConsLegumesChampignonsComponent } from './cons-legumes-champignons/cons-legumes-champignons.component';
+import { ConsLegumesChouxComponent } from './cons-legumes-choux/cons-legumes-choux.component';
+import { ConsLegumesCourgesComponent } from './cons-legumes-courges/cons-legumes-courges.component';
+import { ConsLegumesRacinesComponent } from './cons-legumes-racines/cons-legumes-racines.component';
+import { ConsLegumesSaladesComponent } from './cons-legumes-salades/cons-legumes-salades.component';
+import { ConsLegumesSecComponent } from './cons-legumes-sec/cons-legumes-sec.component';
+import { ConsLegumesfeuillesComponent } from './cons-legumesfeuilles/cons-legumesfeuilles.component';
+import { ConsLegumesfruitsComponent } from './cons-legumesfruits/cons-legumesfruits.component';
+import { ConsVinsComponent } from './cons-vins/cons-vins.component';
+import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.component';
+import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
+import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
+import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
 
 
 
@@ -133,6 +165,36 @@ import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
     NavbarConsComponent,
     NavbarProdComponent,
     NavbarAdminComponent,
+    EtalConsComponent,
+    ConsAutresComponent,
+    ConsBieresComponent,
+    ConsBieresBlanchesComponent,
+    ConsBieresBlondesComponent,
+    ConsBieresBrunesComponent,
+    ConsBieresRoussesComponent,
+    ConsFromagesComponent,
+    ConsFruitsComponent,
+    ConsFruitsAgrumesComponent,
+    ConsFruitsBaiesComponent,
+    ConsFruitsDrupesComponent,
+    ConsFruitsPepoComponent,
+    ConsFruitsPomesComponent,
+    ConsFruitsTropicauxComponent,
+    ConsLegumesComponent,
+    ConsLegumesAromatiquesComponent,
+    ConsLegumesChampignonsComponent,
+    ConsLegumesChouxComponent,
+    ConsLegumesCourgesComponent,
+    ConsLegumesRacinesComponent,
+    ConsLegumesSaladesComponent,
+    ConsLegumesSecComponent,
+    ConsLegumesfeuillesComponent,
+    ConsLegumesfruitsComponent,
+    ConsVinsComponent,
+    ConsVinsBlancsComponent,
+    ConsVinsChampagnesComponent,
+    ConsVinsRosesComponent,
+    ConsVinsRougesComponent,
     NewProdGestionComponent,
     NewProdUploaderComponent,
     AdminActivationComponent,
@@ -154,7 +216,10 @@ import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
     MatListModule,
     MatCardModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     {
