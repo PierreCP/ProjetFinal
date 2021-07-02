@@ -18,7 +18,7 @@ export class HistoriqueCommandeComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get(this.access.getBackURL() + 'commandes/' + this.user.id).subscribe({
+    this.http.get(this.access.getBackURL() + 'commandes-valide/' + this.user.id).subscribe({
       next: (data) => {
         this.listCommandes = data;
         console.log(this.listCommandes);

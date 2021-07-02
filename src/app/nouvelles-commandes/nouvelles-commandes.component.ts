@@ -18,7 +18,7 @@ export class NouvellesCommandesComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get(this.access.getBackURL() + 'commandes/' + this.user.id).subscribe({
+    this.http.get(this.access.getBackURL() + 'commandes-nouvelles/' + this.user.id).subscribe({
       next: (data) => {
         this.listCommandes = data;
         console.log(this.listCommandes);
@@ -28,7 +28,14 @@ export class NouvellesCommandesComponent implements OnInit {
   }
 
 
-  validate(): void{
-    console.log("fonction validate à construire")
+  validate(idCommandes: any): void{
+    console.log(idCommandes);
+    this.user = this.authService.getUserInLocalStorage();
+    this.http.get(this.access.getBackURL() + 'valider-commande/' + idCommandes).subscribe({
+      next: (data) => {
+        this.ngOnInit();
+      },
+      error: (err) => (console.log(err))
+    });
   }
 }
