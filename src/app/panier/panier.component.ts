@@ -65,6 +65,11 @@ export class PanierComponent implements OnInit {
       
       error: (err)=>(console.log(err))
     })
+
+  }
+
+  RedirectionProduit(): void{
+    this.route.navigateByUrl('etal-cons');
   }
 
 
