@@ -96,9 +96,8 @@ export class AuthService {
 
   supprimerProduit(m: any): void {
     this.user = this.getUserInLocalStorage();
-    console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name);
     this.http.delete('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
-      next: (data) => { this.liste = data, console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name) },
+      next: (data) => { this.liste = data},
       error: (err) => { console.log(err) }
     })
     this.MsgErr = 'Suppression du produit impossible.'
