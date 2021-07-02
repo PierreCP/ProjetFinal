@@ -61,7 +61,11 @@ export class PanierComponent implements OnInit {
   }
 
   Valider(){
-    
+
+  }
+
+  RedirectionProduit(): void{
+    this.route.navigateByUrl('etal-cons');
   }
 
 

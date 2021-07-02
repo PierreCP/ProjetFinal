@@ -32,4 +32,7 @@ export class NavbarConsComponent implements OnInit {
     this.route.navigateByUrl('uploader');
   }
 
+  RedirectionPanier(): void{
+    this.route.navigateByUrl('panier');
+  }
 }
