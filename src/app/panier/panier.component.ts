@@ -12,7 +12,6 @@ import { PanierService } from '../panier.service';
 })
 export class PanierComponent implements OnInit {
 
-  
   prix: any;
   quantite= '1';
   value='1';
@@ -30,20 +29,6 @@ export class PanierComponent implements OnInit {
       error: (err)=> (console.log(err))
     });
   }
-
-  changeValue (event: any) {
-    this.value = event.value;
-    //this.prix = this.value*this.produit.prix;
-  }
-
-  getPrix(prt: any): any{
-    this.prix = prt.prix
-    console.log(prt);
-   //this.prix = this.produit.prix;
-  }
-
-  
-
   deleteProduit(prdt :any): any {
     console.log(prdt);
     this.http.delete('http://localhost:8082/panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
