@@ -128,7 +128,9 @@
                         </div>
                     </div>
                     <!--ici on appel le createur de new products -->
-                    <app-new-prod-gestion></app-new-prod-gestion>
+                    <div *ngIf='mediaExist(producteur)'>
+                        <app-new-prod-gestion></app-new-prod-gestion>
+                    </div>
                 </div>
             </div>
         </div>

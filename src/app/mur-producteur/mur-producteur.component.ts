@@ -33,6 +33,15 @@ export class MurProducteurComponent implements OnInit {
     return window.atob(media);
   }
 
+  mediaExist(media: any): boolean {
+    if (media != null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
   refresh(): void {
     this.ngOnInit();
   }

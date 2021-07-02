@@ -133,6 +133,9 @@ import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
     NavbarConsComponent,
     NavbarProdComponent,
     NavbarAdminComponent,
+    NewProdGestionComponent,
+    NewProdUploaderComponent,
+    AdminActivationComponent,
   ],
   imports: [
     BrowserModule,
