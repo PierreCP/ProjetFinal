@@ -35,13 +35,16 @@ export class PanierComponent implements OnInit {
     this.value = event.value;
   }
 
-  getPrix(){
-    this.prix = this.panier.getprix();
-  }
+  
 
-  deleteProduit(): any {
-    this.http.delete(this.accessService.getBackURL() + 'panier/produit/' + this.panierService.getPanierInLocalStorage().id + '/' + this.authService.getUserInLocalStorage().id).subscribe({
-      next: (data)=>(this.produit = data),
+  deleteProduit(prdt :any): any {
+    console.log(prdt);
+    this.http.delete('http://localhost:8082/panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+      next: (data)=>(
+        prdt = data,
+        this.getProductOfPanier()
+        ),
+      
       error: (err)=>(console.log(err))
     })
   }
