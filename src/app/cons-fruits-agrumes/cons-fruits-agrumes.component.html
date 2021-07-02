@@ -1,1 +1,48 @@
-<p>cons-fruits-agrumes works!</p>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-light">
+    <div class="container-fluid bg-light rounded">
+        <div class="h4 font-weight-bold text-center py-3">
+            <p class="mt-120" style="color: rgb(51, 172, 3)">
+                <font size="7">Agrumes</font>
+            </p>
+        </div>
+
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
+                <div class="box bg-white">
+                    <div class="d-flex align-items-center">
+
+                        <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                            <p hidden>Id : {{d.id}}</p>
+                            <p class="text-muted">Prix : {{d.prix}}</p>
+                            <p class="text-muted">Description : {{d.description}}</p>
+                        </div>
+                        <div Class="col-6 text-right">
+                            <a (click)='addProduitToPanier(d)'> <i style="color: rgb(51, 172, 3)"
+                                    class="fa fa-shopping-basket fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-sm-5"></div>
+            <div Class="col-2 text-center">
+                <a (click)='retourFruitsMenu()'> <i style="color: rgb(51, 172, 3)"
+                        class="fa fa-rotate-left fa-4x"></i></a>
+            </div>
+            <div class="col-5"></div>
+
+        </div>
+    </div>
+</body>

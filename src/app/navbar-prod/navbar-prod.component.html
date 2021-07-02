@@ -1,69 +1,99 @@
 <div class="my-font-family" *ngIf='authService.isConnected()'>
-    <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
-      <div class="container-fluid">
-        <div class="d-flex flex-row">
-          <button mat-icon-button class="mr-5 menu-button" (click)='toggleSidenav()'>
-            <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
-          </button>
-  
-  
+  <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+    <div class="container-fluid">
+      <div class="d-flex flex-row">
+        <button mat-icon-button class="mr-5 menu-button" style="cursor: pointer;" (click)='authService.toggleSidenav()'>
+          <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+        </button>
+
+
+      </div>
+      <div><a style="cursor: pointer;" (click)='authService.goMenuProd()' class="navbar-brand margin-brand-img"><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a>
+      </div>
+
+
+      <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+        <button class="nav-item nav-link button-transparent" style="cursor: pointer;" (click)='authService.deconnexion()'>
+          <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+        </button>
+        <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.goMessagerie()'>
+          <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+        </button>
+        <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.fonction()'>
+          <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+        </button>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div class="">
+  <mat-drawer-container class="drawer-container" hasBackdrop="true">
+    <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+      <div class="container pt-3 myFont-title">
+
+        <h1 class="myFont-head mb-5">Menu principal</h1>
+        <div class="container"> <!-- redirection vers mur à refaire -->
+          <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Mon mur</button>
         </div>
-        <div><a class="navbar-brand margin-brand-img"><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
-  
-  
-        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
-            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </a>
+        <div class="container">
+          <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
+        </div>
+        <div class="container"> <!-- pas de router pour modif profil -->
+          <button mat-raised-button (click)='authService.fonction()' class="btn myFont-title">Modifier mon profil</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Ma messagerie</button>
+        </div>
+        <div class="container"> <!-- pas de router -->
+          <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+          <button mat-raised-button  class="btn myFont-title">Nous contacter</button></a>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='affichageProd.toggleMenu()' class="btn myFont-title">Test</button>
         </div>
       </div>
-    </nav>
-  </div>
-  
-  <div class="">
-    <mat-drawer-container class="drawer-container" hasBackdrop="true">
-      <mat-drawer class="sidenav" [(opened)]='opened' mode="over">
-        <div class="container pt-3 myFont-title">
-  
-          <h1 class="myFont-head mb-5">Menu principal</h1>
-          <div class="">
-            <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Mon mur</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button class="btn myFont-title">Mon étal</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button class="btn myFont-title">Modifier mon profil</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button class="btn myFont-title">Ma messagerie</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='affichageProd.toggleMenu()' class="btn myFont-title">Test</button>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-menu-producteur></app-menu-producteur>
+      <div class="modal" id="contacterAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-center" id="exampleModalLabel"><font size="5" style="color: green;">Nous contacter</font></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form #fMessageAdminCons="ngForm">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Objet :</label>
+                  <input type="text" class='form-control' ngModel required name="objet" placeholder="Objet"/>
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Message :</label>
+                  <textarea class="form-control" ngModel required name="message" rows="5" placeholder="Votre message"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button (click)='this.authService.messageAdmin(fMessageAdminCons.value)' type="submit"
+                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                    data-dismiss="modal">Envoyer</button>
+                  <button type="button" class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                    data-dismiss="modal">Retour</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-  
-  
-      </mat-drawer>
-      <mat-drawer-content>
+      </div>
+    </mat-drawer-content>
 
-        <app-menu-producteur></app-menu-producteur>
-      </mat-drawer-content>
+  </mat-drawer-container>
 
-      
-
-    </mat-drawer-container>
-  
-  </div>
+</div>

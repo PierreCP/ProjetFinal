@@ -12,49 +12,66 @@ import { PanierService } from '../panier.service';
 })
 export class PanierComponent implements OnInit {
 
-  
   prix: any;
-  quantite= '1';
-  value='1';
-  SelectedValue='1';
+  visible: any;
+  prixTot= 0;
   produit: any;
+  quantiteTot= 0;
   constructor(public authService : AuthService, private route: Router, private http : HttpClient, private panierService : PanierService, private accessService: AccessService) { }
 
   ngOnInit(): void {
+    this.prixTot = 0;
+    this.quantiteTot = 0;
     this.getProductOfPanier();
+    console.log(this.produit);
   }
 
   getProductOfPanier(): void{
-    this.http.get('http://localhost:8082/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
-      next: (data)=> (this.produit = data),
+    var p:any;
+    this.http.get(this.accessService.getBackURL() + '/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+      next: (data)=> {
+        this.produit = data;
+        console.log(this.produit)
+        for (p in this.produit) {
+          this.prixTot+= this.produit[p].prix*this.produit[p].quantiteCons;
+          this.quantiteTot += this.produit[p].quantiteCons;
+        }
+        this.prixTot = Math.round(this.prixTot*100)/100
+        if (this.produit[p] == null) {
+          this.visible = true;
+        }
+        else{
+          this.visible = false;
+        }
+      },
       error: (err)=> (console.log(err))
     });
   }
 
-  changeValue (event: any) {
-    this.value = event.value;
-    //this.prix = this.value*this.produit.prix;
-  }
-
-  getPrix(prt: any): any{
-    this.prix = prt.prix
-    console.log(prt);
-   //this.prix = this.produit.prix;
-  }
-
-  
-
   deleteProduit(prdt :any): any {
-    console.log(prdt);
-    this.http.delete('http://localhost:8082/panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+    this.http.delete(this.accessService.getBackURL() + 'panier/produit/' + prdt.id + '/' + this.panierService.getPanierInLocalStorage().id).subscribe({
       next: (data)=>(
         prdt = data,
-        this.getProductOfPanier()
+        this.ngOnInit()
         ),
       
       error: (err)=>(console.log(err))
     })
   }
 
+  Valider(){
+    console.log(this.panierService.getPanierInLocalStorage().id);
+    this.http.get(this.accessService.getBackURL() + 'validation-panier/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+      next: (data)=>(
+        this.authService.goHomeCons()
+        ),
+      
+      error: (err)=>(console.log(err))
+    })
+  }
+
+  RedirectionProduit(): void{
+    this.route.navigateByUrl('etal-cons');
+  }
 
 }

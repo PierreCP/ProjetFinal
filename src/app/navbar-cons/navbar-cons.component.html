@@ -16,10 +16,10 @@
             <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
           </a>
           <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+            <mat-icon style="font-size: 40px; color: green;" > chat_bubble</mat-icon>
           </a>
           <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> shopping_cart</mat-icon>
+            <mat-icon style="font-size: 40px; color: green;" (click)='RedirectionPanier()'> shopping_cart</mat-icon>
           </a>
           <a class="nav-item nav-link mr-3">
             <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
@@ -36,20 +36,21 @@
   
           <h1 class="myFont-head mb-5">Menu principal</h1>
           <div class="">
-            <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
+            <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
               producteurs</button>
           </div>
+      
           <div class="container">
-            <button mat-raised-button class="btn myFont-title">Rechercher des produits</button>
+            <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
           </div>
           <div class="container">
             <button mat-raised-button class="btn myFont-title">Modifier le profil</button>
           </div>
           <div class="container">
-            <button mat-raised-button class="btn myFont-title">Messagerie</button>
+            <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Messagerie</button>
           </div>
-          <div class="container">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button>
+          <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
           </div>
           <div class="container">
             <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
@@ -62,8 +63,39 @@
   
   
         <app-menu-consommateur></app-menu-consommateur>
-  
+        <div class="modal" id="contacterAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel"><font size="5" style="color: green;">Nous contacter</font></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form #fMessageAdminCons="ngForm">
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Objet :</label>
+                    <input type="text" class='form-control' ngModel required name="objet" placeholder="Objet"/>
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Message :</label>
+                    <textarea class="form-control" ngModel required name="message" rows="5" placeholder="Votre message"></textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button (click)='this.authService.messageAdmin(fMessageAdminCons.value)' type="submit"
+                      class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                      data-dismiss="modal">Envoyer</button>
+                    <button type="button" class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                      data-dismiss="modal">Retour</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </mat-drawer-content>
     </mat-drawer-container>
   
   </div>
+  

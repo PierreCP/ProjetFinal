@@ -12,16 +12,19 @@ import { AuthService } from '../auth.service';
 export class ProdFromagesComponent implements OnInit {
 
   constructor(public http: HttpClient, private access: AccessService, public authService: AuthService, private route: Router) { }
-  
+  opened: boolean = false;
   user: any;
   liste: any;
   ngOnInit(): void {
     this.getSousCategorieByProducteur('Fromages');
   }
 
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
   getSousCategorieByProducteur(sousCategorie: String): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/produit/' + this.user.id + '/' + sousCategorie).subscribe({
+    this.http.get(this.access.getBackURL() + 'person/produit/' + this.user.id + '/' + sousCategorie).subscribe({
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {

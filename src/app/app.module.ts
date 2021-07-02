@@ -105,6 +105,9 @@ import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-ch
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
 import { ProduitDuMoisComponent } from './produit-du-mois/produit-du-mois.component';
+import { GestionCommandesComponent } from './gestion-commandes/gestion-commandes.component';
+import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
+import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-commandes.component';
 
 
 
@@ -200,6 +203,9 @@ import { ProduitDuMoisComponent } from './produit-du-mois/produit-du-mois.compon
     NewProdUploaderComponent,
     AdminActivationComponent,
     ProduitDuMoisComponent,
+    GestionCommandesComponent,
+    HistoriqueCommandeComponent,
+    NouvellesCommandesComponent,
   ],
   imports: [
     BrowserModule,

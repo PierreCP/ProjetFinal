@@ -12,14 +12,19 @@ import { AuthService } from '../auth.service';
 export class EtalConsComponent implements OnInit {
 
   constructor(private http: HttpClient, public authService: AuthService, private route: Router, private access: AccessService) { }
-
+  events: string[] = [];
+  opened: boolean = false;
+  msgErr = '';
   liste: any;
   liste2: any;
   user: any;
   MsgErr: any;
   ngOnInit(): void {
   }
-
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
   redirectionLegumesMenu(): void {
     this.route.navigateByUrl('cons-legumes');
   }
@@ -38,8 +43,9 @@ export class EtalConsComponent implements OnInit {
   redirectionAutresMenu(): void {
     this.route.navigateByUrl('cons-autres');
   }
-
-
+  RedirectionPanier(): void{
+    this.route.navigateByUrl('panier');
+  }
   retourMenuCons(): void {
     this.route.navigateByUrl('nav-cons');
   }

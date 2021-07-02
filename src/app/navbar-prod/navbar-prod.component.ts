@@ -15,7 +15,6 @@ export class NavbarProdComponent implements OnInit {
   events: string[] = [];
   opened: boolean = false;
   msgErr = '';
-  
 
   // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
@@ -32,4 +31,5 @@ export class NavbarProdComponent implements OnInit {
   uploader(): void {
     this.route.navigateByUrl('uploader');
   }
+
 }

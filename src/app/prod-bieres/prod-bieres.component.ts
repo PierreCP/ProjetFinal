@@ -10,10 +10,15 @@ import { AuthService } from '../auth.service';
 export class ProdBieresComponent implements OnInit {
 
   constructor(private route: Router, public authService: AuthService) { }
-
+  events: string[] = [];
+  opened: boolean = false;
   ngOnInit(): void {
   }
 
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
   retourEtal(): void {
     this.route.navigateByUrl('etal');
   }

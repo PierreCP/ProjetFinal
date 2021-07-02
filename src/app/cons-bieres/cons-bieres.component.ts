@@ -11,11 +11,28 @@ export class ConsBieresComponent implements OnInit {
   constructor(private route: Router) { }
   user: any;
   liste: any;
+  opened: boolean = false;
 
   ngOnInit(): void {
   }
   retourEtal(): void {
     this.route.navigateByUrl('etal-cons');
 
+  }
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
+  redirectionBlondesMenu(): void {
+    this.route.navigateByUrl('cons-blondes');
+  }
+  redirectionBrunesMenu(): void {
+    this.route.navigateByUrl('cons-brunes');
+  }
+  redirectionRoussesMenu(): void {
+    this.route.navigateByUrl('cons-rousses');
+  }
+  redirectionBlanchesMenu(): void {
+    this.route.navigateByUrl('cons-blanches');
   }
 }

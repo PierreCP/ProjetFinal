@@ -1,0 +1,23 @@
+<div class="container" style="width: 1200px;">
+    <h1 class="text-center container myFont-head"><b>Commandes en attente</b> </h1>
+    <table class="table table-bordered table-condensed">
+        <tbody>
+            <tr class="myFont-text">
+                <td>Client</td>
+                <td>Contenu</td>
+            </tr>
+            <tr *ngFor="let c of listCommandes">
+                
+                <td style="width:20%">{{c.consom.person.prenom + ' ' + c.consom.person.nom}}</td>
+                <td style="width:80%">
+                    <div *ngFor="let p of c.contenuCommande">
+                        <p><b>{{p.description}}</b></p>
+                        <p>{{'Date de la commande : ' + c.date}}</p>
+                        <p>{{'Quantité : ' + p.quantiteCons + '\t \t Prix : ' + p.prix * p.quantiteCons  + ' €'}}</p>
+                    </div>
+                <td><button (click)='validate(c.id)' class="btn btn-block myFont-title">Valider</button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

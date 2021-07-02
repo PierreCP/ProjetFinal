@@ -79,6 +79,10 @@ import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.com
 import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
+import { GestionCommandesComponent } from "./gestion-commandes/gestion-commandes.component";
+import { HistoriqueCommandeComponent } from "./historique-commande/historique-commande.component";
+import { NouvellesCommandesComponent } from "./nouvelles-commandes/nouvelles-commandes.component";
+import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -87,8 +91,7 @@ const routes: Routes = [
   { component: ImageGestionComponent, path: 'image' },
   { component: NewProdGestionComponent, path: 'new-prod'},
   { component: NewProdUploaderComponent, path: 'new-prod-uploader'},
-  
-  { component: MenuAdminComponent, path: 'menu-admin'},
+
   { component: AdminActivationComponent, path: 'admin-activation'},
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
@@ -111,7 +114,6 @@ const routes: Routes = [
   { component: Test123Component, path: 'test123' },
   {component: TestComponent, path: 'test'},
   { component: AccueilComponent, path: 'accueil' },
-  { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: MenuAdminComponent, path: 'menu-admin' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},
@@ -152,7 +154,6 @@ const routes: Routes = [
   {component: ConsBieresBrunesComponent, path: 'cons-brunes'},
   {component: ConsBieresRoussesComponent, path: 'cons-rousses'},
   {component: ConsFromagesComponent, path: 'cons-fromages'},
-  {component: ConsFruitsAgrumesComponent, path: 'cons-fruits'},
   {component: ConsFruitsAgrumesComponent, path: 'cons-agrumes'},
   {component: ConsFruitsBaiesComponent, path: 'cons-baies'},
   {component: ConsFruitsDrupesComponent, path: 'cons-drupes'},
@@ -174,6 +175,10 @@ const routes: Routes = [
   {component: ConsVinsChampagnesComponent, path: 'cons-champagnes'},
   {component: ConsVinsRosesComponent, path: 'cons-roses'},
   {component: ConsVinsRougesComponent, path: 'cons-rouges'},
+  {component: GestionCommandesComponent, path: 'gestion-commandes'},
+  {component: HistoriqueCommandeComponent, path: 'gestion-commandes'},
+  {component: NouvellesCommandesComponent, path: 'gestion-commandes'},
+  {component: ConsFruitsComponent, path: 'cons-fruits'}
 
 
 ];

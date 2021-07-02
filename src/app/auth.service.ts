@@ -8,12 +8,12 @@ import { NouveauMessageComponent } from './nouveau-message/nouveau-message.compo
   providedIn: 'root'
 })
 export class AuthService {
-
   user: any;
   rec: any;
   prod: any;
   MsgErr = '';
   liste: any;
+  opened: boolean = false;
 
 
   constructor(private route: Router, private http: HttpClient, private dialog: MatDialog) { }
@@ -58,6 +58,36 @@ export class AuthService {
     this.MsgErr = 'À bientôt !'
   }
 
+  // Les redirections de navbar   [
+
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
+
+  fonction(): void {
+    this.route.navigateByUrl('nav-prod');
+    console.log('place holder fonction')
+  }
+
+  goMessagerie(): void {
+    this.route.navigateByUrl('messagerie')
+  }
+
+  goEtal(): void {
+    this.route.navigateByUrl('etal')
+  }
+
+  goMenuProd(): void {
+    this.route.navigateByUrl('menu-prod')
+  }
+  RedirectionPanier(): void {
+    this.route.navigateByUrl('panier')
+  }
+
+
+
+  //                              ]
+
   isConnected(): boolean {
     if (this.getUserInLocalStorage() == null) {
       return false;
@@ -66,24 +96,31 @@ export class AuthService {
     }
   }
 
-  goBack(): void{
+  goBack(): void {
     this.route.navigateByUrl('login');
   }
 
-  messagerie(): void{
+  messagerie(): void {
     this.route.navigateByUrl('messagerie')
   }
- 
-  nouveauMessage(): any{
+
+  nouveauMessage(): any {
     const myDialog = this.dialog.open(NouveauMessageComponent)
   }
-  
+
   goHomeCons(): any {
     this.route.navigateByUrl('menu-cons');
   }
 
+  goHomeProd(): any {
+    this.route.navigateByUrl('menu-prod');
+  }
+
   goRechercheProd(): any {
     this.route.navigateByUrl('liste-prod');
+  }
+  goRechercheProduit(): any {
+    this.route.navigateByUrl('etal-cons');
   }
 
   ajoutProduit(m: any): void {
@@ -117,8 +154,8 @@ export class AuthService {
   messageAdmin(m: any): void {
     this.user = this.getUserInLocalStorage();
     this.http.get('http://localhost:8082/getMessage/admin/' + this.user.id + '/' + m.message).subscribe({
-      next: (data) => {this.liste=data},
-      error: (err) => {console.log(err)}
+      next: (data) => { this.liste = data },
+      error: (err) => { console.log(err) }
     })
   }
 }

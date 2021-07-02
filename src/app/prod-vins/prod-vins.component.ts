@@ -10,8 +10,13 @@ import { AuthService } from '../auth.service';
 export class ProdVinsComponent implements OnInit {
 
   constructor(private route: Router, public authService: AuthService) { }
-
+  opened: boolean = false;
   ngOnInit(): void {
+  }
+
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
   }
 
   retourEtal(): void {

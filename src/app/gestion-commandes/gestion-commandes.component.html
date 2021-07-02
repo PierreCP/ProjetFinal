@@ -1,0 +1,15 @@
+<span><span></span></span>
+<div>
+  <p class="text-selection text-center"> {{ Selection }} </p>
+</div>
+<div>
+  <a (mouseover)='Text("Commandes en cours")' (mouseout)='Text("")' (click)='nouvellesCommandes()'>
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Historique")' (mouseout)='Text("")' (click)='historique()'>
+    <div></div>
+  </a>
+  <a (mouseover)='Text("Retour")' (mouseout)='Text("")' (click)='authService.goHomeProd()'>
+    <div></div>
+  </a>
+</div>

@@ -16,6 +16,9 @@ export class MessagerieComponent implements OnInit {
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog) { }
 
+  user: any;
+  Selection: any;
+
   ngOnInit(): void {
   }
 
@@ -26,6 +29,9 @@ export class MessagerieComponent implements OnInit {
   boiteEnvoi(): any{
     const envoi = this.dialog.open(BoiteEnvoiComponent)
   }
-
+  
+  Text(Message: any):any{
+    this.Selection= Message;
+  }
   
 }
