@@ -109,6 +109,7 @@ import { GestionCommandesComponent } from './gestion-commandes/gestion-commandes
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-commandes.component';
 import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
+import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.component';
 
 
 
@@ -208,6 +209,7 @@ import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.compon
     HistoriqueCommandeComponent,
     NouvellesCommandesComponent,
     ModifProfConsComponent,
+    MessagerieConsComponent,
   ],
   imports: [
     BrowserModule,

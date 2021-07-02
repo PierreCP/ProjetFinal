@@ -74,6 +74,11 @@ export class AuthService {
     this.route.navigateByUrl('messagerie')
   }
 
+  goMessagerieCons(): void {
+    this.route.navigateByUrl('messagerie-cons')
+  }
+
+
   goEtal(): void {
     this.route.navigateByUrl('etal')
   }
@@ -81,6 +86,11 @@ export class AuthService {
   goMenuProd(): void {
     this.route.navigateByUrl('menu-prod')
   }
+
+goMurProd():void {
+  this.route.navigateByUrl('mur-prod')
+}
+
   RedirectionPanier(): void {
     this.route.navigateByUrl('panier')
   }
@@ -128,6 +138,14 @@ export class AuthService {
   }
   goRechercheProduit(): any {
     this.route.navigateByUrl('etal-cons');
+  }
+
+  goModifCons(): void{
+    this.route.navigateByUrl('modifier-cons')
+  }
+
+  goPanier(): void{
+    this.route.navigateByUrl('panier')
   }
 
   ajoutProduit(m: any): void {

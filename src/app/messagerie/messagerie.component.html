@@ -1,131 +1,83 @@
+<div class="my-font-family" *ngIf='authService.isConnected()'>
+    <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+      <div class="container-fluid">
+        <div class="d-flex flex-row">
+          <button mat-icon-button class="mr-5 menu-button" style="cursor: pointer;" (click)='authService.toggleSidenav()'>
+            <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+          </button>
+  
+  
+        </div>
+        <div><a style="cursor: pointer;" (click)='authService.goMenuProd()' class="navbar-brand margin-brand-img"><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a>
+        </div>
+  
+  
+        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+          <button class="nav-item nav-link button-transparent" style="cursor: pointer;" (click)='authService.deconnexion()'>
+            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.goMessagerie()'>
+            <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.fonction()'>
+            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="">
+    <mat-drawer-container class="drawer-container" hasBackdrop="true">
+      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+        <div class="container pt-3 myFont-title">
+  
+          <h1 class="myFont-head mb-5">Menu principal</h1>
+          <div class="container"> <!-- redirection vers mur à refaire -->
+            <button mat-raised-button (click)='authService.goMurProd()' class="btn myFont-title">Mon mur</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
+          </div>
+          <div class="container"> <!-- pas de router pour modif profil -->
+            <button mat-raised-button (click)='authService.fonction()' class="btn myFont-title">Modifier mon profil</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Ma messagerie</button>
+          </div>
+          <div class="container"> <!-- pas de router -->
+            <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+            <button mat-raised-button  class="btn myFont-title">Nous contacter</button></a>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+          </div>
+  
+        </div>
+  
+  
+      </mat-drawer>
+      <mat-drawer-content>
+  
 <span><span></span></span>
 <div>
     <p class="text-selection text-center"> {{ Selection }} </p>
 </div>
 <div>
-    <a class="a a1 div div1" (mouseover)='Text("Boite envoi")' (mouseout)='Text("")' (click)='boiteEnvoi()'>
-        <div></div>
+    <a class="a a1" (mouseover)='Text("Boite envoi")' (mouseout)='Text("")' (click)='boiteEnvoi()'>
+        <div class="div div1"></div>
     </a>
-    <a class="a a2 div div2" (mouseover)='Text("Boite de réception")' (mouseout)='Text("")' (click)='boiteReception()'>
-        <div></div>
+    <a class="a a2" (mouseover)='Text("Boite de réception")' (mouseout)='Text("")' (click)='boiteReception()'>
+        <div class="div div2"></div>
     </a>
 
-    <a class="a a3 div div3" (mouseover)='Text("Retour")' (mouseout)='Text("")' (click)='authService.goHomeProd()'>
-        <div></div>
+    <a class="a a3" (mouseover)='Text("Retour")' (mouseout)='Text("")' (click)='authService.goHomeProd()'>
+        <div class="div div3"></div>
     </a>
 </div>
 
+</mat-drawer-content>
 
-<!--
-<div class="">
-    <mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
-        <mat-drawer class="sidenav" #drawer mode="over">
-            <div class="container pt-3 myFont-title">
-
-                <h1 class="myFont-head">Menu principal</h1>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Rechercher des producteurs</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Rechercher des produits</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Modifier le profil</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Messagerie</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Nous contacter</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button (click)='authService.deconnexion()'
-                        class="btn btn-block">Deconnexion</button>
-                </div>
-
-                              <mat-form-field appearance="fill">
-          <mat-label>Has backdrop</mat-label>
-          <mat-select #hasBackdrop>
-            <mat-option>Unset</mat-option>
-            <mat-option [value]="true">True</mat-option>
-            <mat-option [value]="false">False</mat-option>
-            </mat-form-field>
-          </mat-select>
-
-
-            </div>
-
-
-        </mat-drawer>
-        <mat-drawer-content>
-
-            <div class="col-sm-2">
-                <div>
-                    <mat-card class="sans-fond">
-                        <mat-card-header></mat-card-header>
-                        <img class="container mt-3" mat-card-image src="/assets/img/logo_sans_fond.png" alt="Etale">
-                        <mat-card-content></mat-card-content>
-                    </mat-card>
-                </div>
-                <div class="above-banniere">
-                    <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn">
-                        <mat-icon>list</mat-icon>
-                    </button>
-                </div>
-            </div>
-            <div class="custom-margin-left row d-flex justify-content-around">
-                <div class="container-fluid col-sm-4 my-pad-bot">
-                    <mat-card class="example-card" (click)='boiteReception()'>
-                        <mat-card-header>
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Boîte de Réception</mat-card-title>
-                        </mat-card-header>
-                        <img class="container mt-3" mat-card-image src="/assets/img/mailbox.jpg" alt="Etale">
-                        <mat-card-content>
-                            <p class="align-middle">
-                                Consultez vos messages actuels
-                            </p>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-
-                <div class="container-fluid col-sm-4 my-pad-bot">
-                    <mat-card class="example-card" (click)='boiteEnvoi()'>
-                        <mat-card-header>
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Boîte d'envoi</mat-card-title>
-                        </mat-card-header>
-                        <img class="container mt-3" mat-card-image src="/assets/img/ink_pen.jpg" alt="produits">
-                        <mat-card-content>
-                            <p class="align-text-middle">
-                                Consultez l'historique de vos messages envoyés
-                            </p>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-
-                <div class="container-fluid col-sm-4 my-pad-bot">
-                    <mat-card class="example-card" (click)='authService.goBack()'>
-                        <mat-card-header>
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Retour</mat-card-title>
-                        </mat-card-header>
-                        <img class="container mt-3" mat-card-image src="/assets/img/deconnexion.png" alt="Etale">
-                        <mat-card-content>
-                            <p class="align-text-middle">
-                                Revenir au Menu Principal
-                            </p>
-                        </mat-card-content>
-                    </mat-card>
-                </div>
-            </div>
-
-
-
-
-        </mat-drawer-content>
-    </mat-drawer-container>
+</mat-drawer-container>
 
 </div>
-
--->

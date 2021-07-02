@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-cons-fruits',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ConsFruitsComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, public authService: AuthService) { }
   user: any;
   liste: any;
   opened: boolean = false;

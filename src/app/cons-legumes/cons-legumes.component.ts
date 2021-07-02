@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-cons-legumes',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ConsLegumesComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, public authService: AuthService) { }
   user: any;
   liste: any;
   opened: boolean = false;
@@ -18,6 +19,11 @@ export class ConsLegumesComponent implements OnInit {
     this.route.navigateByUrl('etal-cons');
 
   }
+
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
+
   redirectionRacinesMenu(): void {
     this.route.navigateByUrl('cons-racines');
   }

@@ -18,7 +18,7 @@ export class MurProducteurComponent implements OnInit {
   producteur: any;
   produit: any;
   Type = "";
-  constructor(private http: HttpClient, private authService: AuthService, private producteurService: ProducteurService, public affichageProd: AffichageProdService, private access: AccessService, private dialog: MatDialog, public route: Router) { }
+  constructor(private http: HttpClient, public authService: AuthService, private producteurService: ProducteurService, public affichageProd: AffichageProdService, private access: AccessService, private dialog: MatDialog, public route: Router) { }
 
 
   ngOnInit(): void {
