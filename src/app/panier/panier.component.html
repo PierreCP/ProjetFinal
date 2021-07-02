@@ -13,7 +13,7 @@
                     <mat-card-content class="container">
                         <div class="row">
                             <div class="col-sm-10"></div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-2" *ngIf='!visible'>
                                 <label>Prix</label>
                             </div>
                             <hr>
@@ -27,10 +27,8 @@
                                         <p><i>{{p.description}}</i></p>
                                         <div class="row">
                                             <div class="form-group col-sm-4">
-                                                    <mat-form-field appearance="fill">
                                                         <mat-label>Quantité</mat-label>
-                                                        <input matInput value="1" class="form-control" >
-                                                    </mat-form-field>
+                                                        <p class="form-control" >{{p.quantiteCons}}</p>
                                             </div>
                                             <button mat-icon-button color="secondary" (click)='deleteProduit(p)'>
                                                 <mat-icon>delete</mat-icon>
@@ -43,21 +41,24 @@
                                 </div>
                                 <hr>
                             </div>
-                                <div class="col-sm-10"></div>
-                                <div class="col-sm-2">
-                                    <label>Sous-total</label>
+                                <div class="col-sm-9"></div>
+                                <div class="col-sm-3" *ngIf='!visible'>
+                                    <label><strong>TOTAL ({{quantiteTot}} articles)</strong></label>
+                                    <br>
+                                    <label><strong>{{prixTot}} €</strong></label>
                             </div>
                         </div>
 
 
                     </mat-card-content>
                     <mat-card-content>
-                        <p class="text-center color-red">
+                        <h2 *ngIf='visible' class="text-center color-red">
                             Votre panier est vide
-                        </p>
+                        </h2>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button class="btn btn-block btn-secondary">Commander</button>
+                        <button *ngIf='visible' class="btn btn-block btn-secondary">Commander</button>
+                        <button *ngIf='!visible' class="btn btn-block btn-secondary" (click)='Valider()'>Valider</button>
                     </mat-card-footer>
                 </mat-card>
             </div>
