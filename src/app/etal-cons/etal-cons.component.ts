@@ -39,7 +39,6 @@ export class EtalConsComponent implements OnInit {
     this.route.navigateByUrl('cons-autres');
   }
 
-
   retourMenuCons(): void {
     this.route.navigateByUrl('nav-cons');
   }

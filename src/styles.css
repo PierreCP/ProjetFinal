@@ -75,6 +75,14 @@
     background-color: inherit;
 }
 
+.button-transparent {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
 .margin-brand-img{
   margin-left: 170px;
 }
@@ -221,12 +229,6 @@
 .mt-100 {
     margin-top: 100px;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .strokeme
 {

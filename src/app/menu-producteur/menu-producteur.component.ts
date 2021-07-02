@@ -27,6 +27,7 @@ export class MenuProducteurComponent implements OnInit {
   redirectionEtal(): void {
     this.route.navigateByUrl('etal')
   }
+  
   Text(Message: any):any{
     this.Selection= Message;
   }
