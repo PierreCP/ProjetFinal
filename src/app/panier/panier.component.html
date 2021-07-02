@@ -46,8 +46,8 @@
                             </div>
                         </mat-card-header>
                         <hr>
-                        <mat-card-content>
-                            <p class="text-center">{{consommateur.id}}</p>
+                        <mat-card-content *ngFor='let p of panier'>
+                            <p class="text-center">{{p.nom}}</p>
                         </mat-card-content>
                         <mat-card-content>
                             <p class="text-center color-red">

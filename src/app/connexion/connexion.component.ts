@@ -15,6 +15,7 @@ export class ConnexionComponent implements OnInit {
   user: any;
   MsgErr = '';
   Type = '';
+  idPa: any;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
@@ -56,6 +57,8 @@ export class ConnexionComponent implements OnInit {
                 this.route.navigateByUrl('nav-prod');
               }
               else if (this.Type == "Consommateur") {
+                this.route.navigateByUrl('menu-cons');
+                this.getIdPanier();
                 this.route.navigateByUrl('nav-cons');
               }
             }
@@ -66,6 +69,18 @@ export class ConnexionComponent implements OnInit {
       },
       error: (err) => { console.log(err) }
     })
+  }
+
+  getIdPanier(): void {
+    this.http.get(this.access.getBackURL() + 'panier/user/' + this.user.id).subscribe({
+      next: (data) => { 
+        this.idPa = data 
+        let objPanier = JSON.stringify(this.idPa);
+        localStorage.setItem('panier', objPanier)
+      },
+      error: (err) => { console.log(err) }
+    })
+    
   }
 
 }

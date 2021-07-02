@@ -12,16 +12,14 @@ import { PanierService } from '../panier.service';
 export class PanierComponent implements OnInit {
 
   panier: any;
-  consommateur: any;
   constructor(public authService : AuthService, private route: Router, private http : HttpClient, private panierService : PanierService) { }
 
   ngOnInit(): void {
-    this.consommateur = this.authService.getUserInLocalStorage();
-   // this.getProductOfPanier();
+    this.getProductOfPanier();
   }
 
   getProductOfPanier(): void{
-    this.http.get('http://localhost:8082/panier/' + this.panierService.panier.id).subscribe({
+    this.http.get('http://localhost:8082/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
       next: (data)=> (this.panier = data),
       error: (err)=> (console.log(err))
     });
