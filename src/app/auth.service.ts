@@ -15,7 +15,7 @@ export class AuthService {
   liste: any;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog ) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog) { }
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
