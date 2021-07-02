@@ -1,25 +1,3 @@
 .example-spacer {
     flex: 1 1 auto;
   }
-
-  .toolbar-style{
-      background-color: rgb(184, 231, 184);
-      height: 100px;
-  }
-
-  .crm-navigation-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 998;
-  }
-
-  .menu-button{
-      border: none;
-      background-color: inherit;
-  }
-
-.margin-brand-img{
-    margin-left: 170px;
-}

@@ -13,16 +13,20 @@ export class NouveauMessageComponent implements OnInit {
 
   test: any;
   MsgErr = '';
+  longueur = 0;
+  Titre = '';
+  destinataire = ''; 
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService) { }
 
   ngOnInit(): void {
+    this.destinataire += this.authService.getRecInLocalStorage().prenom + ' ' + this.authService.getRecInLocalStorage().nom
   }
 
   envoyer(u: any): void {
 
     let emetteur = {id: this.authService.getUserInLocalStorage().id};
-    let receveur = {id: u.id};
+    let receveur = {id: this.authService.getRecInLocalStorage().id};
     
     let message = {contenu: u.contenu, emetteur, receveur};
     
@@ -39,5 +43,9 @@ export class NouveauMessageComponent implements OnInit {
       error: (err) => { console.log(err) }
     })
   }
+  
+  valueChange(u: any) {
+    this.longueur = u.contenu.length;
+   }
 
 }

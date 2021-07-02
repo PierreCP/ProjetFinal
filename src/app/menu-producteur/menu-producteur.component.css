@@ -49,7 +49,7 @@ a:nth-child(3){
   transition:transform .4s .25s;
 }
 a:nth-child(3) div{
-  background-image:url('/assets/img/messagerie.jpg');
+  background-image:url('/assets/img/messages.jpg');
 }
 a:nth-child(4){
   border-radius:0 0 40vmin 0;
@@ -58,7 +58,7 @@ a:nth-child(4){
   transition:transform .4s .3s;
 }
 a:nth-child(4) div{
-  background-image: url('/assets/img/contact.png');
+  background-image: url('/assets/img/contact.jpg');
 }
 a:nth-child(5){
   width:55%;height:55%;

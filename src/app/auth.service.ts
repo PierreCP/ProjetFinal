@@ -10,6 +10,7 @@ import { NouveauMessageComponent } from './nouveau-message/nouveau-message.compo
 export class AuthService {
 
   user: any;
+  rec: any;
   MsgErr = '';
   liste: any;
 
@@ -20,9 +21,18 @@ export class AuthService {
     localStorage.setItem('userConnect', JSON.stringify(u));
   }
 
+  setRecInLocalStorage(u: any): void {
+    localStorage.setItem('recConnect', JSON.stringify(u));
+  }
+
   getUserInLocalStorage(): any {
     this.user = localStorage.getItem('userConnect');
     return JSON.parse(this.user);
+  }
+
+  getRecInLocalStorage(): any {
+    this.rec = localStorage.getItem('recConnect');
+    return JSON.parse(this.rec);
   }
 
   verif(): void {
@@ -53,7 +63,7 @@ export class AuthService {
   messagerie(): void{
     this.route.navigateByUrl('messagerie')
   }
-
+ 
   nouveauMessage(): any{
     const myDialog = this.dialog.open(NouveauMessageComponent)
   }

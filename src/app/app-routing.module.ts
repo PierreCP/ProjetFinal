@@ -45,6 +45,8 @@ import { PanierComponent } from './panier/panier.component';
 import { TestComponent } from './test/test.component';
 import { AdminActivationComponent } from './admin-activation/admin-activation.component';
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
+import { NewProdGestionComponent } from './new-prod-gestion/new-prod-gestion.component';
+import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.component';
 import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
 import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
@@ -83,6 +85,9 @@ const routes: Routes = [
   { component: InscriptionComponent, path: 'inscription'},
   { component: ImageUploaderComponent, path: 'uploader' },
   { component: ImageGestionComponent, path: 'image' },
+  { component: NewProdGestionComponent, path: 'new-prod'},
+  { component: NewProdUploaderComponent, path: 'new-prod-uploader'},
+  
   { component: MenuAdminComponent, path: 'menu-admin'},
   { component: AdminActivationComponent, path: 'admin-activation'},
   { component: MenuProducteurComponent, path: 'menu-prod' },
