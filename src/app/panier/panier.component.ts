@@ -60,14 +60,18 @@ export class PanierComponent implements OnInit {
   }
 
   Valider(){
-    this.http.delete(this.accessService.getBackURL() + 'validation-panier/' + this.panierService.getPanierInLocalStorage().id).subscribe({
+    console.log(this.panierService.getPanierInLocalStorage().id);
+    this.http.get(this.accessService.getBackURL() + 'validation-panier/' + this.panierService.getPanierInLocalStorage().id).subscribe({
       next: (data)=>(
-        this.ngOnInit()
+        this.authService.goHomeCons()
         ),
       
       error: (err)=>(console.log(err))
     })
   }
 
+  RedirectionProduit(): void{
+    this.route.navigateByUrl('etal-cons');
+  }
 
 }
