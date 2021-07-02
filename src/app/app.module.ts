@@ -107,6 +107,7 @@ import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.com
 import { GestionCommandesComponent } from './gestion-commandes/gestion-commandes.component';
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-commandes.component';
+import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
 
 
 
@@ -204,6 +205,7 @@ import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-com
     GestionCommandesComponent,
     HistoriqueCommandeComponent,
     NouvellesCommandesComponent,
+    ModifProfConsComponent,
   ],
   imports: [
     BrowserModule,

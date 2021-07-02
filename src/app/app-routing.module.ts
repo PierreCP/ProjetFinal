@@ -83,6 +83,7 @@ import { GestionCommandesComponent } from "./gestion-commandes/gestion-commandes
 import { HistoriqueCommandeComponent } from "./historique-commande/historique-commande.component";
 import { NouvellesCommandesComponent } from "./nouvelles-commandes/nouvelles-commandes.component";
 import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
+import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -178,7 +179,8 @@ const routes: Routes = [
   {component: GestionCommandesComponent, path: 'gestion-commandes'},
   {component: HistoriqueCommandeComponent, path: 'gestion-commandes'},
   {component: NouvellesCommandesComponent, path: 'gestion-commandes'},
-  {component: ConsFruitsComponent, path: 'cons-fruits'}
+  {component: ConsFruitsComponent, path: 'cons-fruits'},
+  {component: ModifProfConsComponent, path: 'modifier-cons'}
 
 
 ];

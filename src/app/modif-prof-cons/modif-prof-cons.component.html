@@ -1,0 +1,67 @@
+<div class="">
+    <!-- Background image -->
+    <div class="bg-image" style="
+    background-image: url('assets/img/banniere.jpg');
+    height: 150px;
+  ">
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-sm-3 text-center">
+            <img src="assets/img/vigne.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-sm-6 container pt-5">
+            <h1 class="text-center container myFont-head"><b>Modification Profil</b> </h1>
+            <br><br>
+            <form #fModif="ngForm" (ngSubmit)='modifier(fModif.value)'>
+                <div style="margin: auto; width: 60%">
+                    <div class="form-group">
+                        <label class="label-perso">Login : </label>
+                        <input type="text" class="form-control" ngModel={{user.login}} required name="login" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Nom : </label>
+                        <input type="text" name="nom" ngModel={{user.nom}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Prénom : </label>
+                        <input type="text" name="prenom" ngModel={{user.prenom}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Age : </label>
+                        <input type="text" name="age" ngModel={{user.age}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Numéro de Rue : </label>
+                        <input type="text" name="numeroRue" ngModel={{user.adresse.numeroRue}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Nom de Rue : </label>
+                        <input type="text" name="nomRue" ngModel={{user.adresse.nomRue}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Ville : </label>
+                        <input type="text" name="nomCommune" ngModel={{user.adresse.nomCommune}} class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label class="label-perso">Code Postal : </label>
+                        <input type="text" name="codePostal" ngModel={{user.adresse.codePostal}} class="form-control" />
+                        <input hidden type="password" name="mdp" ngModel={{user.mdp}} class="form-control" />
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-block myFont-title" >Modifier</button>
+                    <br>
+                    <button type="button" (click)='RedirectionNav()' class="btn btn-block myFont-title">Retour</button>
+                    <br>
+                    
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3 text-center">
+            <img src="assets/img/vigne.png" class="img-fluid flip-horizontally" alt="" height="500">
+
+        </div>
+    </div>
+    
+</div>
