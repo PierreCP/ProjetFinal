@@ -11,11 +11,13 @@
         </div>
         <div class="form-group">
           <label for="" class="text-secondary">Catégorie</label>
-          <input type="text" class="form-control" name='sousCategorie' ngModel="">
+          <mat-select name="sousCategorie" ngModel="typeBox" (selectionChange)="changeType($event)">
+            <mat-option *ngFor="let sc of listeSousCategorie" value = {{sc}}>{{sc}}</mat-option>
+          </mat-select>
         </div>
         <div class="form-group">
           <label for="" class="text-secondary">Quantité</label>
-          <input type="number" class="form-control" name='quantite' ngModel="">
+          <input type="number" class="form-control" name='quantite' ngModel="" ng-pattern="integerval">
         </div>
         <div class="form-group">
           <label for="" class="text-secondary">Prix</label>

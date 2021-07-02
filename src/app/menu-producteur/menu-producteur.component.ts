@@ -14,10 +14,16 @@ import { AuthService } from '../auth.service';
 export class MenuProducteurComponent implements OnInit {
 
   Selection: any = "Menu producteur";
+  pro: any;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
+    this.http.get(this.access.getBackURL() + 'producteur/person/' + this.authService.getUserInLocalStorage().id).subscribe({
+      next: (data)=>{
+        this.pro = data
+      }
+    })
   }
 
   doStuff():void{

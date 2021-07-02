@@ -34,7 +34,7 @@
 
         <h1 class="myFont-head mb-5">Menu principal</h1>
         <div class="container"> <!-- redirection vers mur à refaire -->
-          <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Mon mur</button>
+          <button mat-raised-button (click)='authService.redirectionFicheProducteur(pro)' class="btn myFont-title">Mon mur</button>
         </div>
         <div class="container">
           <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
@@ -52,6 +52,12 @@
         <div class="container">
           <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
         </div>
+<<<<<<< HEAD
+=======
+        <div class="container">
+          <button mat-raised-button (click)='authService.redirectionFicheProducteur(pro)'  class="btn myFont-title">Test</button>
+        </div>
+>>>>>>> 867808c98251154f45beabb9faea0def1cef4907
       </div>
 
 

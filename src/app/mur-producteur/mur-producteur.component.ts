@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
 import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
+import { NewProdUploaderComponent } from '../new-prod-uploader/new-prod-uploader.component';
 import { ProducteurService } from '../producteur.service';
 
 @Component({
@@ -13,19 +16,25 @@ import { ProducteurService } from '../producteur.service';
 export class MurProducteurComponent implements OnInit {
 
   producteur: any;
-  produit:any;
-  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService, public affichageProd: AffichageProdService, private access: AccessService) { }
+  produit: any;
+  Type = "";
+  constructor(private http: HttpClient, private authService: AuthService, private producteurService: ProducteurService, public affichageProd: AffichageProdService, private access: AccessService, private dialog: MatDialog, public route: Router) { }
+
 
   ngOnInit(): void {
-    
+    this.http.get(this.access.getBackURL() + 'person/type/' + this.authService.getUserInLocalStorage().id, { responseType: 'text' }).subscribe({
+      next: (data) => {
+        this.Type = data;
+      }
+    });
+    this.producteur = this.authService.getProdInLocalStorage();
     this.getProductFromProducteur();
-    this.producteur = this.producteurService.producteur;
   }
 
-  getProductFromProducteur(): void{
-    this.http.get(this.access.getBackURL() + 'producteur/produit/' + this.producteurService.producteur.id).subscribe({
-      next: (data)=> (this.produit = data),
-      error: (err)=> (console.log(err))
+  getProductFromProducteur(): void {
+    this.http.get(this.access.getBackURL() + 'producteur/produit/' + this.producteur.id).subscribe({
+      next: (data) => (this.produit = data),
+      error: (err) => (console.log(err))
     });
   }
 
@@ -45,8 +54,13 @@ export class MurProducteurComponent implements OnInit {
   refresh(): void {
     this.ngOnInit();
   }
-  contact(): void{
+
+  contact(): void {
     this.authService.nouveauMessage();
+  }
+
+  nouveauProduit(): any {
+    const reception = this.dialog.open(NewProdUploaderComponent)
   }
 
 }
