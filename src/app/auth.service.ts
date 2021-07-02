@@ -10,6 +10,7 @@ import { NouveauMessageComponent } from './nouveau-message/nouveau-message.compo
 export class AuthService {
 
   user: any;
+  rec: any;
   MsgErr = '';
   liste: any;
 
@@ -20,9 +21,18 @@ export class AuthService {
     localStorage.setItem('userConnect', JSON.stringify(u));
   }
 
+  setRecInLocalStorage(u: any): void {
+    localStorage.setItem('recConnect', JSON.stringify(u));
+  }
+
   getUserInLocalStorage(): any {
     this.user = localStorage.getItem('userConnect');
     return JSON.parse(this.user);
+  }
+
+  getRecInLocalStorage(): any {
+    this.rec = localStorage.getItem('recConnect');
+    return JSON.parse(this.rec);
   }
 
   verif(): void {
@@ -53,7 +63,7 @@ export class AuthService {
   messagerie(): void{
     this.route.navigateByUrl('messagerie')
   }
-
+ 
   nouveauMessage(): any{
     const myDialog = this.dialog.open(NouveauMessageComponent)
   }
@@ -76,23 +86,30 @@ export class AuthService {
   }
 
   modifierProduit(m: any): void {
-    console.log('Ici on débute');
     this.user = this.getUserInLocalStorage();
     this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
       next: (data) => { this.liste = data },
       error: (err) => { console.log(err) }
     })
-    this.MsgErr = 'Ajout du produit impossible.'
+    this.MsgErr = 'Modification du produit impossible.'
   }
 
   supprimerProduit(m: any): void {
-    console.log('Ici on débute');
     this.user = this.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/person/' + '/produit/' + this.user.id + '/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
-      next: (data) => { this.liste = data },
+    console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name);
+    this.http.delete('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name).subscribe({
+      next: (data) => { this.liste = data, console.log('http://localhost:8082/produit/person/' + this.user.id + '/' + m.name) },
       error: (err) => { console.log(err) }
     })
-    this.MsgErr = 'Ajout du produit impossible.'
+    this.MsgErr = 'Suppression du produit impossible.'
 
+  }
+
+  messageAdmin(m: any): void {
+    this.user = this.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/getMessage/admin/' + this.user.id + '/' + m.message).subscribe({
+      next: (data) => {this.liste=data},
+      error: (err) => {console.log(err)}
+    })
   }
 }

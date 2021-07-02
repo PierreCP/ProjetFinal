@@ -14,6 +14,7 @@ export class MenuConsommateurComponent implements OnInit {
 
   hover: boolean = false;
   a: any;
+  Selection: any = "Bienvenu sur Court-Circuit";
 
   constructor(private route: Router, public adress: GestionAdressService, private http: HttpClient, private access: AccessService, public authService: AuthService) {
     this.http.get(this.access.getBackURL() + 'nullAdress').subscribe({
@@ -36,6 +37,8 @@ export class MenuConsommateurComponent implements OnInit {
   getAdress():void{
     this.adress.getDistance(22, 25);
   }
-
+  Text(Message: any):any{
+    this.Selection= Message;
+  }
    
 }

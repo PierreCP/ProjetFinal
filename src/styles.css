@@ -4,6 +4,10 @@
     margin-top: 80px;
 }
 
+.mt-100{
+    padding-top: 100px;
+}
+
 .foo {
 
     background-image: url('/assets/img/background accueil3.png');
@@ -41,8 +45,10 @@
 }
 
 .sidenav{
-    background-color: rgb(203, 255, 203);
+    background-color: rgb(221, 255, 96);
     width: 400px;
+    height: 100vh;
+    
 }
 
 
@@ -50,9 +56,33 @@
     width: 100vw;
 }
 
+
+.toolbar-style{
+    background-color: rgb(200, 255, 0);
+    height: 100px;
+}
+
+.crm-navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+}
+
+.menu-button{
+    border: none;
+    background-color: inherit;
+}
+
+.margin-brand-img{
+  margin-left: 170px;
+}
+
 .drawer-container {
     width: 100vw;
-    height: max-content;
+    height: 100vh;
+    z-index: 0;
   }
   
   mat-drawer-content {
@@ -119,7 +149,7 @@
 }
 
 .my-font-family{
-    font-family: 'Noto Serif';
+    font-family: 'Helvetica Neue';
 }
 
 .mt-120{

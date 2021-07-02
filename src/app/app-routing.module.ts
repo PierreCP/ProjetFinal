@@ -48,6 +48,9 @@ import { AdminActivationComponent } from './admin-activation/admin-activation.co
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 import { NewProdGestionComponent } from './new-prod-gestion/new-prod-gestion.component';
 import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.component';
+import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
+import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
+import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -112,6 +115,9 @@ const routes: Routes = [
   {component: ProdLegumesSecComponent, path: 'prod-legumesSecs'},
   {component: MessagerieComponent, path: 'messagerie'},
   {component: PanierComponent, path: 'panier'},
+  {component: NavbarConsComponent, path: 'nav-cons'},
+  {component: NavbarProdComponent, path: 'nav-prod'},
+  {component: NavbarAdminComponent, path: 'nav-admin'},
 
 
 ];

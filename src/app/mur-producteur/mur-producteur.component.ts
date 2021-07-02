@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { AccessService } from '../access.service';
+import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 import { ProducteurService } from '../producteur.service';
 
@@ -14,9 +14,10 @@ export class MurProducteurComponent implements OnInit {
 
   producteur: any;
   produit:any;
-  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService, private access: AccessService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService, public affichageProd: AffichageProdService, private access: AccessService) { }
 
   ngOnInit(): void {
+    
     this.getProductFromProducteur();
     this.producteur = this.producteurService.producteur;
   }
@@ -35,4 +36,8 @@ export class MurProducteurComponent implements OnInit {
   refresh(): void {
     this.ngOnInit();
   }
+  contact(): void{
+    this.authService.nouveauMessage();
+  }
+
 }

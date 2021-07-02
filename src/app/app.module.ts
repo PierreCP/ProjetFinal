@@ -19,14 +19,15 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { MurProducteurComponent } from './mur-producteur/mur-producteur.component';
 import { Test123Component } from './test123/test123.component';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatListModule } from '@angular/material/list';
-import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MenuConsommateurComponent } from './menu-consommateur/menu-consommateur.component';
 import { AccueilComponent } from './accueil/accueil.component';
@@ -68,6 +69,10 @@ import { AdminActivationComponent } from './admin-activation/admin-activation.co
 import { ImageGestionComponent } from './image-gestion/image-gestion.component';
 import { NewProdGestionComponent } from './new-prod-gestion/new-prod-gestion.component';
 import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.component';
+import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
+import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
+import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
+
 
 
 
@@ -125,8 +130,9 @@ import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.
     AjoutProduitComponent,
     TestComponent,
     ImageGestionComponent,
-    NewProdGestionComponent,
-    NewProdUploaderComponent
+    NavbarConsComponent,
+    NavbarProdComponent,
+    NavbarAdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -145,6 +151,7 @@ import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.
     MatListModule,
     MatCardModule,
     MatDialogModule,
+    MatMenuModule
   ],
   providers: [
     {
