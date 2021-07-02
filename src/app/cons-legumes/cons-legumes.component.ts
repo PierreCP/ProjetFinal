@@ -11,6 +11,7 @@ export class ConsLegumesComponent implements OnInit {
   constructor(private route: Router) { }
   user: any;
   liste: any;
+  opened: boolean = false;
   ngOnInit(): void {
   }
   retourEtal(): void {

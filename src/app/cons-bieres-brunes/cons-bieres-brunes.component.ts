@@ -17,6 +17,7 @@ export class ConsBieresBrunesComponent implements OnInit {
   liste2: any;
   user: any;
   liste: any;
+  opened: boolean = false;
   ngOnInit(): void {
     this.getAllProduitBySousCategorie('Bières brunes');
   }
@@ -24,10 +25,14 @@ export class ConsBieresBrunesComponent implements OnInit {
   retourBieresMenu(): void {
     this.route.navigateByUrl('cons-bieres');
   }
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
 
   getAllProduitBySousCategorie(sousCategorie: String): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/produit/sous_categorie/' + sousCategorie).subscribe({
+    this.http.get(this.accessService.getBackURL() + 'produit/sous_categorie/' + sousCategorie).subscribe({
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {

@@ -16,6 +16,7 @@ export class ConsFruitsAgrumesComponent implements OnInit {
   panier: any;
   liste2: any;
   user: any;
+  opened: boolean = false;
   liste: any;
   ngOnInit(): void {
     this.getAllProduitBySousCategorie('Agrumes');
@@ -24,10 +25,14 @@ export class ConsFruitsAgrumesComponent implements OnInit {
   retourFruitsMenu(): void {
     this.route.navigateByUrl('cons-fruits');
   }
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
 
   getAllProduitBySousCategorie(sousCategorie: String): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/produit/sous_categorie/' + sousCategorie).subscribe({
+    this.http.get(this.accessService.getBackURL() + 'produit/sous_categorie/' + sousCategorie).subscribe({
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {

@@ -14,7 +14,8 @@ import { AuthService } from '../auth.service';
 export class EtalComponent implements OnInit {
 
   constructor(private http: HttpClient, public authService: AuthService, private route: Router, private access: AccessService) { }
-
+  events: string[] = [];
+  opened: boolean = false;
   liste: any;
   liste2: any;
   user: any;
@@ -22,6 +23,10 @@ export class EtalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
   redirectionLegumesMenu(): void {
     this.route.navigateByUrl('prod-legumes');
   }

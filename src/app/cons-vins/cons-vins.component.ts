@@ -11,6 +11,7 @@ export class ConsVinsComponent implements OnInit {
   constructor(private route: Router) { }
   user: any;
   liste: any;
+  opened: boolean = false;
   ngOnInit(): void {
   }
   retourEtal(): void {
@@ -18,6 +19,10 @@ export class ConsVinsComponent implements OnInit {
 
   }
 
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
+  }
   redirectionRougesMenu(): void {
     this.route.navigateByUrl('cons-rouges');
   }
