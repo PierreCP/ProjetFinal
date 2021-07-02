@@ -49,7 +49,7 @@
                     <img *ngIf='visible' src="assets/img/Empty-Cart.jpg" alt="" width="100%">
                 </mat-card-content>
                 <mat-card-footer class="myfont">
-                    <button *ngIf='visible' class="btn btn-secondary btn-block">Commander</button>
+                    <button *ngIf='visible' class="btn btn-secondary btn-block" (click)='RedirectionProduit()'>Commander</button>
                     <button *ngIf='!visible' class="btn btn-block btn-secondary" (click)='Valider()'>Valider</button>
                 </mat-card-footer>
             </mat-card>
