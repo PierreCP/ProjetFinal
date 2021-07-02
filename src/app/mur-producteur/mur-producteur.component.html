@@ -1,20 +1,7 @@
-<div class="container my-5">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 mb-6 mb-lg-0">
-            <!-- Card -->
-            <div class="bg-image card shadow-1-strong" style="
-                    background-image: url('assets/img/étal_magasin_fromages.jpg');
-                    ">
-                <div class="card col-sm-2">
-                    <img alt="" src="assets/img/tete.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="center container">
-    <h2>{{producteur.person.prenom}} {{producteur.person.nom}}</h2>
-    <h4><i>Producteur de fromages depuis 1978</i></h4>
+
+<div class="center container myFont-head mt-5">
+    <h1>;<strong>{{producteur.person.prenom}} {{producteur.person.nom}}</strong></h1>
+    <h2><i>{{producteur.nomMagasin}}</i></h2>
     <hr>
 </div>
 
@@ -26,10 +13,10 @@
                 <div class="card-body">
                     <div class="mr-2" >
                         <br>
-                        <p><strong>Nom : </strong>{{producteur.person.nom}}</p>
-                        <p><strong>Prenom : </strong>{{producteur.person.prenom}}</p>
-                        <p><strong>Magasin : </strong>{{producteur.nomMagasin}}</p>
-                        <p><strong>Adresse : </strong>{{producteur.person.adresse.numeroRue}} {{producteur.person.adresse.nomRue}}</p>
+                        <p><strong>{{producteur.person.prenom}} {{producteur.person.nom}}</strong></p>
+                        <p><strong>{{producteur.nomMagasin}}</strong></p>
+                        <p><strong>{{producteur.person.adresse.numeroRue}} {{producteur.person.adresse.nomRue}}</strong></p>
+                        <p><strong>{{producteur.person.adresse.codePostal}} {{producteur.person.adresse.nomCommune}}</strong></p>
                     </div>
                 </div>
                 <hr>
@@ -50,47 +37,19 @@
                 </div>
                 <br>
             </div>
-            <br>
-            <div class="card card-shadow text-center">
-                <div class="card-header"><strong>Mes Abonnés</strong></div>
-                <div class="card-body"></div>
-                <div class="container row">
-                    <div class="col-sm-1"></div>
-                    <div class="col-sm-5">
-                        <img src="assets/img/tete.jpg" alt="tete" width="100%">
-                        <label>Tete</label>
-                    </div>
-
-                </div>
-                <br>
-            </div>
+            
             <div class="card card-shadow text-center">
                 <div class="card-header"><strong>Contacter</strong></div>
                 <div class="card-body"></div>
                 <div class="container row">
-                    <a class="nav-item nav-link" (click)='contact()' > <i style="color: black" class="fa fa-envelope fa-5x"></i></a>
+                    <a class="nav-item nav-link" (click)='contact()' > <i style="color: green" class="fa fa-envelope fa-5x"></i></a>
                 </div>
                 <br>
             </div>
         </div>
         <div class="col-sm-8">
             <div class="col-sm-1"></div>
-            <div class="row">
-                <button class="ml-4 btn btn-block btn-outline-secondary col-sm-5">Affichage des publications</button>
-                <div class="col-sm-1"></div>
-                <button class="mr-4 btn btn-block btn-outline-secondary col-sm-5">Affichage des produits</button>
-            </div>
-            <div class="card card-shadow">
-                <div class="card-header text-center">
-                    <label><strong>Publications</strong></label>
-                </div>
-                <div class="card-body text-center row">
-                    <i class="fa fa-plus-circle fa-2x col-sm-2 mt-1"></i>
-                    <button class="btn btn-block btn-secondary col-sm-4">Nouvelle Publication</button>
-                </div>
-                <hr>
-            </div>
-            <br>
+             
             <div class="card card-shadow">
                 <div class="card-header">
                     <label class="col-sm-8 text-center"><strong>Le Produit du mois</strong></label>
