@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AccessService } from '../access.service';
+import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 import { ProducteurService } from '../producteur.service';
 
@@ -12,7 +14,7 @@ export class MurProducteurComponent implements OnInit {
 
   producteur: any;
   produit:any;
-  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService, public affichageProd: AffichageProdService, private access: AccessService) { }
 
   ngOnInit(): void {
     this.producteur = this.authService.getProdInLocalStorage();
@@ -27,6 +29,22 @@ export class MurProducteurComponent implements OnInit {
     });
   }
 
+  changeFormatMedia(media: any): any {
+    return window.atob(media);
+  }
+
+  mediaExist(media: any): boolean {
+    if (media != null) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  refresh(): void {
+    this.ngOnInit();
+  }
   contact(): void{
     this.authService.nouveauMessage();
   }

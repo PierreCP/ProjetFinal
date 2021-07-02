@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
+import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class MenuProducteurComponent implements OnInit {
 
   Selection: any = "Menu producteur";
 
-  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
   }

@@ -1,67 +1,70 @@
 <div class="">
-    <mat-drawer-container class="drawer-container general-background foo" hasBackdrop="true">
-        <mat-drawer class="sidenav" #drawer mode="over">
-            <div class="container pt-3 myFont-title">
-
-                <h1 class="myFont-head">Menu principal</h1>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Rechercher des producteurs</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Rechercher des produits</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Modifier le profil</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Messagerie</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button class="btn btn-block">Nous contacter</button>
-                </div>
-                <div class="container">
-                    <button mat-raised-button (click)='authService.deconnexion()'
-                        class="btn btn-block">Deconnexion</button>
-                </div>
-            </div>
-
-
-        </mat-drawer>
-        <mat-drawer-content>
-
-            <div class="col-sm-2">
-                <div class="above-banniere">
-                    <button mat-raised-button (click)="drawer.toggle()" class="sidenav-btn">
-                        <mat-icon>list</mat-icon>
-                    </button>
-                </div>
-            </div>
-            <div class="container mt-100">
-                <div class=" col-sm-12 my-pad-bot">
-                    <mat-card>
-                        <mat-card-header class="text-center">
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <div class="col-sm-10 align-middle">
-                                <mat-card-title>Votre Panier</mat-card-title>
+    <div class="row">
+        <div class="container mt-100 col-sm-8 my-font-family">
+            <div class=" col-sm-12 my-pad-bot">
+                <mat-card>
+                    <mat-card-header class="text-center">
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <div class="col-sm-10 align-middle">
+                            <mat-card-title>Votre Panier</mat-card-title>
+                        </div>
+                    </mat-card-header>
+                    <br>
+                    <mat-card-content class="container">
+                        <div class="row">
+                            <div class="col-sm-10"></div>
+                            <div class="col-sm-2">
+                                <label>Prix</label>
                             </div>
-                        </mat-card-header>
-                        <hr>
-                        <mat-card-content>
-                            <p class="text-center">{{consommateur.id}}</p>
-                        </mat-card-content>
-                        <mat-card-content>
-                            <p class="text-center color-red">
-                                Votre panier est vide
-                            </p>
-                        </mat-card-content>
-                        <mat-card-footer>
-                            <button class="btn btn-block btn-secondary">Commander</button>
-                        </mat-card-footer>
-                    </mat-card>
-                </div>
-            </div>
+                            <hr>
+                            <div *ngFor='let p of produit'>
+                                <div class="row">
+                                    <div class="col-sm-2 mt-2">
+                                        <img src="assets/img/camembert.jpg" alt="" width="100%">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h3><strong>{{p.nom}}</strong></h3>
+                                        <p><i>{{p.description}}</i></p>
+                                        <div class="row">
+                                            <div class="form-group col-sm-4">
+                                                    <mat-form-field appearance="fill">
+                                                        <mat-label>Quantité</mat-label>
+                                                        <input matInput value="1" class="form-control" >
+                                                    </mat-form-field>
+                                            </div>
+                                            <button mat-icon-button color="secondary" (click)='deleteProduit(p)'>
+                                                <mat-icon>delete</mat-icon>
+                                              </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <h2><strong>{{p.prix}} €</strong></h2>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                                <div class="col-sm-10"></div>
+                                <div class="col-sm-2">
+                                    <label>Sous-total</label>
+                            </div>
+                        </div>
 
-        </mat-drawer-content>
-    </mat-drawer-container>
+
+                    </mat-card-content>
+                    <mat-card-content>
+                        <p class="text-center color-red">
+                            Votre panier est vide
+                        </p>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <button class="btn btn-block btn-secondary">Commander</button>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
 
 </div>
