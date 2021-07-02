@@ -16,6 +16,7 @@ export class ConsFruitsPomesComponent implements OnInit {
   panier: any;
   liste2: any;
   user: any;
+  opened: boolean = false;
   liste: any;
   ngOnInit(): void {
     this.getAllProduitBySousCategorie('Pommes et poires');
@@ -27,7 +28,7 @@ export class ConsFruitsPomesComponent implements OnInit {
 
   getAllProduitBySousCategorie(sousCategorie: String): void {
     this.user = this.authService.getUserInLocalStorage();
-    this.http.get('http://localhost:8082/produit/sous_categorie/' + sousCategorie).subscribe({
+    this.http.get(this.accessService.getBackURL() + 'produit/sous_categorie/' + sousCategorie).subscribe({
       next: (data) => {
         this.liste = data;
         if (this.liste == "") {
@@ -38,6 +39,10 @@ export class ConsFruitsPomesComponent implements OnInit {
       error: (err) => { console.log(err) }
 
     })
+  }
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
   }
 
   addProduitToPanier(idProd: any): any {

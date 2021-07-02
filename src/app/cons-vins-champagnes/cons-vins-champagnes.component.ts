@@ -18,6 +18,7 @@ export class ConsVinsChampagnesComponent implements OnInit {
   liste: any;
   liste2: any;
   panier: any;
+  opened: boolean = false;
   ngOnInit(): void {
     this.getAllProduitBySousCategorie('Champagnes');
   }
@@ -25,6 +26,10 @@ export class ConsVinsChampagnesComponent implements OnInit {
   retourVinsMenu(): void {
     this.route.navigateByUrl('cons-vins');
 
+  }
+  
+  toggleSidenav(): boolean {
+    return this.opened = !this.opened
   }
 
   getAllProduitBySousCategorie(sousCategorie: String): void {

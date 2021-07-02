@@ -8,7 +8,6 @@ import { NouveauMessageComponent } from './nouveau-message/nouveau-message.compo
   providedIn: 'root'
 })
 export class AuthService {
-
   user: any;
   rec: any;
   MsgErr = '';
@@ -71,6 +70,11 @@ export class AuthService {
   goMenuProd(): void {
     this.route.navigateByUrl('menu-prod')
   }
+  RedirectionPanier(): void {
+    this.route.navigateByUrl('panier')
+  }
+
+
 
   //                              ]
 

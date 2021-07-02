@@ -21,6 +21,7 @@ export class EtalConsComponent implements OnInit {
   MsgErr: any;
   ngOnInit(): void {
   }
+  
   toggleSidenav(): boolean {
     return this.opened = !this.opened
   }
