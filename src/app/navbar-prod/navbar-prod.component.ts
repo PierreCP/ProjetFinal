@@ -15,6 +15,7 @@ export class NavbarProdComponent implements OnInit {
   events: string[] = [];
   opened: boolean = false;
   msgErr = '';
+  pro: any;
 
   // shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
 
@@ -22,6 +23,11 @@ export class NavbarProdComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
+    this.http.get(this.access.getBackURL() + 'producteur/person/' + this.authService.getUserInLocalStorage().id).subscribe({
+      next: (data)=>{
+        this.pro = data
+      }
+    })
   }
 
   toggleSidenav(): boolean {

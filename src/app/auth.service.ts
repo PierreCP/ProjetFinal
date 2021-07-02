@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
+import { ProducteurService } from './producteur.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
   opened: boolean = false;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService) { }
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -84,6 +85,12 @@ export class AuthService {
     this.route.navigateByUrl('panier')
   }
 
+  redirectionFicheProducteur(prdt: any): any{
+    this.producteurService.producteur = prdt;
+    this.route.navigateByUrl('mur');
+    this.setRecInLocalStorage(prdt.person);
+    this.setProdInLocalStorage(prdt);
+  }
 
 
   //                              ]
