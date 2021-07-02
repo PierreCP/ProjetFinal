@@ -98,6 +98,10 @@ export class AuthService {
     this.route.navigateByUrl('menu-cons');
   }
 
+  goHomeProd(): any {
+    this.route.navigateByUrl('menu-prod');
+  }
+
   goRechercheProd(): any {
     this.route.navigateByUrl('liste-prod');
   }
