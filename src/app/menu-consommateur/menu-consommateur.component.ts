@@ -40,5 +40,8 @@ export class MenuConsommateurComponent implements OnInit {
   Text(Message: any):any{
     this.Selection= Message;
   }
+  redirectionChercherProduit(): void {
+    this.route.navigateByUrl('etal-cons');
+  }
    
 }
