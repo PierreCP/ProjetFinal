@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuProducteurComponent } from './menu-producteur/menu-producteur.component';
 import { NavComponent } from './nav/nav.component';
@@ -72,6 +72,8 @@ import { NewProdUploaderComponent } from './new-prod-uploader/new-prod-uploader.
 import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
 import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
+import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { EtalConsComponent } from './etal-cons/etal-cons.component';
 import { ConsAutresComponent } from './cons-autres/cons-autres.component';
 import { ConsBieresComponent } from './cons-bieres/cons-bieres.component';
@@ -214,7 +216,10 @@ import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.com
     MatListModule,
     MatCardModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     {
