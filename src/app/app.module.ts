@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -71,6 +71,7 @@ import { NavbarConsComponent } from './navbar-cons/navbar-cons.component';
 import { NavbarProdComponent } from './navbar-prod/navbar-prod.component';
 import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
 import {MatButtonModule} from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -151,7 +152,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatDialogModule,
     MatMenuModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [
     {

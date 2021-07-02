@@ -17,7 +17,7 @@
                                 <label>Prix</label>
                             </div>
                             <hr>
-                            <div *ngFor='let p of panier'>
+                            <div *ngFor='let p of produit'>
                                 <div class="row">
                                     <div class="col-sm-2 mt-2">
                                         <img src="assets/img/camembert.jpg" alt="" width="100%">
@@ -26,20 +26,13 @@
                                         <h3><strong>{{p.nom}}</strong></h3>
                                         <p><i>{{p.description}}</i></p>
                                         <div class="row">
-                                            <mat-form-field appearance="fill" class="col-sm-4">
-                                                <mat-label>Quantité</mat-label>
-                                                <mat-select matNativeControl (selectionChange)="changeValue($event)" required [(value)]="SelectedValue">
-                                                    <mat-option value="1">1</mat-option>
-                                                    <mat-option value="2">2</mat-option>
-                                                    <mat-option value="3">3</mat-option>
-                                                    <mat-option value="4">4</mat-option>
-                                                    <mat-option value="5">5</mat-option>
-                                                    <mat-option value="6">6</mat-option>
-                                                    <mat-option value="7">7</mat-option>
-                                                    <mat-option value="8">8+</mat-option>
-                                                </mat-select>
-                                            </mat-form-field>
-                                            <button mat-icon-button color="secondary" onclick='deleteProduit()'>
+                                            <div class="form-group col-sm-4">
+                                                    <mat-form-field appearance="fill">
+                                                        <mat-label>Quantité</mat-label>
+                                                        <input matInput value="1" class="form-control" >
+                                                    </mat-form-field>
+                                            </div>
+                                            <button mat-icon-button color="secondary" (click)='deleteProduit(p)'>
                                                 <mat-icon>delete</mat-icon>
                                               </button>
                                         </div>
@@ -49,6 +42,10 @@
                                     </div>
                                 </div>
                                 <hr>
+                            </div>
+                                <div class="col-sm-10"></div>
+                                <div class="col-sm-2">
+                                    <label>Sous-total</label>
                             </div>
                         </div>
 

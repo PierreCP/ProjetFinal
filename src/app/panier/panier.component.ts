@@ -12,8 +12,9 @@ import { PanierService } from '../panier.service';
 })
 export class PanierComponent implements OnInit {
 
-  panier: any;
+  
   prix: any;
+  quantite= '1';
   value='1';
   SelectedValue='1';
   produit: any;
@@ -21,18 +22,24 @@ export class PanierComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProductOfPanier();
-    //this.getPrix();
   }
 
   getProductOfPanier(): void{
     this.http.get('http://localhost:8082/panier/produit/' + this.panierService.getPanierInLocalStorage().id).subscribe({
-      next: (data)=> (this.panier = data),
+      next: (data)=> (this.produit = data),
       error: (err)=> (console.log(err))
     });
   }
 
-  changeValue (event: any) { 
+  changeValue (event: any) {
     this.value = event.value;
+    //this.prix = this.value*this.produit.prix;
+  }
+
+  getPrix(prt: any): any{
+    this.prix = prt.prix
+    console.log(prt);
+   //this.prix = this.produit.prix;
   }
 
   
