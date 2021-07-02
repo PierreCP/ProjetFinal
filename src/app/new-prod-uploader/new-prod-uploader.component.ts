@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { AccessService } from '../access.service';
 import { NgForm } from '@angular/forms';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProducteurService } from '../producteur.service';
 
 @Component({
   selector: 'app-new-prod-uploader',
@@ -17,7 +18,7 @@ export class NewProdUploaderComponent implements OnInit {
   mediaUrl: any;
   id: any;
 
-  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, public dialogRef: MatDialogRef<NewProdUploaderComponent>) { }
+  constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private producteurService: ProducteurService, public dialogRef: MatDialogRef<NewProdUploaderComponent>) { }
 
   ngOnInit(): void {
   }
@@ -30,7 +31,7 @@ export class NewProdUploaderComponent implements OnInit {
         this.http.post(this.access.getBackURL() + 'produit', p).subscribe({
           next: (res) => {
             this.id = res;
-            this.http.get(this.access.getBackURL() + 'lier/65/' + this.id.toString()).subscribe();
+            this.http.get(this.access.getBackURL() + 'lier/' + this.producteurService.producteur.id.toString() + '/' + this.id.toString()).subscribe();
             this.dialogRef.close();
           },
           error: (err) => {
