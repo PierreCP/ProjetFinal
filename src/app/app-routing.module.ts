@@ -79,13 +79,10 @@ import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.com
 import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
-<<<<<<< HEAD
 import { GestionCommandesComponent } from "./gestion-commandes/gestion-commandes.component";
 import { HistoriqueCommandeComponent } from "./historique-commande/historique-commande.component";
 import { NouvellesCommandesComponent } from "./nouvelles-commandes/nouvelles-commandes.component";
-=======
 import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
->>>>>>> 92146205db138f24c1f75c1ca89fc2683aa0b9f7
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -180,13 +177,10 @@ const routes: Routes = [
   {component: ConsVinsChampagnesComponent, path: 'cons-champagnes'},
   {component: ConsVinsRosesComponent, path: 'cons-roses'},
   {component: ConsVinsRougesComponent, path: 'cons-rouges'},
-<<<<<<< HEAD
   {component: GestionCommandesComponent, path: 'gestion-commandes'},
   {component: HistoriqueCommandeComponent, path: 'gestion-commandes'},
   {component: NouvellesCommandesComponent, path: 'gestion-commandes'},
-=======
   {component: ConsFruitsComponent, path: 'cons-fruits'}
->>>>>>> 92146205db138f24c1f75c1ca89fc2683aa0b9f7
 
 
 ];
