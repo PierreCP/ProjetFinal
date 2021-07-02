@@ -91,8 +91,7 @@ const routes: Routes = [
   { component: ImageGestionComponent, path: 'image' },
   { component: NewProdGestionComponent, path: 'new-prod'},
   { component: NewProdUploaderComponent, path: 'new-prod-uploader'},
-  
-  { component: MenuAdminComponent, path: 'menu-admin'},
+
   { component: AdminActivationComponent, path: 'admin-activation'},
   { component: MenuProducteurComponent, path: 'menu-prod' },
   { component: EtalComponent, path: 'etal', children: [
@@ -115,7 +114,6 @@ const routes: Routes = [
   { component: Test123Component, path: 'test123' },
   {component: TestComponent, path: 'test'},
   { component: AccueilComponent, path: 'accueil' },
-  { component: MenuConsommateurComponent, path: 'menu-cons' },
   { component: MenuAdminComponent, path: 'menu-admin' },
   { component: ProdFruitsComponent, path: 'prod-fruits' },
   {component: MurProducteurComponent, path: 'mur'},

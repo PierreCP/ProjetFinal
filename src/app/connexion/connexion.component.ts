@@ -30,10 +30,10 @@ export class ConnexionComponent implements OnInit {
             this.route.navigateByUrl('menu-admin');
           }
           else if (this.Type == "Producteur") {
-            this.route.navigateByUrl('nav-prod');
+            this.route.navigateByUrl('menu-prod');
           }
           else if (this.Type == "Consommateur") {
-            this.route.navigateByUrl('nav-cons');
+            this.route.navigateByUrl('menu-cons');
           }
         }
       });
