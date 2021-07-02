@@ -104,6 +104,7 @@ import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.com
 import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
+import { ProduitDuMoisComponent } from './produit-du-mois/produit-du-mois.component';
 
 
 
@@ -198,6 +199,7 @@ import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.com
     NewProdGestionComponent,
     NewProdUploaderComponent,
     AdminActivationComponent,
+    ProduitDuMoisComponent,
   ],
   imports: [
     BrowserModule,
@@ -230,7 +232,8 @@ import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.com
   entryComponents: [
     NouveauMessageComponent,
     BoiteEnvoiComponent,
-    BoiteReceptionComponent
+    BoiteReceptionComponent,
+    NewProdUploaderComponent
   ],
   bootstrap: [AppComponent]
 })

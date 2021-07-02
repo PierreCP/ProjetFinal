@@ -1,28 +1,30 @@
-
 <div class="center container myFont-head mt-5">
-    <h1>;<strong>{{producteur.person.prenom}} {{producteur.person.nom}}</strong></h1>
+    <h1><strong>{{producteur.person.prenom}} {{producteur.person.nom}}</strong></h1>
     <h2><i>{{producteur.nomMagasin}}</i></h2>
     <hr>
 </div>
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-4" >
+        <div class="col-sm-4">
             <div class="card card-shadow">
                 <div class="card-header  text-center"><strong>Mes Infos</strong></div>
                 <div class="card-body">
-                    <div class="mr-2" >
+                    <div class="mr-2">
                         <br>
                         <p><strong>{{producteur.person.prenom}} {{producteur.person.nom}}</strong></p>
                         <p><strong>{{producteur.nomMagasin}}</strong></p>
-                        <p><strong>{{producteur.person.adresse.numeroRue}} {{producteur.person.adresse.nomRue}}</strong></p>
-                        <p><strong>{{producteur.person.adresse.codePostal}} {{producteur.person.adresse.nomCommune}}</strong></p>
+                        <p><strong>{{producteur.person.adresse.numeroRue}} {{producteur.person.adresse.nomRue}}</strong>
+                        </p>
+                        <p><strong>{{producteur.person.adresse.codePostal}}
+                                {{producteur.person.adresse.nomCommune}}</strong></p>
                     </div>
                 </div>
                 <hr>
-                <button class="btn btn-block btn-secondary">Modifier mon profil</button>
+                <button class="btn btn-block btn-secondary" *ngIf='Type == "Producteur"'>Modifier mon profil</button>
             </div>
             <br>
+            <!--
             <div class="card card-shadow text-center">
                 <div class="card-header"><strong>Mes Photos</strong></div>
                 <div class="card-body container row">
@@ -37,23 +39,29 @@
                 </div>
                 <br>
             </div>
-            
-            <div class="card card-shadow text-center">
+            -->
+
+            <div class="card card-shadow text-center" *ngIf='Type == "Consommateur"'>
                 <div class="card-header"><strong>Contacter</strong></div>
                 <div class="card-body"></div>
-                <div class="container row">
-                    <a class="nav-item nav-link" (click)='contact()' > <i style="color: green" class="fa fa-envelope fa-5x"></i></a>
+                <div class="container row text-align:center">
+                    <a class="nav-item nav-link" (click)='contact()'> <i style="color: green"
+                            class="fa fa-envelope fa-5x"></i></a>
                 </div>
                 <br>
+            </div>
+            <br>
+            <div class="card card-shadow text-center">
+                <button class="btn btn-block btn-secondary" (click)='route.navigateByUrl("liste-prod")'>Retour</button>
             </div>
         </div>
         <div class="col-sm-8">
             <div class="col-sm-1"></div>
-             
+            <!--
             <div class="card card-shadow">
                 <div class="card-header">
                     <label class="col-sm-8 text-center"><strong>Le Produit du mois</strong></label>
-                    <button class="btn btn-outline-secondary col-sm-4">Ajouter/Modifier</button>
+                    <button class="btn btn-outline-secondary col-sm-4" *ngIf='Type == "Producteur"'>Ajouter/Modifier</button>
                 </div>
                 <div class="card-body text-center">
                     <img alt="" src="assets/img/camembert.jpg" width="50%">
@@ -61,25 +69,25 @@
                     <label>Camembert de Normandie AOP</label>
                 </div>
             </div>
-            <br>
+            -->
             <div class="card card-shadow">
                 <div class="card-header text-center">
                     <label><strong>Liste des produits</strong></label>
                 </div>
                 <div class="card">
                     <div class="card-body row" *ngFor='let p of produit'>
-                        <div class="col-sm-5 mt-3">
+                        <div class="col-sm-5 mt-3" *ngIf='mediaExist(p.image)'>
                             <!-- ici il faudra mettre l'image avec un changeFormat et le lien qui va bien jusqu'à la bd -->
                             <img alt="pas d'image disponible" [src]="changeFormatMedia(p.image)" width="100%">
                             <br>
                         </div>
-                        <div class="card col-sm-7" >
+                        <div class="card col-sm-7">
                             <div class="card-header text-center">
                                 <label>{{p.nom}}</label>
                             </div>
                             <div class="card-body">
                                 <p><strong>Description : </strong>{{p.description}}</p>
-                                <p><strong>Catégorie : </strong> {{p.sousCategorie.nom}} </p> <!-- {{p.sousCategorie.nom}} -->
+                                <p><strong>Catégorie : </strong> {{p.sousCategorie.nom}} </p>
                                 <p><strong>Quantité disponible : </strong> {{p.quantite}} </p>
                                 <p><strong>Prix : </strong> {{p.prix}} €</p>
                             </div>
@@ -87,13 +95,14 @@
                         </div>
                     </div>
                     <!--ici on appel le createur de new products -->
-                    <div *ngIf='mediaExist(producteur)'>
-                        <app-new-prod-gestion></app-new-prod-gestion>
+                    <div *ngIf='Type == "Producteur"'>
+                        <button class="btn btn-block btn-secondary" *ngIf='Type == "Producteur"'
+                            (click)='nouveauProduit()'>Ajouter un Produit</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
     <br><br><br>
 </div>
