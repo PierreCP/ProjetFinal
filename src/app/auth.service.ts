@@ -11,6 +11,7 @@ export class AuthService {
 
   user: any;
   rec: any;
+  prod: any;
   MsgErr = '';
   liste: any;
 
@@ -25,6 +26,10 @@ export class AuthService {
     localStorage.setItem('recConnect', JSON.stringify(u));
   }
 
+  setProdInLocalStorage(u: any): void {
+    localStorage.setItem('prodConnect', JSON.stringify(u));
+  }
+
   getUserInLocalStorage(): any {
     this.user = localStorage.getItem('userConnect');
     return JSON.parse(this.user);
@@ -33,6 +38,11 @@ export class AuthService {
   getRecInLocalStorage(): any {
     this.rec = localStorage.getItem('recConnect');
     return JSON.parse(this.rec);
+  }
+
+  getProdInLocalStorage(): any {
+    this.prod = localStorage.getItem('prodConnect');
+    return JSON.parse(this.prod);
   }
 
   verif(): void {

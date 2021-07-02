@@ -15,12 +15,13 @@ export class MurProducteurComponent implements OnInit {
   constructor(private http: HttpClient, private authService: AuthService, private producteurService : ProducteurService) { }
 
   ngOnInit(): void {
-    this.getProductFromProducteur();
-    this.producteur = this.producteurService.producteur;
+    this.producteur = this.authService.getProdInLocalStorage();
+    this.getProductFromProducteur();    
+    console.log(this.producteur);
   }
 
   getProductFromProducteur(): void{
-    this.http.get('http://localhost:8082/producteur/produit/' + this.producteurService.producteur.id).subscribe({
+    this.http.get('http://localhost:8082/producteur/produit/' + this.producteur.id).subscribe({
       next: (data)=> (this.produit = data),
       error: (err)=> (console.log(err))
     });
