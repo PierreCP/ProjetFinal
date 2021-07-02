@@ -19,6 +19,8 @@
 
 /* old style*/
 
+
+
 .general-background{
     background-image: url('assets/img/background accueil3.png'); 
     height: 100%;
@@ -73,6 +75,8 @@
 .menu-button{
     border: none;
     background-color: inherit;
+    box-shadow: none;
+
 }
 
 .button-transparent {
@@ -124,27 +128,32 @@
   }
 
 .myFont-head{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: xx-large;
-    color: rgb(40, 153, 40)
+    color: rgb(40, 153, 40);
+    background-color: inherit;
+    
   }
 
 .myFont-title{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: larger;
     color: rgb(40, 153, 40);
+    background-color: inherit;
   }
 
   .myFont-subtitle{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: large;
-    color: rgb(40, 153, 40)
+    color: rgb(40, 153, 40);
+    background-color: inherit;
   }
 
   .myFont-text{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: medium;
-    color: rgb(40, 153, 40)
+    color: rgb(40, 153, 40);
+    background-color: inherit;
   }
 
 
@@ -206,9 +215,7 @@
     margin-left: 10px;
 }
 
-.route-active{
-    color: green !important;
-}
+
 
 .mt-20 {
     margin-top: 20px;
@@ -242,7 +249,6 @@
 
 /* Styles côtés producteur */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 * {
     padding: 0;
@@ -267,20 +273,11 @@ body {
     transform: scale(1.03)
 }
 
-a:hover {
-    text-decoration: none
-}
 
 
 
-p.text-muted {
-    margin: 0;
-    font-size: 0.9rem
-}
 
-b {
-    font-size: 1.12rem
-}
+
 
 .rounded-circle {
     width: 60px;
