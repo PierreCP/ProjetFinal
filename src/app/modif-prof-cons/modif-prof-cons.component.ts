@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
+import { DialogExampleComponent } from '../dialog-example/dialog-example.component';
 
 @Component({
   selector: 'app-modif-prof-cons',
@@ -14,7 +16,7 @@ export class ModifProfConsComponent implements OnInit {
   
   user: any;
   type ='type';
-  constructor(private authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService) { }
+  constructor(private authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUserInLocalStorage();
@@ -27,7 +29,7 @@ export class ModifProfConsComponent implements OnInit {
       next: (data)=> {
         this.user=data,
         this.authService.setUserInLocalStorage(this.user),
-        this.route.navigateByUrl('modifier-cons')
+        this.dialog.open(DialogExampleComponent);
       },
       error: (err)=> (console.log(err))
     })

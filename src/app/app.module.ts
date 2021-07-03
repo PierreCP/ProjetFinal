@@ -108,6 +108,7 @@ import { GestionCommandesComponent } from './gestion-commandes/gestion-commandes
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-commandes.component';
 import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
+import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 
 
 
@@ -206,6 +207,7 @@ import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.compon
     HistoriqueCommandeComponent,
     NouvellesCommandesComponent,
     ModifProfConsComponent,
+    DialogExampleComponent,
   ],
   imports: [
     BrowserModule,
@@ -238,7 +240,8 @@ import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.compon
   entryComponents: [
     NouveauMessageComponent,
     BoiteEnvoiComponent,
-    BoiteReceptionComponent
+    BoiteReceptionComponent,
+    DialogExampleComponent
   ],
   bootstrap: [AppComponent]
 })
