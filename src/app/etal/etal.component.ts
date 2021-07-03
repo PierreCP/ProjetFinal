@@ -51,7 +51,7 @@ export class EtalComponent implements OnInit {
   }
 
   retourMenuProd(): void {
-    this.route.navigateByUrl('nav-prod');
+    this.route.navigateByUrl('menu-prod');
   }
 
 

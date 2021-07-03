@@ -14,7 +14,7 @@ export class DialogExampleComponent implements OnInit {
   }
 
   goNavCons(): void{
-    this.route.navigateByUrl('nav-cons')
+    this.route.navigateByUrl('menu-cons')
   }
 
 }
