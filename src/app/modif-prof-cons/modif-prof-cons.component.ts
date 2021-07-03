@@ -16,7 +16,7 @@ export class ModifProfConsComponent implements OnInit {
   
   user: any;
   type ='type';
-  constructor(private authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
+  constructor(public authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.user = this.authService.getUserInLocalStorage();
@@ -35,8 +35,5 @@ export class ModifProfConsComponent implements OnInit {
     })
   }
 
-  RedirectionNav(): void{
-    this.route.navigateByUrl('nav-cons')
-  }
 
 }

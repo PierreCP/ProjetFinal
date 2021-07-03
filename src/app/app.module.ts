@@ -104,11 +104,13 @@ import { ConsVinsBlancsComponent } from './cons-vins-blancs/cons-vins-blancs.com
 import { ConsVinsChampagnesComponent } from './cons-vins-champagnes/cons-vins-champagnes.component';
 import { ConsVinsRosesComponent } from './cons-vins-roses/cons-vins-roses.component';
 import { ConsVinsRougesComponent } from './cons-vins-rouges/cons-vins-rouges.component';
+import { ProduitDuMoisComponent } from './produit-du-mois/produit-du-mois.component';
 import { GestionCommandesComponent } from './gestion-commandes/gestion-commandes.component';
 import { HistoriqueCommandeComponent } from './historique-commande/historique-commande.component';
 import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-commandes.component';
 import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.component';
 
 
 
@@ -203,11 +205,13 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     NewProdGestionComponent,
     NewProdUploaderComponent,
     AdminActivationComponent,
+    ProduitDuMoisComponent,
     GestionCommandesComponent,
     HistoriqueCommandeComponent,
     NouvellesCommandesComponent,
     ModifProfConsComponent,
     DialogExampleComponent,
+    MessagerieConsComponent,
   ],
   imports: [
     BrowserModule,
@@ -241,7 +245,8 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     NouveauMessageComponent,
     BoiteEnvoiComponent,
     BoiteReceptionComponent,
-    DialogExampleComponent
+    DialogExampleComponent,
+    NewProdUploaderComponent
   ],
   bootstrap: [AppComponent]
 })

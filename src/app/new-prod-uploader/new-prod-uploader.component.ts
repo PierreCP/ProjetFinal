@@ -17,22 +17,30 @@ export class NewProdUploaderComponent implements OnInit {
   produit: any;
   mediaUrl: any;
   id: any;
+  listeSousCategorie: any;
+  sousCat: any;
 
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private producteurService: ProducteurService, public dialogRef: MatDialogRef<NewProdUploaderComponent>) { }
 
   ngOnInit(): void {
+    this.http.get(this.access.getBackURL() + 'sousCategorie').subscribe({
+      next: (data) => {
+        this.listeSousCategorie = data;
+      }
+    })
   }
 
   uploadPdt(p: any): any {
     p.image = window.btoa(this.mediaUrl);
-    this.http.get(this.access.getBackURL() + 'SousCategorie/' + p.sousCategorie.toString()).subscribe({
+    this.http.get(this.access.getBackURL() + 'SousCategorie/' + this.sousCat).subscribe({
       next: (data) => {
         p.sousCategorie = data;
         this.http.post(this.access.getBackURL() + 'produit', p).subscribe({
-          next: (res) => {
-            this.id = res;
-            this.http.get(this.access.getBackURL() + 'lier/' + this.producteurService.producteur.id.toString() + '/' + this.id.toString()).subscribe();
-            this.dialogRef.close();
+          next: (data) => {
+            this.produit = data
+            this.http.get(this.access.getBackURL() + 'person/' + this.authService.getProdInLocalStorage().id + '/produit/' + this.produit.nom + '/' + this.produit.quantite + '/' + this.produit.prix + '/' + this.produit.description).subscribe();
+            this.dialogRef.close();           
+            this.route.navigateByUrl('mur');
           },
           error: (err) => {
             console.log(err);
@@ -42,6 +50,11 @@ export class NewProdUploaderComponent implements OnInit {
       }
     });
 
+  }
+
+  changeType (event: any) {
+    this.sousCat = event.value;
+    console.log(this.sousCat);
   }
 
   onFileChanged(event: any): any {

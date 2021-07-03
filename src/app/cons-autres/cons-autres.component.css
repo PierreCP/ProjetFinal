@@ -33,7 +33,7 @@ a:hover {
 .fa:hover{
     transform: scale(1.15)
 }
-img {
+.img {
     object-fit: contain;
     width: 35px;
     height: 35px

@@ -1,3 +1,64 @@
+<div class="my-font-family" *ngIf='authService.isConnected()'>
+    <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+      <div class="container-fluid">
+        <div class="d-flex flex-row">
+          <button mat-icon-button class="mr-5 menu-button" style="cursor: pointer;" (click)='authService.toggleSidenav()'>
+            <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+          </button>
+  
+  
+        </div>
+        <div><a style="cursor: pointer;" (click)='authService.goMenuProd()' class="navbar-brand margin-brand-img"><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a>
+        </div>
+  
+  
+        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+          <button class="nav-item nav-link button-transparent" style="cursor: pointer;" (click)='authService.deconnexion()'>
+            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.goMessagerie()'>
+            <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.fonction()'>
+            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <div class="">
+    <mat-drawer-container class="drawer-container" hasBackdrop="true">
+      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+        <div class="container pt-3 myFont-title">
+  
+          <h1 class="myFont-head mb-5">Menu principal</h1>
+          <div class="container"> <!-- redirection vers mur à refaire -->
+            <button mat-raised-button (clic)='authService.goMurProd()' class="btn myFont-title">Mon mur</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
+          </div>
+          <div class="container"> <!-- pas de router pour modif profil -->
+            <button mat-raised-button (click)='authService.fonction()' class="btn myFont-title">Modifier mon profil</button>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Ma messagerie</button>
+          </div>
+          <div class="container"> <!-- pas de router -->
+            <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+            <button mat-raised-button  class="btn myFont-title">Nous contacter</button></a>
+          </div>
+          <div class="container">
+            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+          </div>
+        </div>
+  
+  
+      </mat-drawer>
+      <mat-drawer-content>
+  
+
 <div class="container">
     <form #fAjoutProduit="ngForm" (ngSubmit)='ajoutProduit(fAjoutProduit.value)'>
         <div class="form-group">
@@ -13,4 +74,10 @@
 
         <button type="submit" class="btn btn-block btn-primary ">Valider</button>
     </form>
+</div>
+
+</mat-drawer-content>
+
+</mat-drawer-container>
+
 </div>

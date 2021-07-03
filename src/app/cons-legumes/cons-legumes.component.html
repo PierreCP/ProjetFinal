@@ -4,8 +4,69 @@
 </head>
 
 <body class="bg-light">
-
-
+    <div *ngIf='authService.isConnected()'>
+        <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+          <div class="container-fluid">
+            <div class="d-flex flex-row">
+              <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
+                <mat-icon style="font-size: 40px;  color: green;" >menu</mat-icon>
+              </button>
+      
+      
+            </div>
+            <div><a class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+      
+      
+            <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+              <a class="nav-item nav-link" (click)='authService.deconnexion()'>
+                <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+              </a>
+              <a class="nav-item nav-link mr-3">
+                <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble</mat-icon>
+              </a>
+              <a class="nav-item nav-link mr-3">
+                <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
+              </a>
+              <a class="nav-item nav-link mr-3">
+                <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <div class="">
+        <mat-drawer-container class="drawer-container" hasBackdrop="true">
+          <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+            <div class="container pt-3 myFont-title">
+      
+              <h1 class="myFont-head mb-5">Menu principal</h1>
+              <div class="">
+                <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
+                  producteurs</button>
+              </div>
+          
+              <div class="container">
+                <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
+              </div>
+              <div class="container">
+                <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le profil</button>
+              </div>
+              <div class="container">
+                <button mat-raised-button (click)='authService.goMessagerieCons()' class="btn myFont-title">Messagerie</button>
+              </div>
+              <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+                <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
+              </div>
+              <div class="container">
+                <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+              </div>
+            </div>
+      
+      
+          </mat-drawer>
+          <mat-drawer-content>
+      
     <div class="container-fluid bg-light rounded">
         <div class="h4 font-weight-bold text-center py-3">
             <p class="mt-120" style="color: rgb(51, 172, 3)">
@@ -21,7 +82,7 @@
                         <div class="d-flex align-items-center">
                             <div
                                 class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                                <img src="/assets/img/legumes racines.png" alt="">
+                                <img class="img"  src="/assets/img/legumes racines.png" alt="">
                             </div>
                             <div class="d-flex flex-column"> <b>Légumes racines, tubercules et tiges</b>
                                 <p class="text-muted"></p>
@@ -35,7 +96,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                <img src="/assets/img/choux.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/choux.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Choux</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -48,7 +109,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="/assets/img/courges.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/courges.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Courges</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -62,7 +123,7 @@
                         <div class="d-flex align-items-center">
                             <div
                                 class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
-                                <img src="/assets/img/champignons.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/champignons.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Champignons</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -75,7 +136,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                <img src="/assets/img/aromatiques.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/aromatiques.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Aromatiques fraîches</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -88,7 +149,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="/assets/img/legumes fruits.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/legumes fruits.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Légumes fruits</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -101,7 +162,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="/assets/img/salades.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/salades.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Salades</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -114,7 +175,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="/assets/img/legumes feuilles.png" alt=""> </div>
+                                <img class="img"  src="/assets/img/legumes feuilles.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Légumes feuilles</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -127,7 +188,7 @@
                     <div class="box bg-white">
                         <div class="d-flex align-items-center">
                             <div class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                <img src="clegumes secs.png" alt=""> </div>
+                                <img class="img"  src="clegumes secs.png" alt=""> </div>
                             <div class="d-flex flex-column"> <b>Haricots, pois, légumes secs, graines germées</b>
                                 <p class="text-muted"></p>
                             </div>
@@ -151,5 +212,10 @@
 
         </div>
     </div>
+</mat-drawer-content>
+</mat-drawer-container>
+
+</div>
+
 
 </body>

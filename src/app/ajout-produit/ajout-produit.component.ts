@@ -12,7 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AjoutProduitComponent implements OnInit {
 
-  constructor(private http: HttpClient, private authService: AuthService, private route : Router, private dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+  constructor(private http: HttpClient, public authService: AuthService, private route : Router, private dialogRef: MatDialogRef<AjoutProduitComponent>) { }
 
   ngOnInit(): void {
   }
@@ -32,5 +32,6 @@ export class AjoutProduitComponent implements OnInit {
         console.log(err)}
     });
   }
+
 
 }

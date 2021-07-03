@@ -34,7 +34,7 @@
 
         <h1 class="myFont-head mb-5">Menu principal</h1>
         <div class="container"> <!-- redirection vers mur à refaire -->
-          <button mat-raised-button (clic)='authService.goRechercheProd()' class="btn myFont-title">Mon mur</button>
+          <button mat-raised-button (click)='authService.goMurProd()' class="btn myFont-title">Mon mur</button>
         </div>
         <div class="container">
           <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
@@ -52,46 +52,13 @@
         <div class="container">
           <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
         </div>
-        <div class="container">
-          <button mat-raised-button (click)='affichageProd.toggleMenu()' class="btn myFont-title">Test</button>
-        </div>
+
       </div>
 
 
     </mat-drawer>
     <mat-drawer-content>
-      <app-menu-producteur></app-menu-producteur>
-      <div class="modal" id="contacterAdmin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title text-center" id="exampleModalLabel"><font size="5" style="color: green;">Nous contacter</font></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form #fMessageAdminCons="ngForm">
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Objet :</label>
-                  <input type="text" class='form-control' ngModel required name="objet" placeholder="Objet"/>
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Message :</label>
-                  <textarea class="form-control" ngModel required name="message" rows="5" placeholder="Votre message"></textarea>
-                </div>
-                <div class="modal-footer">
-                  <button (click)='this.authService.messageAdmin(fMessageAdminCons.value)' type="submit"
-                    class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                    data-dismiss="modal">Envoyer</button>
-                  <button type="button" class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                    data-dismiss="modal">Retour</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </mat-drawer-content>
 
   </mat-drawer-container>

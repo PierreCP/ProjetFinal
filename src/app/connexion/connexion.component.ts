@@ -27,13 +27,13 @@ export class ConnexionComponent implements OnInit {
           this.Type = data;
           console.log(this.Type);
           if (this.Type == "Admin") {
-            this.route.navigateByUrl('menu-admin');
+            this.route.navigateByUrl('nav-admin');
           }
           else if (this.Type == "Producteur") {
-            this.route.navigateByUrl('menu-prod');
+            this.route.navigateByUrl('nav-prod');
           }
           else if (this.Type == "Consommateur") {
-            this.route.navigateByUrl('menu-cons');
+            this.route.navigateByUrl('nav-cons');
           }
         }
       });
@@ -51,15 +51,14 @@ export class ConnexionComponent implements OnInit {
               this.Type = data;
               console.log(this.Type);
               if (this.Type == "Admin") {
-                this.route.navigateByUrl('nav-admin');
+                this.route.navigateByUrl('menu-admin');
               }
               else if (this.Type == "Producteur") {
-                this.route.navigateByUrl('nav-prod');
+                this.route.navigateByUrl('menu-prod');
               }
               else if (this.Type == "Consommateur") {
-                this.route.navigateByUrl('menu-cons');
                 this.getIdPanier();
-                this.route.navigateByUrl('nav-cons');
+                this.route.navigateByUrl('menu-cons');
               }
             }
           });

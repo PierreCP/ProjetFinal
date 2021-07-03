@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
+import { ProducteurService } from './producteur.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +11,13 @@ import { NouveauMessageComponent } from './nouveau-message/nouveau-message.compo
 export class AuthService {
   user: any;
   rec: any;
+  prod: any;
   MsgErr = '';
   liste: any;
   opened: boolean = false;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService) { }
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -23,6 +25,10 @@ export class AuthService {
 
   setRecInLocalStorage(u: any): void {
     localStorage.setItem('recConnect', JSON.stringify(u));
+  }
+
+  setProdInLocalStorage(u: any): void {
+    localStorage.setItem('prodConnect', JSON.stringify(u));
   }
 
   getUserInLocalStorage(): any {
@@ -33,6 +39,11 @@ export class AuthService {
   getRecInLocalStorage(): any {
     this.rec = localStorage.getItem('recConnect');
     return JSON.parse(this.rec);
+  }
+
+  getProdInLocalStorage(): any {
+    this.prod = localStorage.getItem('prodConnect');
+    return JSON.parse(this.prod);
   }
 
   verif(): void {
@@ -63,6 +74,11 @@ export class AuthService {
     this.route.navigateByUrl('messagerie')
   }
 
+  goMessagerieCons(): void {
+    this.route.navigateByUrl('messagerie-cons')
+  }
+
+
   goEtal(): void {
     this.route.navigateByUrl('etal')
   }
@@ -70,10 +86,21 @@ export class AuthService {
   goMenuProd(): void {
     this.route.navigateByUrl('menu-prod')
   }
+
+goMurProd():void {
+  this.route.navigateByUrl('mur-prod')
+}
+
   RedirectionPanier(): void {
     this.route.navigateByUrl('panier')
   }
 
+  redirectionFicheProducteur(prdt: any): any{
+    this.producteurService.producteur = prdt;
+    this.route.navigateByUrl('mur');
+    this.setRecInLocalStorage(prdt.person);
+    this.setProdInLocalStorage(prdt);
+  }
 
 
   //                              ]
@@ -111,6 +138,14 @@ export class AuthService {
   }
   goRechercheProduit(): any {
     this.route.navigateByUrl('etal-cons');
+  }
+
+  goModifCons(): void{
+    this.route.navigateByUrl('modifier-cons')
+  }
+
+  goPanier(): void{
+    this.route.navigateByUrl('panier')
   }
 
   ajoutProduit(m: any): void {
