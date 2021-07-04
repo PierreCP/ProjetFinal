@@ -85,6 +85,7 @@ import { NouvellesCommandesComponent } from "./nouvelles-commandes/nouvelles-com
 import { ConsFruitsComponent } from './cons-fruits/cons-fruits.component';
 import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
 import { MessagerieConsComponent } from "./messagerie-cons/messagerie-cons.component";
+import { ModifProfProdComponent } from './modif-prof-prod/modif-prof-prod.component';
 
 const routes: Routes = [
   { component: ConnexionComponent, path: 'login' },
@@ -183,8 +184,8 @@ const routes: Routes = [
   {component: ConsFruitsComponent, path: 'cons-fruits'},
   {component: ModifProfConsComponent, path: 'modifier-cons'},
   {component: MurProducteurComponent, path: 'mur-prod'},
-  {component: MessagerieConsComponent, path: 'messagerie-cons'}
-
+  {component: MessagerieConsComponent, path: 'messagerie-cons'},
+  {component: ModifProfProdComponent, path: 'modifier-prod'}
 
 ];
 

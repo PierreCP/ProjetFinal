@@ -13,8 +13,8 @@ export class DialogExampleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goNavCons(): void{
-    this.route.navigateByUrl('menu-cons')
+  goNavProd(): void{
+    this.route.navigateByUrl('menu-prod')
   }
 
 }

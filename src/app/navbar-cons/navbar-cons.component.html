@@ -12,18 +12,18 @@
   
   
         <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
+          <button class="nav-item nav-link button-transparent" style="cursor: pointer;" (click)='authService.deconnexion()'>
             <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
             <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
             <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </a>
+          </button>
+          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+            <mat-icon style="font-size: 40px; color: green;" (click)='goModifCons()'> face</mat-icon>
+          </button>
         </div>
       </div>
     </nav>

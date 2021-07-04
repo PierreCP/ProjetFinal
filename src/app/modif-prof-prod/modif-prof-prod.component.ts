@@ -4,17 +4,15 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AccessService } from '../access.service';
 import { AuthService } from '../auth.service';
-import { DialogModifConsComponent } from '../dialog-modif-cons/dialog-modif-cons.component';
-
+import { DialogExampleComponent } from '../dialog-example/dialog-example.component';
 
 @Component({
-  selector: 'app-modif-prof-cons',
-  templateUrl: './modif-prof-cons.component.html',
-  styleUrls: ['./modif-prof-cons.component.css']
+  selector: 'app-modif-prof-prod',
+  templateUrl: './modif-prof-prod.component.html',
+  styleUrls: ['./modif-prof-prod.component.css']
 })
-export class ModifProfConsComponent implements OnInit {
+export class ModifProfProdComponent implements OnInit {
 
-  
   user: any;
   type ='type';
   constructor(public authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
@@ -30,11 +28,10 @@ export class ModifProfConsComponent implements OnInit {
       next: (data)=> {
         this.user=data,
         this.authService.setUserInLocalStorage(this.user),
-        this.dialog.open(DialogModifConsComponent);
+        this.dialog.open(DialogExampleComponent);
       },
       error: (err)=> (console.log(err))
     })
   }
-
 
 }

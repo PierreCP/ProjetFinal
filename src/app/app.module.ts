@@ -112,6 +112,8 @@ import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.compon
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.component';
 import { ImageChangerComponent } from './image-changer/image-changer.component';
+import { ModifProfProdComponent } from './modif-prof-prod/modif-prof-prod.component';
+import { DialogModifConsComponent } from './dialog-modif-cons/dialog-modif-cons.component';
 
 
 
@@ -214,6 +216,8 @@ import { ImageChangerComponent } from './image-changer/image-changer.component';
     DialogExampleComponent,
     MessagerieConsComponent,
     ImageChangerComponent,
+    ModifProfProdComponent,
+    DialogModifConsComponent,
   ],
   imports: [
     BrowserModule,
@@ -248,7 +252,8 @@ import { ImageChangerComponent } from './image-changer/image-changer.component';
     BoiteEnvoiComponent,
     BoiteReceptionComponent,
     DialogExampleComponent,
-    NewProdUploaderComponent
+    NewProdUploaderComponent,
+    DialogModifConsComponent
   ],
   bootstrap: [AppComponent]
 })

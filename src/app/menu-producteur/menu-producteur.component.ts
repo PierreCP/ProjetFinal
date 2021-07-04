@@ -37,5 +37,9 @@ export class MenuProducteurComponent implements OnInit {
   Text(Message: any):any{
     this.Selection= Message;
   }
+
+  goModifProd(): void{
+    this.route.navigateByUrl('modifier-prod')
+  }
   
 }
