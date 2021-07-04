@@ -73,5 +73,4 @@ export class PanierComponent implements OnInit {
   RedirectionProduit(): void{
     this.route.navigateByUrl('etal-cons');
   }
-
 }
