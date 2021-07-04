@@ -58,6 +58,9 @@
             <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
           </div>
           <div class="container">
+            <button mat-raised-button (click)='authService.historiqueCommandes()' class="btn myFont-title">Historique des commandes</button>
+          </div>
+          <div class="container">
             <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
           </div>
         </div>

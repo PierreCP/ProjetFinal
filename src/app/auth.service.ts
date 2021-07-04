@@ -86,32 +86,43 @@ export class AuthService {
   }
 
   goMessagerie(): void {
-    this.route.navigateByUrl('messagerie')
+    this.route.navigateByUrl('messagerie');
+    this.opened = false;
   }
 
   goModifProd(): void{
     this.route.navigateByUrl('modifier-prod');
+    this.opened = false;
   }
 
   goMessagerieCons(): void {
-    this.route.navigateByUrl('messagerie-cons')
+    this.route.navigateByUrl('messagerie-cons');
+    this.opened = false;
   }
 
+  historiqueCommandes(){
+    this.route.navigateByUrl('commandes-perso');
+    this.opened = false;
+  }
 
   goEtal(): void {
-    this.route.navigateByUrl('etal')
+    this.route.navigateByUrl('etal');
+    this.opened = false;
   }
 
   goMenuProd(): void {
-    this.route.navigateByUrl('menu-prod')
+    this.route.navigateByUrl('menu-prod');
+    this.opened = false;
   }
 
   goMurProd():void {
-  this.route.navigateByUrl('mur-prod')
+  this.route.navigateByUrl('mur-prod');
+  this.opened = false;
 }
 
   RedirectionPanier(): void {
-    this.route.navigateByUrl('panier')
+    this.route.navigateByUrl('panier');
+    this.opened = false;
   }
 
   redirectionFicheProducteur(prdt: any): any{
@@ -119,6 +130,8 @@ export class AuthService {
     this.route.navigateByUrl('mur');
     this.setRecInLocalStorage(prdt.person);
     this.setProdInLocalStorage(prdt);
+    
+    this.opened = false;
   }
 
 
@@ -134,10 +147,13 @@ export class AuthService {
 
   goBack(): void {
     this.route.navigateByUrl('login');
+    
+    this.opened = false;
   }
 
   messagerie(): void {
-    this.route.navigateByUrl('messagerie')
+    this.route.navigateByUrl('messagerie');
+    this.opened = false;
   }
 
   nouveauMessage(): any {
@@ -146,25 +162,31 @@ export class AuthService {
 
   goHomeCons(): any {
     this.route.navigateByUrl('menu-cons');
+    this.opened = false;
   }
 
   goHomeProd(): any {
     this.route.navigateByUrl('menu-prod');
+    this.opened = false;
   }
 
   goRechercheProd(): any {
     this.route.navigateByUrl('liste-prod');
+    this.opened = false;
   }
   goRechercheProduit(): any {
     this.route.navigateByUrl('etal-cons');
+    this.opened = false;
   }
 
   goModifCons(): void{
-    this.route.navigateByUrl('modifier-cons')
+    this.route.navigateByUrl('modifier-cons');
+    this.opened = false;
   }
 
   goPanier(): void{
-    this.route.navigateByUrl('panier')
+    this.route.navigateByUrl('panier');
+    this.opened = false;
   }
 
   ajoutProduit(m: any): void {

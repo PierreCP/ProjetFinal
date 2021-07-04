@@ -114,6 +114,7 @@ import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.compo
 import { ImageChangerComponent } from './image-changer/image-changer.component';
 import { ModifProfProdComponent } from './modif-prof-prod/modif-prof-prod.component';
 import { DialogModifConsComponent } from './dialog-modif-cons/dialog-modif-cons.component';
+import { CommandesPersoComponent } from './commandes-perso/commandes-perso.component';
 
 
 
@@ -218,6 +219,7 @@ import { DialogModifConsComponent } from './dialog-modif-cons/dialog-modif-cons.
     ImageChangerComponent,
     ModifProfProdComponent,
     DialogModifConsComponent,
+    CommandesPersoComponent,
   ],
   imports: [
     BrowserModule,

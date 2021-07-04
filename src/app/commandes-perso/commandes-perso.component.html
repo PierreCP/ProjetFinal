@@ -1,9 +1,4 @@
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body class="bg-light">
-  <div *ngIf='authService.isConnected()'>
+<div *ngIf='authService.isConnected()'>
     <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
       <div class="container-fluid">
         <div class="d-flex flex-row">
@@ -60,6 +55,7 @@
           <div class="container">
             <button mat-raised-button (click)='authService.historiqueCommandes()' class="btn myFont-title">Historique des commandes</button>
           </div>
+  
           <div class="container">
             <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
           </div>
@@ -69,51 +65,44 @@
       </mat-drawer>
       <mat-drawer-content>
   
-    <div class="container-fluid bg-light rounded">
-        <div class="h4 font-weight-bold text-center py-3">
-            <p class="mt-120" style="color: rgb(51, 172, 3)">
-                <font size="7">Plantes aromatiques</font>
-            </p>
-        </div>
 
-        <br>
-        <br>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
-                <div class="box bg-white">
-                    <div class="d-flex align-items-center">
+<div class="container" style="width: 1200px;">
+    <h1 class="text-center container myFont-head"><b>Historique des commandes</b> </h1>
+    <table class="table table-bordered table-condensed">
+        <tbody>
+            <tr *ngFor="let c of listCommandes">
+                
+                <td style="width:20%">
+                    <p>{{'Date de la commande : '}}</p>
+                    <p>{{c.date}}</p>
+                </td>
+                <td style="width:80%">
+                    <div *ngFor="let p of c.contenuCommande">
+                        <td style="width:30%">                        <div class="mt-2" style="column-width: 500px;">
+                            <div *ngIf='mediaExist(p.image)'>
+                              <img [src]="changeFormatMedia(p.image)" alt="image non lisible" width="100%">
+                            </div>
+                            <div *ngIf='mediaExist(p.image) == false'>
+                              <img src="assets\img\no_image.png" alt="image non lisible" width="60%" style="margin-left: 35px;">
+                            </div>
+                          </div></td>
 
-                        <div class="d-flex flex-column"> <b>{{d.nom}}</b>
-                            <p hidden>Id : {{d.id}}</p>
-                            <p class="text-muted">Prix : {{d.prix}}</p>
-                            <p class="text-muted">Description : {{d.description}}</p>
-                        </div>
-                        <div Class="col-6 text-right">
-                            <a (click)='addProduitToPanier(d)'> <i style="color: rgb(51, 172, 3)"
-                                    class="fa fa-shopping-basket fa-2x"></i></a>
-                        </div>
+                        <td style="width:70%">
+                            <p><b>{{p.nom}}</b></p>
+                            <p>{{p.description}}</p>
+                            <p>{{'Quantité : ' + p.quantiteCons + '\t \t Prix : ' + p.prix * p.quantiteCons  + ' €'}}</p>
+                        </td>
+
+                        
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-sm-5"></div>
-            <div Class="col-2 text-center">
-                <a (click)='retourLegumesMenu()'> <i style="color: rgb(51, 172, 3)"
-                        class="fa fa-rotate-left fa-4x"></i></a>
-            </div>
-            <div class="col-5"></div>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-        </div>
-    </div>
 </mat-drawer-content>
 </mat-drawer-container>
 
 </div>
-
-</body>
