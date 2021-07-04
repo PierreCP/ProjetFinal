@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="my-font-family">
+      <form #image='ngForm' (ngSubmit)='uploadImage(image.value)'>
+        <div>
+            <button mat-icon-button type="button" class="btn btn-block" (click)="file.click()">
+                <mat-icon>add_photo_alternate</mat-icon>
+            </button>
+          </div>
+  
+          <input type="file" [hidden]='true' #file accept="image/*" required ngModel="" name="image" (change)='onFileChanged($event)'> 
+          <div class="text-center">
+            <img [src]="mediaUrl" alt="imgUpl" class="center" width="20%" *ngIf="mediaUrl">
+          </div>
+        <button type="submit" class="btn btn-primary btn-block">Upload</button>
+      </form>
+    </div>
+  </div>

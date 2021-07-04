@@ -12,6 +12,8 @@ export class AuthService {
   user: any;
   rec: any;
   prod: any;
+  idforblob: any;
+  produitforblob: any;
   MsgErr = '';
   liste: any;
   opened: boolean = false;
@@ -31,6 +33,14 @@ export class AuthService {
     localStorage.setItem('prodConnect', JSON.stringify(u));
   }
 
+  setIdForBlobInLocalStorage(i: any): any {
+    localStorage.setItem('inMemoryIdForBlob', i);
+  }
+
+  setProduitForBlobInLocalStorage(p: any): any {
+    localStorage.setItem("inMemoryProduit", JSON.stringify(p));
+  }
+
   getUserInLocalStorage(): any {
     this.user = localStorage.getItem('userConnect');
     return JSON.parse(this.user);
@@ -44,6 +54,16 @@ export class AuthService {
   getProdInLocalStorage(): any {
     this.prod = localStorage.getItem('prodConnect');
     return JSON.parse(this.prod);
+  }
+
+  getIdForBlobInLocalStorage(): any {
+    this.idforblob = localStorage.getItem('inMemoryIdForBlob');
+    return this.idforblob;
+  }
+
+  getProduitForBlobInLocalStorage(): any {
+    this.produitforblob = localStorage.getItem('inMemoryProduit');
+    return JSON.parse(this.produitforblob);
   }
 
   verif(): void {
@@ -87,7 +107,7 @@ export class AuthService {
     this.route.navigateByUrl('menu-prod')
   }
 
-goMurProd():void {
+  goMurProd():void {
   this.route.navigateByUrl('mur-prod')
 }
 

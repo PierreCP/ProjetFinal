@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 import { AccessService } from '../access.service';
 import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
+import { ImageChangerComponent } from '../image-changer/image-changer.component';
 import { NewProdUploaderComponent } from '../new-prod-uploader/new-prod-uploader.component';
 import { ProducteurService } from '../producteur.service';
 
@@ -60,7 +63,12 @@ export class MurProducteurComponent implements OnInit {
   }
 
   nouveauProduit(): any {
-    const reception = this.dialog.open(NewProdUploaderComponent)
+    const reception = this.dialog.open(NewProdUploaderComponent);
+  }
+
+  addImage(p: any): any {
+    this.authService.setProduitForBlobInLocalStorage(p);
+    const myDialog = this.dialog.open(ImageChangerComponent);
   }
 
 }

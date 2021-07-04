@@ -111,6 +111,7 @@ import { NouvellesCommandesComponent } from './nouvelles-commandes/nouvelles-com
 import { ModifProfConsComponent } from './modif-prof-cons/modif-prof-cons.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
 import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.component';
+import { ImageChangerComponent } from './image-changer/image-changer.component';
 
 
 
@@ -212,6 +213,7 @@ import { MessagerieConsComponent } from './messagerie-cons/messagerie-cons.compo
     ModifProfConsComponent,
     DialogExampleComponent,
     MessagerieConsComponent,
+    ImageChangerComponent,
   ],
   imports: [
     BrowserModule,

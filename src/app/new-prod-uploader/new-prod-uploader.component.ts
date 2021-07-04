@@ -37,14 +37,15 @@ export class NewProdUploaderComponent implements OnInit {
         p.sousCategorie = data;
         this.http.post(this.access.getBackURL() + 'produit', p).subscribe({
           next: (data) => {
-            this.produit = data
+            this.produit = data;
             this.http.get(this.access.getBackURL() + 'person/' + this.authService.getProdInLocalStorage().id + '/produit/' + this.produit.nom + '/' + this.produit.quantite + '/' + this.produit.prix + '/' + this.produit.description).subscribe();
             this.dialogRef.close();           
-            this.route.navigateByUrl('mur');
+            location.reload();
           },
           error: (err) => {
             console.log(err);
             this.dialogRef.close();
+            location.reload();
           }
         });
       }
