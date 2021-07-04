@@ -1,131 +1,144 @@
 <div *ngIf='authService.isConnected()'>
-    <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
-      <div class="container-fluid">
-        <div class="d-flex flex-row">
-          <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
-            <mat-icon style="font-size: 40px;  color: green;" >menu</mat-icon>
-          </button>
-  
-  
-        </div>
-        <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
-  
-  
-        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <button class="nav-item nav-link button-transparent" style="cursor: pointer;" (click)='authService.deconnexion()'>
-            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </button>
-          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble</mat-icon>
-          </button>
-          <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
-          </button>
-          <button class="nav-item nav-link mr-3 button-transparent" (click)='authService.goModifCons()' style="cursor: pointer;">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </button>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
+    <div class="container-fluid">
+      <div class="d-flex flex-row">
+        <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
+          <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+        </button>
+
+
       </div>
-    </nav>
-  </div>
-  
-  <div class="">
-    <mat-drawer-container class="drawer-container" hasBackdrop="true">
-      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
-        <div class="container pt-3 myFont-title">
-  
-          <h1 class="myFont-head mb-5">Menu principal</h1>
-          <div class="">
-            <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
-              producteurs</button>
-          </div>
-      
-          <div class="container">
-            <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le profil</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goMessagerieCons()' class="btn myFont-title">Messagerie</button>
-          </div>
-          <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
-          </div>
-        </div>
-  
-  
-      </mat-drawer>
-      <mat-drawer-content>
-  
-
-<div class="">
-    <div class="container mt-100 my-font-family">
-        <div class=" row my-pad-bot">
-            <mat-card>
-                    <mat-card-title  class="text-center">Votre Panier</mat-card-title>
-                <hr>
-                <mat-card-content class="container">
-                    <div class="row">
-                        <div class="col-sm-10"></div>
-                        <div class="col-sm-2" *ngIf='!visible'>
-                            <label>Prix</label>
-                        </div>
-                        <hr>
-                        <div *ngFor='let p of produit'>
-                            <div class="row">
-                                <div class="col-sm-2 mt-2">
-                                    <img src="assets/img/camembert.jpg" alt="" width="100%">
-                                </div>
-                                <div class="col-sm-8">
-                                    <h3><strong>{{p.nom}}</strong></h3>
-                                    <p><i>{{p.description}}</i></p>
-                                    <div class="row">
-                                        <div class="form-group col-sm-4">
-                                            <mat-label>Quantité</mat-label>
-                                            <p class="form-control">{{p.quantiteCons}}</p>
-                                        </div>
-                                        <button mat-icon-button color="secondary" (click)='deleteProduit(p)'>
-                                            <mat-icon>delete</mat-icon>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="col-sm-2">
-                                    <h2><strong>{{p.prix}} €</strong></h2>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="col-sm-9"></div>
-                        <div class="col-sm-3" *ngIf='!visible'>
-                            <label><strong>TOTAL ({{quantiteTot}} articles)</strong></label>
-                            <br>
-                            <label><strong>{{prixTot}} €</strong></label>
-                        </div>
-                    </div>
+      <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img
+            src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
 
 
-                </mat-card-content>
-                <mat-card-content>
-                    <img *ngIf='visible' src="assets/img/Empty-Cart.jpg" alt="" width="100%">
-                </mat-card-content>
-                <mat-card-footer class="myfont">
-                    <button *ngIf='visible' class="btn btn-secondary btn-block" (click)='RedirectionProduit()'>Commander</button>
-                    <button *ngIf='!visible' class="btn btn-block btn-secondary" (click)='Valider()'>Valider</button>
-                </mat-card-footer>
-            </mat-card>
-        </div>
+      <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+        <button class="nav-item nav-link button-transparent" style="cursor: pointer;"
+          (click)='authService.deconnexion()'>
+          <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+        </button>
+        <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+          <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble
+          </mat-icon>
+        </button>
+        <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+          <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
+        </button>
+        <button class="nav-item nav-link mr-3 button-transparent" (click)='authService.goModifCons()'
+          style="cursor: pointer;">
+          <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+        </button>
+      </div>
     </div>
-    <div class="col-sm-4">
-
-    </div>
-
+  </nav>
 </div>
 
-</mat-drawer-content>
-</mat-drawer-container>
+<div class="">
+  <mat-drawer-container class="drawer-container" hasBackdrop="true">
+    <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+      <div class="container pt-3 myFont-title">
+
+        <h1 class="myFont-head mb-5">Menu principal</h1>
+        <div class="">
+          <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
+            producteurs</button>
+        </div>
+
+        <div class="container">
+          <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des
+            produits</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le
+            profil</button>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.goMessagerieCons()'
+            class="btn myFont-title">Messagerie</button>
+        </div>
+        <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
+        </div>
+        <div class="container">
+          <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
+        </div>
+      </div>
+
+
+    </mat-drawer>
+    <mat-drawer-content>
+
+
+      <div class="">
+        <div class="container mt-100 my-font-family">
+          <div class="row my-pad-bot">
+            <mat-card>
+              <mat-card-title class="text-center">Votre Panier</mat-card-title>
+              <hr>
+              <mat-card-content class="container">
+                <div class="row">
+                  <div class="col-sm-10"></div>
+                  <div class="col-sm-2" *ngIf='!visible'>
+                    <label>Prix</label>
+                  </div>
+                  <hr>
+                  <div *ngFor='let p of produit'>
+                    <div class="row">
+                      <div class="col-sm-2 mt-2" style="column-width: 1000px;">
+                        <div *ngIf='mediaExist(p.image)'>
+                          <img [src]="changeFormatMedia(p.image)" alt="image non lisible" width="100%">
+                        </div>
+                        <div *ngIf='mediaExist(p.image) == false'>
+                          <img src="assets\img\no_image.png" alt="image non lisible" width="60%" style="margin-left: 35px;">
+                        </div>
+                      </div>
+                      <div class="col-sm-8">
+                        <h3><strong>{{p.nom}}</strong></h3>
+                        <p><i>{{p.description}}</i></p>
+                        <div class="row">
+                          <div class="form-group col-sm-4">
+                            <mat-label>Quantité</mat-label>
+                            <p class="form-control">{{p.quantiteCons}}</p>
+                          </div>
+                          <button mat-icon-button color="secondary" (click)='deleteProduit(p)'>
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="col-sm-2">
+                        <h2><strong>{{p.prix}} €</strong></h2>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="col-sm-9"></div>
+                  <div class="col-sm-3" *ngIf='!visible'>
+                    <label><strong>TOTAL ({{quantiteTot}} articles)</strong></label>
+                    <br>
+                    <label><strong>{{prixTot}} €</strong></label>
+                  </div>
+                </div>
+
+
+              </mat-card-content>
+              <mat-card-content>
+                <img *ngIf='visible' src="assets/img/Empty-Cart.jpg" alt="" width="100%">
+              </mat-card-content>
+              <mat-card-footer class="myfont">
+                <button *ngIf='visible' class="btn btn-secondary btn-block"
+                  (click)='RedirectionProduit()'>Commander</button>
+                <button *ngIf='!visible' class="btn btn-block btn-secondary" (click)='Valider()'>Valider</button>
+              </mat-card-footer>
+            </mat-card>
+          </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+
+      </div>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
 
 </div>
