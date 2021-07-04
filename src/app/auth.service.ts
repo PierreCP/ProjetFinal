@@ -85,11 +85,6 @@ export class AuthService {
     return this.opened = !this.opened
   }
 
-  fonction(): void {
-    this.route.navigateByUrl('nav-prod');
-    console.log('place holder fonction')
-  }
-
   goMessagerie(): void {
     this.route.navigateByUrl('messagerie')
   }
