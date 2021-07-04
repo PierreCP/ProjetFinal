@@ -1,127 +1,137 @@
-
 <div *ngIf='authService.isConnected()'>
     <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
-      <div class="container-fluid">
-        <div class="d-flex flex-row">
-          <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
-            <mat-icon style="font-size: 40px;  color: green;" >menu</mat-icon>
-          </button>
-  
-  
+        <div class="container-fluid">
+            <div class="d-flex flex-row">
+                <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
+                    <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+                </button>
+
+
+            </div>
+            <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeProd()'><img
+                        src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+
+
+            <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+                <button class="nav-item nav-link button-transparent" style="cursor: pointer;"
+                    (click)='authService.deconnexion()'>
+                    <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;"
+                    (click)='authService.goMessagerie()'>
+                    <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;"
+                    (click)='authService.goModifProd()'>
+                    <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+                </button>
+            </div>
         </div>
-        <div><a class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
-  
-  
-        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
-            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </a>
-        </div>
-      </div>
     </nav>
-  </div>
-  
-  <div class="">
+</div>
+
+<div class="">
     <mat-drawer-container class="drawer-container" hasBackdrop="true">
-      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
-        <div class="container pt-3 myFont-title">
-  
-          <h1 class="myFont-head mb-5">Menu principal</h1>
-          <div class="">
-            <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
-              producteurs</button>
-          </div>
-      
-          <div class="container">
-            <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le profil</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goMessagerieCons()' class="btn myFont-title">Messagerie</button>
-          </div>
-          <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
-          </div>
-        </div>
-  
-  
-      </mat-drawer>
-      <mat-drawer-content>
-  
+        <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+            <div class="container pt-3 myFont-title">
 
-    <div class="row pt-5">
-        <div class="col-sm-3 text-center">
-            <img src="assets/img/vigne.png" class="img-fluid" alt="">
-        </div>
-        <div class="col-sm-6 container pt-5">
-            <h1 class="text-center container myFont-head"><b>Modification Profil</b> </h1>
-            <br><br>
-            <form #fModif="ngForm" (ngSubmit)='modifier(fModif.value)'>
-                <div style="margin: auto; width: 60%">
-                    <div class="form-group">
-                        <label class="label-perso">Login : </label>
-                        <input type="text" class="form-control" ngModel={{user.login}} required name="login" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Nom : </label>
-                        <input type="text" name="nom" ngModel={{user.nom}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Prénom : </label>
-                        <input type="text" name="prenom" ngModel={{user.prenom}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Age : </label>
-                        <input type="text" name="age" ngModel={{user.age}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Numéro de Rue : </label>
-                        <input type="text" name="numeroRue" ngModel={{user.adresse.numeroRue}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Nom de Rue : </label>
-                        <input type="text" name="nomRue" ngModel={{user.adresse.nomRue}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Ville : </label>
-                        <input type="text" name="nomCommune" ngModel={{user.adresse.nomCommune}} class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label class="label-perso">Code Postal : </label>
-                        <input type="text" name="codePostal" ngModel={{user.adresse.codePostal}} class="form-control" />
-                        <input hidden type="password" name="mdp" ngModel={{user.mdp}} class="form-control" />
-                    </div>
-
-                    <br>
-                    <button type="submit" class="btn btn-block myFont-title" >Modifier</button>
-                    <br>
-                    <button type="button" (click)='authService.goHomeCons()' class="btn btn-block myFont-title">Retour</button>
-                    <br>
-                    
+                <h1 class="myFont-head mb-5">Menu principal</h1>
+                <div class="container">
+                    <!-- redirection vers mur à refaire -->
+                    <button mat-raised-button (click)='authService.goMurProd()' class="btn myFont-title">Mon
+                        mur</button>
                 </div>
-            </form>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="assets/img/vigne.png" class="img-fluid flip-horizontally" alt="" height="500">
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goModifProd()' class="btn myFont-title">Modifier mon
+                        profil</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Ma
+                        messagerie</button>
+                </div>
+                <div class="container">
+                    <!-- pas de router -->
+                    <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+                        <button mat-raised-button class="btn myFont-title">Nous contacter</button></a>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.deconnexion()'
+                        class="btn myFont-title">Deconnexion</button>
+                </div>
 
-        </div>
-    </div>
-    
-</mat-drawer-content>
-</mat-drawer-container>
+            </div>
+
+
+        </mat-drawer>
+        <mat-drawer-content>
+
+
+            <div class="row pt-5">
+                <div class="col-sm-3 text-center">
+                    <img src="assets/img/vigne.png" class="img-fluid" alt="">
+                </div>
+                <div class="col-sm-6 container pt-5">
+                    <h1 class="text-center container myFont-head"><b>Modification Profil</b> </h1>
+                    <br><br>
+                    <form #fModif="ngForm" (ngSubmit)='modifier(fModif.value)'>
+                        <div style="margin: auto; width: 60%">
+                            <div class="form-group">
+                                <label class="label-perso">Login : </label>
+                                <input type="text" class="form-control" ngModel={{user.login}} required name="login" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Nom : </label>
+                                <input type="text" name="nom" ngModel={{user.nom}} class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Prénom : </label>
+                                <input type="text" name="prenom" ngModel={{user.prenom}} class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Age : </label>
+                                <input type="text" name="age" ngModel={{user.age}} class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Numéro de Rue : </label>
+                                <input type="text" name="numeroRue" ngModel={{user.adresse.numeroRue}}
+                                    class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Nom de Rue : </label>
+                                <input type="text" name="nomRue" ngModel={{user.adresse.nomRue}} class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Ville : </label>
+                                <input type="text" name="nomCommune" ngModel={{user.adresse.nomCommune}}
+                                    class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Code Postal : </label>
+                                <input type="text" name="codePostal" ngModel={{user.adresse.codePostal}}
+                                    class="form-control" />
+                                <input hidden type="password" name="mdp" ngModel={{user.mdp}} class="form-control" />
+                            </div>
+
+                            <br>
+                            <button type="submit" class="btn btn-block myFont-title">Modifier</button>
+                            <br>
+                            <button type="button" (click)='authService.goHomeProd()'
+                                class="btn btn-block myFont-title">Retour</button>
+                            <br>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3 text-center">
+                    <img src="assets/img/vigne.png" class="img-fluid flip-horizontally" alt="" height="500">
+
+                </div>
+            </div>
+
+        </mat-drawer-content>
+    </mat-drawer-container>
 
 </div>

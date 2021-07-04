@@ -1,237 +1,252 @@
 <div *ngIf='authService.isConnected()'>
     <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
-      <div class="container-fluid">
-        <div class="d-flex flex-row">
-          <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
-            <mat-icon style="font-size: 40px;  color: green;" >menu</mat-icon>
-          </button>
-  
-  
+        <div class="container-fluid">
+            <div class="d-flex flex-row">
+                <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
+                    <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+                </button>
+
+
+            </div>
+            <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img
+                        src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+
+
+            <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+                <button class="nav-item nav-link button-transparent" style="cursor: pointer;"
+                    (click)='authService.deconnexion()'>
+                    <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'>
+                        chat_bubble</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart
+                    </mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" (click)='authService.goModifCons()'
+                    style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+                </button>
+            </div>
         </div>
-        <div><a class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
-  
-  
-        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
-            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'> chat_bubble</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </a>
-        </div>
-      </div>
     </nav>
-  </div>
-  
-  <div class="">
+</div>
+
+<div class="">
     <mat-drawer-container class="drawer-container" hasBackdrop="true">
-      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
-        <div class="container pt-3 myFont-title">
-  
-          <h1 class="myFont-head mb-5">Menu principal</h1>
-          <div class="">
-            <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
-              producteurs</button>
-          </div>
-      
-          <div class="container">
-            <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le profil</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goMessagerieCons()' class="btn myFont-title">Messagerie</button>
-          </div>
-          <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
-          </div>
-        </div>
-  
-  
-      </mat-drawer>
-      <mat-drawer-content>
-  
-<div class="container-fluid bg-light rounded">
-    <div class="h4 font-weight-bold text-center py-3">
-        <p class="mt-120" style="color: rgb(51, 172, 3)">
-            <font size="7">Mes vins blancs</font>
-        </p>
-    </div>
+        <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+            <div class="container pt-3 myFont-title">
+
+                <h1 class="myFont-head mb-5">Menu principal</h1>
+                <div class="">
+                    <button mat-raised-button (click)='authService.goRechercheProd()'
+                        class="btn myFont-title">Rechercher des
+                        producteurs</button>
+                </div>
+
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goRechercheProduit()'
+                        class="btn myFont-title">Rechercher des produits</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le
+                        profil</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goMessagerieCons()'
+                        class="btn myFont-title">Messagerie</button>
+                </div>
+                <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+                        <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.deconnexion()'
+                        class="btn myFont-title">Deconnexion</button>
+                </div>
+            </div>
 
 
-    <div class="row">
+        </mat-drawer>
+        <mat-drawer-content>
 
-        <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
-            <div class="box bg-white">
-                <div class="d-flex align-items-center">
-                    <div
-                        class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+            <div class="container-fluid bg-light rounded">
+                <div class="h4 font-weight-bold text-center py-3">
+                    <p class="mt-120" style="color: rgb(51, 172, 3)">
+                        <font size="7">Mes vins blancs</font>
+                    </p>
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 my-lg-0 my-3" *ngFor='let d of liste'>
+                        <div class="box bg-white">
+                            <div class="d-flex align-items-center">
+                                <div
+                                    class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
+                                </div>
+                                <div class="d-flex flex-column"> <b>{{d.nom}}</b>
+                                    <p class="text-muted">Prix : {{d.prix}}</p>
+                                    <p class="text-muted">Quantité : {{d.quantite}}</p>
+                                    <p class="text-muted">Description : {{d.description}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex flex-column"> <b>{{d.nom}}</b>
-                        <p class="text-muted">Prix : {{d.prix}}</p>
-                        <p class="text-muted">Quantité : {{d.quantite}}</p>
-                        <p class="text-muted">Description : {{d.description}}</p>
+                </div>
+
+
+                <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Ajouter</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form #fAjout="ngForm">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom du produit :</label>
+                                        <input type="text" class="form-control" ngModel required name="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Prix :</label>
+                                        <input type="float" class="form-control" ngModel required name="prix" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Quantité :</label>
+                                        <input type="number" class="form-control" ngModel required name="quantite" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Description :</label>
+                                        <input type="text" class="form-control" ngModel required name="description" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button (click)='this.authService.ajoutProduit(fAjout.value)' type="submit"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Accepter</button>
+
+                                        <button type="button"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Retour</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal fade" id="modifier" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Modifier un produit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form #fModifie="ngForm">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom du produit :</label>
+                                        <input type="text" class="form-control" ngModel required name="name" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Prix :</label>
+                                        <input type="float" class="form-control" ngModel required name="prix" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Quantité :</label>
+                                        <input type="number" class="form-control" ngModel required name="quantite" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Description :</label>
+                                        <input type="text" class="form-control" ngModel required name="description" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button (click)='this.authService.modifierProduit(fModifie.value)' type="submit"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Accepter</button>
+
+                                        <button type="button"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Retour</button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <div class="modal fade" id="supprimer" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Supprimer un produit</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form #fSupprime="ngForm">
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Nom du produit :</label>
+                                        <input type="text" class="form-control" ngModel required name="name" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button (click)='this.authService.supprimerProduit(fSupprime.value)'
+                                            type="submit"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Accepter</button>
 
+                                        <button type="button"
+                                            class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
+                                            data-dismiss="modal">Retour</button>
+                                    </div>
+                                </form>
 
-    <div class="modal fade" id="ajouter" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Ajouter</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form #fAjout="ngForm">
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nom du produit :</label>
-                            <input type="text" class="form-control" ngModel required name="name" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Prix :</label>
-                            <input type="float" class="form-control" ngModel required name="prix" />
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Quantité :</label>
-                            <input type="number" class="form-control" ngModel required name="quantite" />
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Description :</label>
-                            <input type="text" class="form-control" ngModel required name="description" />
-                        </div>
-                        <div class="modal-footer">
-                            <button (click)='this.authService.ajoutProduit(fAjout.value)' type="submit"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Accepter</button>
+                    </div>
 
-                            <button type="button"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Retour</button>
-                        </div>
-                    </form>
 
                 </div>
             </div>
-        </div>
-
-    </div>
-    <div class="modal fade" id="modifier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Modifier un produit</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form #fModifie="ngForm">
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nom du produit :</label>
-                            <input type="text" class="form-control" ngModel required name="name" />
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Prix :</label>
-                            <input type="float" class="form-control" ngModel required name="prix" />
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Quantité :</label>
-                            <input type="number" class="form-control" ngModel required name="quantite" />
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Description :</label>
-                            <input type="text" class="form-control" ngModel required name="description" />
-                        </div>
-                        <div class="modal-footer">
-                            <button (click)='this.authService.modifierProduit(fModifie.value)' type="submit"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Accepter</button>
-
-                            <button type="button"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Retour</button>
-                        </div>
-                    </form>
+            <br>
+            <br>
+            <br>
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-4"></div>
+                    <div Class="col-1 text-center">
+                        <a (click)='retourVinsMenu()'> <i style="color: rgb(51, 172, 3)"
+                                class="fa fa-rotate-left fa-4x"></i></a>
+                    </div>
+                    <div class="col-1 text-center">
+                        <a data-toggle="modal" data-target="#ajouter" data-whatever="@mdo"> <i
+                                style="color: rgb(51, 172, 3)" class="fa fa-plus fa-4x"></i></a>
+                    </div>
+                    <div class="col-1 text-center">
+                        <a data-toggle="modal" data-target="#modifier" data-whatever="@mdo"> <i
+                                style="color: rgb(51, 172, 3)" class="fa fa-pencil fa-4x"></i></a>
+                    </div>
+                    <div class="col-1 text-center">
+                        <a data-toggle="modal" data-target="#supprimer" data-whatever="@mdo"> <i
+                                style="color: rgb(51, 172, 3)" class="fa fa-trash fa-4x"></i></a>
+                    </div>
+                    <div class="col-4"></div>
 
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="modal fade" id="supprimer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel">Supprimer un produit</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form #fSupprime="ngForm">
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Nom du produit :</label>
-                            <input type="text" class="form-control" ngModel required name="name" />
-                        </div>
-                        <div class="modal-footer">
-                            <button (click)='this.authService.supprimerProduit(fSupprime.value)' type="submit"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Accepter</button>
-
-                            <button type="button"
-                                class="btn btn-default btn-default:hover btn-secondary btn-block text-center"
-                                data-dismiss="modal">Retour</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</div>
-<br>
-<br>
-<br>
-<div class="container-fluid">
-    <div class="row align-items-center">
-        <div class="col-sm-4"></div>
-        <div Class="col-1 text-center">
-            <a (click)='retourVinsMenu()'> <i style="color: rgb(51, 172, 3)" class="fa fa-rotate-left fa-4x"></i></a>
-        </div>
-        <div class="col-1 text-center">
-            <a data-toggle="modal" data-target="#ajouter" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                    class="fa fa-plus fa-4x"></i></a>
-        </div>
-        <div class="col-1 text-center">
-            <a data-toggle="modal" data-target="#modifier" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                    class="fa fa-pencil fa-4x"></i></a>
-        </div>
-        <div class="col-1 text-center">
-            <a data-toggle="modal" data-target="#supprimer" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
-                    class="fa fa-trash fa-4x"></i></a>
-        </div>
-        <div class="col-4"></div>
-
-    </div>
-</div>
-</mat-drawer-content>
-</mat-drawer-container>
+        </mat-drawer-content>
+    </mat-drawer-container>
 
 </div>

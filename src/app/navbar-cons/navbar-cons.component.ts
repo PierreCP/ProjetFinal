@@ -35,7 +35,5 @@ export class NavbarConsComponent implements OnInit {
   RedirectionPanier(): void{
     this.route.navigateByUrl('panier');
   }
-  goModifCons(): void{
-    this.route.navigateByUrl('modifier-cons');
-  }
+  
 }

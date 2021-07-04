@@ -43,8 +43,6 @@ export class MenuConsommateurComponent implements OnInit {
   redirectionChercherProduit(): void {
     this.route.navigateByUrl('etal-cons');
   }
-  goModifCons(): void{
-    this.route.navigateByUrl('modifier-cons');
-  }
+  
    
 }

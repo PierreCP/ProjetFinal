@@ -4,67 +4,77 @@
 
 <div *ngIf='authService.isConnected()'>
     <nav class="navbar navbar-expand-lg navbar-light toolbar-style">
-      <div class="container-fluid">
-        <div class="d-flex flex-row">
-          <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
-            <mat-icon style="font-size: 40px;  color: green;" >menu</mat-icon>
-          </button>
-  
-  
+        <div class="container-fluid">
+            <div class="d-flex flex-row">
+                <button mat-icon-button class="mr-5 menu-button" (click)='authService.toggleSidenav()'>
+                    <mat-icon style="font-size: 40px;  color: green;">menu</mat-icon>
+                </button>
+
+
+            </div>
+            <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img
+                        src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+
+
+            <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
+                <button class="nav-item nav-link button-transparent" style="cursor: pointer;"
+                    (click)='authService.deconnexion()'>
+                    <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;" (click)='authService.goMessagerieCons()'>
+                        chat_bubble</mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart
+                    </mat-icon>
+                </button>
+                <button class="nav-item nav-link mr-3 button-transparent" (click)='authService.goModifCons()'
+                    style="cursor: pointer;">
+                    <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
+                </button>
+            </div>
         </div>
-        <div><a class="navbar-brand margin-brand-img" (click)='authService.goHomeCons()'><img src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
-  
-  
-        <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
-          <a class="nav-item nav-link" (click)='authService.deconnexion()'>
-            <mat-icon style="font-size: 40px; color: green;">exit_to_app</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.messagerie()'> chat_bubble</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;" (click)='authService.goPanier()'> shopping_cart</mat-icon>
-          </a>
-          <a class="nav-item nav-link mr-3">
-            <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
-          </a>
-        </div>
-      </div>
     </nav>
-  </div>
-  
-  <div class="">
+</div>
+
+<div class="">
     <mat-drawer-container class="drawer-container" hasBackdrop="true">
-      <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
-        <div class="container pt-3 myFont-title">
-  
-          <h1 class="myFont-head mb-5">Menu principal</h1>
-          <div class="">
-            <button mat-raised-button (click)='authService.goRechercheProd()' class="btn myFont-title">Rechercher des
-              producteurs</button>
-          </div>
-      
-          <div class="container">
-            <button mat-raised-button (click)='authService.goRechercheProduit()' class="btn myFont-title">Rechercher des produits</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le profil</button>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Messagerie</button>
-          </div>
-          <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
-            <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
-          </div>
-          <div class="container">
-            <button mat-raised-button (click)='authService.deconnexion()' class="btn myFont-title">Deconnexion</button>
-          </div>
-        </div>
-  
-  
-      </mat-drawer>
-      <mat-drawer-content>
-  
+        <mat-drawer class="sidenav" [(opened)]='authService.opened' mode="over">
+            <div class="container pt-3 myFont-title">
+
+                <h1 class="myFont-head mb-5">Menu principal</h1>
+                <div class="">
+                    <button mat-raised-button (click)='authService.goRechercheProd()'
+                        class="btn myFont-title">Rechercher des
+                        producteurs</button>
+                </div>
+
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goRechercheProduit()'
+                        class="btn myFont-title">Rechercher des produits</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.goModifCons()' class="btn myFont-title">Modifier le
+                        profil</button>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.messagerie()'
+                        class="btn myFont-title">Messagerie</button>
+                </div>
+                <div class="container"> <a data-toggle="modal" data-target="#contacterAdmin" data-whatever="@mdo">
+                        <button mat-raised-button class="btn myFont-title">Nous contacter</button> </a>
+                </div>
+                <div class="container">
+                    <button mat-raised-button (click)='authService.deconnexion()'
+                        class="btn myFont-title">Deconnexion</button>
+                </div>
+            </div>
+
+
+        </mat-drawer>
+        <mat-drawer-content>
+
             <body>
 
                 <div class="align-items-center bg-light rounded">
@@ -82,7 +92,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 text-center d-flex align-items-center justify-content-center pale-orange">
-                                            <img class="img" src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/fruit/3-2-fruit-picture.png" alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Fruits</b>
                                             <p class="text-muted"></p>
@@ -98,7 +109,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                            <img class="img" src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png"
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/vegetable/24646-6-vegetable-photos.png"
                                                 alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Légumes</b>
@@ -114,7 +126,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                            <img class="img" src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png"
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/cheese/17-cheese-png-image.png"
                                                 alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Fromages</b>
@@ -130,7 +143,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-purple">
-                                            <img class="img" src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png"
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/bottle/15-wine-glass-bottle-png.png"
                                                 alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Vins</b>
@@ -146,7 +160,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-cyan">
-                                            <img class="img" src="https://freepngimg.com/thumb/beer/8-beer-png-image.png" alt="">
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/beer/8-beer-png-image.png" alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Bières</b>
                                             <p class="text-muted"></p>
@@ -161,7 +176,8 @@
                                     <div class="d-flex align-items-center">
                                         <div
                                             class="rounded-circle mx-3 d-flex align-items-center justify-content-center pale-pink">
-                                            <img class="img" src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
+                                            <img class="img"
+                                                src="https://freepngimg.com/thumb/shopping%20bag/12-paper-shopping-bag-png-image.png"
                                                 alt="">
                                         </div>
                                         <div class="d-flex flex-column"> <b>Autres</b>

@@ -89,6 +89,10 @@ export class AuthService {
     this.route.navigateByUrl('messagerie')
   }
 
+  goModifProd(): void{
+    this.route.navigateByUrl('modifier-prod');
+  }
+
   goMessagerieCons(): void {
     this.route.navigateByUrl('messagerie-cons')
   }

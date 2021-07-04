@@ -26,7 +26,7 @@
               <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.goMessagerie()'>
                 <mat-icon style="font-size: 40px; color: green;"> chat_bubble</mat-icon>
               </button>
-              <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.fonction()'>
+              <button class="nav-item nav-link mr-3 button-transparent" style="cursor: pointer;" (click)='authService.goModifProd()'>
                 <mat-icon style="font-size: 40px; color: green;"> face</mat-icon>
               </button>
             </div>
@@ -47,7 +47,7 @@
                 <button mat-raised-button (click)='authService.goEtal()' class="btn myFont-title">Mon étal</button>
               </div>
               <div class="container"> <!-- pas de router pour modif profil -->
-                <button mat-raised-button (click)='authService.fonction()' class="btn myFont-title">Modifier mon profil</button>
+                <button mat-raised-button (click)='authService.goModifProd()' class="btn myFont-title">Modifier mon profil</button>
               </div>
               <div class="container">
                 <button mat-raised-button (click)='authService.messagerie()' class="btn myFont-title">Ma messagerie</button>
