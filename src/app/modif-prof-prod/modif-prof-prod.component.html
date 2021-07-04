@@ -8,8 +8,9 @@
 
 
             </div>
-            <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img" (click)='authService.goHomeProd()'><img
-                        src="/assets/img/logo_sans_fond.png" height="80px" alt=""></a></div>
+            <div><a style="cursor: pointer;" class="navbar-brand margin-brand-img"
+                    (click)='authService.goHomeProd()'><img src="/assets/img/logo_sans_fond.png" height="80px"
+                        alt=""></a></div>
 
 
             <div class="d-flex flex-row-reverse" id="navbarNavAltMarkup">
@@ -80,39 +81,46 @@
                         <div style="margin: auto; width: 60%">
                             <div class="form-group">
                                 <label class="label-perso">Login : </label>
-                                <input type="text" class="form-control" ngModel={{user.login}} required name="login" />
+                                <input type="text" class="form-control" ngModel={{user.person.login}} required
+                                    name="login" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Nom : </label>
-                                <input type="text" name="nom" ngModel={{user.nom}} class="form-control" />
+                                <input type="text" name="nom" ngModel={{user.person.nom}} class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Prénom : </label>
-                                <input type="text" name="prenom" ngModel={{user.prenom}} class="form-control" />
+                                <input type="text" name="prenom" ngModel={{user.person.prenom}} class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Age : </label>
-                                <input type="text" name="age" ngModel={{user.age}} class="form-control" />
+                                <input type="text" name="age" ngModel={{user.person.age}} class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label class="label-perso">Nom du Magasin : </label>
+                                <input type="text" name="nomMagasin" ngModel={{user.nomMagasin}} class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Numéro de Rue : </label>
-                                <input type="text" name="numeroRue" ngModel={{user.adresse.numeroRue}}
+                                <input type="text" name="numeroRue" ngModel={{user.person.adresse.numeroRue}}
                                     class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Nom de Rue : </label>
-                                <input type="text" name="nomRue" ngModel={{user.adresse.nomRue}} class="form-control" />
+                                <input type="text" name="nomRue" ngModel={{user.person.adresse.nomRue}}
+                                    class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Ville : </label>
-                                <input type="text" name="nomCommune" ngModel={{user.adresse.nomCommune}}
+                                <input type="text" name="nomCommune" ngModel={{user.person.adresse.nomCommune}}
                                     class="form-control" />
                             </div>
                             <div class="form-group">
                                 <label class="label-perso">Code Postal : </label>
-                                <input type="text" name="codePostal" ngModel={{user.adresse.codePostal}}
+                                <input type="text" name="codePostal" ngModel={{user.person.adresse.codePostal}}
                                     class="form-control" />
-                                <input hidden type="password" name="mdp" ngModel={{user.mdp}} class="form-control" />
+                                <input hidden type="password" name="mdp" ngModel={{user.person.mdp}}
+                                    class="form-control" />
                             </div>
 
                             <br>
