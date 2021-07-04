@@ -55,6 +55,11 @@ export class ConnexionComponent implements OnInit {
               }
               else if (this.Type == "Producteur") {
                 this.route.navigateByUrl('menu-prod');
+                this.http.get(this.access.getBackURL() + 'producteur/person/' + this.authService.getUserInLocalStorage().id).subscribe({
+                  next: (data)=> {
+                    this.authService.setProdInLocalStorage(data)
+                  }
+                })
               }
               else if (this.Type == "Consommateur") {
                 this.getIdPanier();

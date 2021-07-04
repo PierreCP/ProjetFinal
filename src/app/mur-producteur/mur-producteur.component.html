@@ -152,7 +152,8 @@
                 </div>
               </div>
               <hr>
-              <button class="btn btn-block btn-secondary" *ngIf='Type == "Producteur"' (click)='authService.goModifProd()'>Modifier mon profil</button>
+              <button class="btn btn-block btn-secondary" *ngIf='Type == "Producteur"'
+                (click)='authService.goModifProd()'>Modifier mon profil</button>
             </div>
             <br>
             <!--
@@ -227,11 +228,22 @@
                       <label>{{p.nom}}</label>
                     </div>
                     <div class="card-body">
-                      <p><strong>Description : </strong>{{p.description}}</p>
-                      <p><strong>Catégorie : </strong> {{p.sousCategorie.nom}} </p>
-                      <p><strong>Quantité disponible : </strong> {{p.quantite}} </p>
-                      <p><strong>Prix : </strong> {{p.prix}} €</p>
+                      <div class="row">
+                        <div class="col-sm-10">
+                          <p><strong>Description : </strong>{{p.description}}</p>
+                          <p><strong>Catégorie : </strong> {{p.sousCategorie.nom}} </p>
+                          <p><strong>Quantité disponible : </strong> {{p.quantite}} </p>
+                          <p><strong>Prix : </strong> {{p.prix}} €</p>
+                        </div>
+                        <div class="col-sm-2 text-right" *ngIf='Type == "Consommateur"'>
+                          <br><br>
+                          <a (click)='addProduitToPanier(p)'> <i style="color: rgb(51, 172, 3)"
+                              class="fa fa-shopping-basket fa-3x"></i></a>
+                        </div>
+                      </div>
+
                     </div>
+
 
                   </div>
                 </div>

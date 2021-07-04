@@ -9,6 +9,7 @@ import { AffichageProdService } from '../affichage-prod.service';
 import { AuthService } from '../auth.service';
 import { ImageChangerComponent } from '../image-changer/image-changer.component';
 import { NewProdUploaderComponent } from '../new-prod-uploader/new-prod-uploader.component';
+import { PanierService } from '../panier.service';
 import { ProducteurService } from '../producteur.service';
 
 @Component({
@@ -18,10 +19,12 @@ import { ProducteurService } from '../producteur.service';
 })
 export class MurProducteurComponent implements OnInit {
 
+  panier: any;
+  liste2: any;
   producteur: any;
   produit: any;
   Type = "";
-  constructor(private http: HttpClient, public authService: AuthService, private producteurService: ProducteurService, public affichageProd: AffichageProdService, private access: AccessService, private dialog: MatDialog, public route: Router) { }
+  constructor(private http: HttpClient, public authService: AuthService, private producteurService: ProducteurService, public affichageProd: AffichageProdService, private access: AccessService, private dialog: MatDialog, public route: Router, private panierService: PanierService) { }
 
 
   ngOnInit(): void {
@@ -69,6 +72,17 @@ export class MurProducteurComponent implements OnInit {
   addImage(p: any): any {
     this.authService.setProduitForBlobInLocalStorage(p);
     const myDialog = this.dialog.open(ImageChangerComponent);
+  }
+
+  addProduitToPanier(idProd: any): any {
+    this.panier = this.panierService.getPanierInLocalStorage();
+    console.log(this.panier.id)
+    this.http.get(this.access.getBackURL() + 'panier/produit/' + this.panier.id +'/'+idProd.id).subscribe({
+      next: (data) => {this.liste2=data},
+      error: (err) => (console.log(err))
+    })
+    
+    
   }
 
 }

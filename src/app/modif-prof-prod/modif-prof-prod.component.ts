@@ -18,16 +18,18 @@ export class ModifProfProdComponent implements OnInit {
   constructor(public authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.user = this.authService.getUserInLocalStorage();
+    this.user = this.authService.getProdInLocalStorage();
   }
 
   modifier(u: any): void {
     let address = {numeroRue: u.numeroRue, nomRue: u.nomRue, nomCommune: u.nomCommune, codePostal: u.codePostal};
     let personne = {login: u.login, mdp: u.mdp, nom: u.nom, prenom: u.prenom, age: u.age, adresse: address};
-    this.http.put(this.access.getBackURL() + 'person/' + this.authService.getUserInLocalStorage().id, personne).subscribe({
+    let prod = {nomMagasin: u.nomMagasin, person: personne}
+    this.http.put(this.access.getBackURL() + 'prod/' + this.authService.getProdInLocalStorage().id, prod).subscribe({
       next: (data)=> {
         this.user=data,
-        this.authService.setUserInLocalStorage(this.user),
+        this.authService.setUserInLocalStorage(this.user.person),
+        this.authService.setProdInLocalStorage(this.user)
         this.dialog.open(DialogExampleComponent);
       },
       error: (err)=> (console.log(err))
