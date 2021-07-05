@@ -13,6 +13,9 @@ export class ProdBieresComponent implements OnInit {
   events: string[] = [];
   opened: boolean = false;
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   

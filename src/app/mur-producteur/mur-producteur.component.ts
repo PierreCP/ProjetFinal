@@ -28,6 +28,9 @@ export class MurProducteurComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.http.get(this.access.getBackURL() + 'person/type/' + this.authService.getUserInLocalStorage().id, { responseType: 'text' }).subscribe({
       next: (data) => {
         this.Type = data;

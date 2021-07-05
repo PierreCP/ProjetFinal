@@ -17,6 +17,9 @@ export class ProdFruitsPepoComponent implements OnInit {
   liste: any;
   
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getSousCategorieByProducteur('Pepos');
   }
 
