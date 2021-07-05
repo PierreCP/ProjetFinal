@@ -41,5 +41,14 @@ export class MenuProducteurComponent implements OnInit {
     this.Selection= Message;
   }
 
+  contactAdmin(): void{
+    this.http.get(this.access.getBackURL() + 'person/52').subscribe({
+      next: (data) => {
+        let Admin = data
+        this.authService.setRecInLocalStorage(Admin);
+      }
+    })
+    this.authService.nouveauMessage();
+  }
   
 }
