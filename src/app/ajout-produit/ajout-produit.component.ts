@@ -12,7 +12,10 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AjoutProduitComponent implements OnInit {
 
-  constructor(private http: HttpClient, public authService: AuthService, private route : Router, private dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+  constructor(private http: HttpClient, public authService: AuthService, private route : Router, public dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+  user: any;
+  liste: any;
+  MsgErr: any
 
   ngOnInit(): void {
     if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
@@ -20,20 +23,14 @@ export class AjoutProduitComponent implements OnInit {
     }
   }
 
-  ajoutProduit(m: any): void {
 
-    this.http.put('http://localhost:8082/person/', + this.authService.getUserInLocalStorage().id + '/produit/' /*+ produit + '/' + quant*/).subscribe({
-      next: (data)=> {
-        this.dialogRef.close()
-      /*Pour rafraichir DIRECTEMENT
-      this.routerouteReuseStrategy.shouldReuseRoute= () => false;
-      this.route.onSameUrlNavigation='reload'; 
-      this.route.navigateByUrl('menu-prive');*/
-      },
-        //this.route.navigateByUrl('memo-prive')},
-      error: (err) => {
-        console.log(err)}
-    });
+  ajoutProduit(m: any): void {
+    this.user = this.authService.getUserInLocalStorage();
+    this.http.get('http://localhost:8082/person/' + this.user.id + '/produit/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
+      next: (data) => { this.liste = data},
+      error: (err) => { console.log(err) }
+    })
+    this.MsgErr = 'Ajout du produit impossible.'
   }
 
 

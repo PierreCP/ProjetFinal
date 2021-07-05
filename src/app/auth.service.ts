@@ -1,10 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { ModifyProduitComponent } from './modify-produit/modify-produit.component';
 import { AccessService } from './access.service';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 import { ProducteurService } from './producteur.service';
+import { SupprimerProduitComponent } from './supprimer-produit/supprimer-produit.component';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +25,8 @@ export class AuthService {
   isConsommateur: boolean = false;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService, private acces: AccessService) { }
+  constructor(private access: AccessService, private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService,  public dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -179,6 +183,16 @@ export class AuthService {
     const myDialog = this.dialog.open(NouveauMessageComponent)
   }
 
+  ajoutProduitDialog(): any {
+    const myDialog = this.dialog.open(AjoutProduitComponent)
+  }
+  modifyProduitDialog(): any {
+    const myDialog = this.dialog.open(ModifyProduitComponent)
+  }
+  supprimerProduitDialog(): any {
+    const myDialog = this.dialog.open(SupprimerProduitComponent)
+  }
+
   goHomeCons(): any {
     this.route.navigateByUrl('menu-cons');
     this.opened = false;
@@ -211,7 +225,7 @@ export class AuthService {
   ajoutProduit(m: any): void {
     this.user = this.getUserInLocalStorage();
     this.http.get('http://localhost:8082/person/' + this.user.id + '/produit/' + m.name + '/' + m.quantite + '/' + m.prix + '/' + m.description).subscribe({
-      next: (data) => { this.liste = data },
+      next: (data) => { this.liste = data, console.log('ICI')},
       error: (err) => { console.log(err) }
     })
     this.MsgErr = 'Ajout du produit impossible.'
