@@ -18,6 +18,9 @@ export class AjoutProduitComponent implements OnInit {
   MsgErr: any
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
 

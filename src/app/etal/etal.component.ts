@@ -21,7 +21,11 @@ export class EtalComponent implements OnInit {
   user: any;
   MsgErr: any;
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
+
 
   
   toggleSidenav(): boolean {

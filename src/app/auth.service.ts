@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
 import { ModifyProduitComponent } from './modify-produit/modify-produit.component';
+import { AccessService } from './access.service';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 import { ProducteurService } from './producteur.service';
 import { SupprimerProduitComponent } from './supprimer-produit/supprimer-produit.component';
@@ -20,9 +21,12 @@ export class AuthService {
   MsgErr = '';
   liste: any;
   opened: boolean = false;
+  isProducteur: boolean = false;
+  isConsommateur: boolean = false;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService,  public dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+  constructor(private access: AccessService, private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService,  public dialogRef: MatDialogRef<AjoutProduitComponent>) { }
+
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -79,6 +83,8 @@ export class AuthService {
 
   deconnexion(): void {
     localStorage.clear();
+    this.isConsommateur = false;
+    this.isProducteur = false;
     this.route.navigateByUrl('login');
     this.MsgErr = 'À bientôt !'
   }
@@ -119,6 +125,11 @@ export class AuthService {
     this.opened = false;
   }
 
+  goGestionCommandesProd(): void {
+    this.route.navigateByUrl('gestion-commandes');
+    this.opened = false;
+  }
+
   goMurProd():void {
   this.route.navigateByUrl('mur-prod');
   this.opened = false;
@@ -147,6 +158,14 @@ export class AuthService {
     } else {
       return true;
     }
+  }
+
+  isCons(idPerson: any): boolean{
+    return this.isConsommateur;
+  }
+
+  isProd(idPerson: any): boolean{
+    return this.isProducteur;
   }
 
   goBack(): void {

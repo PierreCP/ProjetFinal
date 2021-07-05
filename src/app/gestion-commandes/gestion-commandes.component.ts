@@ -5,6 +5,7 @@ import { AuthService } from '../auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { HistoriqueCommandeComponent } from "../historique-commande/historique-commande.component";
 import { NouvellesCommandesComponent } from "../nouvelles-commandes/nouvelles-commandes.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestion-commandes',
@@ -17,9 +18,12 @@ export class GestionCommandesComponent implements OnInit {
   user: any;
   Selection: any;
 
-  constructor(private http: HttpClient, private access: AccessService, public authService: AuthService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient, private access: AccessService, public authService: AuthService, private dialog: MatDialog, private route: Router) { }
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.user = this.authService.getUserInLocalStorage();
     this.http.get(this.access.getBackURL() + 'commandes/' + this.user.id).subscribe({
       next: (data) => {

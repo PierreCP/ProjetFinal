@@ -12,6 +12,9 @@ export class ProdFruitsComponent implements OnInit {
   constructor(private route: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   retourEtal(): void {

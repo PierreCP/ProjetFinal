@@ -27,13 +27,16 @@ export class ConnexionComponent implements OnInit {
           this.Type = data;
           console.log(this.Type);
           if (this.Type == "Admin") {
-            this.route.navigateByUrl('nav-admin');
+            
+            this.route.navigateByUrl('menu-admin');
           }
           else if (this.Type == "Producteur") {
-            this.route.navigateByUrl('nav-prod');
+            this.authService.isProducteur = true;
+            this.route.navigateByUrl('menu-prod');
           }
           else if (this.Type == "Consommateur") {
-            this.route.navigateByUrl('nav-cons');
+            this.authService.isConsommateur = true;
+            this.route.navigateByUrl('menu-cons');
           }
         }
       });

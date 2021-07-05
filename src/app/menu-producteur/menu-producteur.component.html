@@ -69,13 +69,13 @@
   <a class="a a1" (mouseover)='Text("Mon étal")' (click)='redirectionEtal()' (mouseout)='Text("")'>
     <div class="div div1"></div>
   </a>
-  <a class="a a2" (mouseover)='Text("Mes commandes")' (mouseout)='Text("")'>
+  <a class="a a2" (mouseover)='Text("Mes commandes")' (mouseout)='Text("")' (click)='authService.goGestionCommandesProd()'>
     <div class="div div2"></div>
   </a>
   <a class="a a3" (mouseover)='Text("Ma messagerie")' (click)='authService.goMessagerie()' (mouseout)='Text("")'>
     <div class="div div3"></div>
   </a>
-  <a class="a a4" (mouseover)='Text("Nous contacter")' data-toggle="modal" data-target="#contacterAdminMenu" (mouseout)='Text("")'>
+  <a class="a a4" (mouseover)='Text("Nous contacter")' (click)='contactAdmin()' (mouseout)='Text("")'>
     <div class="div div4"></div>
   </a>
   <a class="a a5" (mouseover)='Text("Mon mur")' (mouseout)='Text("")'

@@ -18,6 +18,9 @@ export class ModifProfProdComponent implements OnInit {
   constructor(public authService: AuthService, private route: Router, private http: HttpClient, private access: AccessService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.user = this.authService.getProdInLocalStorage();
   }
 

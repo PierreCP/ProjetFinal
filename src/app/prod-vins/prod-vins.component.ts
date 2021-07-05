@@ -12,6 +12,9 @@ export class ProdVinsComponent implements OnInit {
   constructor(private route: Router, public authService: AuthService) { }
   opened: boolean = false;
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   
