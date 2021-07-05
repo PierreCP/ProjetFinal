@@ -15,6 +15,9 @@ export class AjoutProduitComponent implements OnInit {
   constructor(private http: HttpClient, public authService: AuthService, private route : Router, private dialogRef: MatDialogRef<AjoutProduitComponent>) { }
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   ajoutProduit(m: any): void {
