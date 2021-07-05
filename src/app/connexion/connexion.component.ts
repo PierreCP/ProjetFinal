@@ -57,6 +57,7 @@ export class ConnexionComponent implements OnInit {
                 this.route.navigateByUrl('menu-admin');
               }
               else if (this.Type == "Producteur") {
+                this.authService.isProducteur = true;
                 this.route.navigateByUrl('menu-prod');
                 this.http.get(this.access.getBackURL() + 'producteur/person/' + this.authService.getUserInLocalStorage().id).subscribe({
                   next: (data)=> {
@@ -65,6 +66,7 @@ export class ConnexionComponent implements OnInit {
                 })
               }
               else if (this.Type == "Consommateur") {
+                this.authService.isConsommateur = true;
                 this.getIdPanier();
                 this.route.navigateByUrl('menu-cons');
               }
