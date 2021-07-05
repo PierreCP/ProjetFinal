@@ -115,6 +115,7 @@ import { ImageChangerComponent } from './image-changer/image-changer.component';
 import { ModifProfProdComponent } from './modif-prof-prod/modif-prof-prod.component';
 import { DialogModifConsComponent } from './dialog-modif-cons/dialog-modif-cons.component';
 import { CommandesPersoComponent } from './commandes-perso/commandes-perso.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -223,6 +224,9 @@ import { CommandesPersoComponent } from './commandes-perso/commandes-perso.compo
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([
+      {path:'',redirectTo: '/accueil', pathMatch:'full'},
+    ]),
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
