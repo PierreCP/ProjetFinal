@@ -20,6 +20,9 @@ export class MessagerieConsComponent implements OnInit {
   Selection: any;
 
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   boiteReception(): any{

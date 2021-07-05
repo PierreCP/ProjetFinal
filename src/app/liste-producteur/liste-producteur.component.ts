@@ -18,6 +18,9 @@ export class ListeProducteurComponent implements OnInit {
   constructor(private http: HttpClient, public authService: AuthService, private route: Router, private producteurService: ProducteurService, private access: AccessService) { }
 
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.user = this.authService.getUserInLocalStorage();
     this.getProducteurs();
     

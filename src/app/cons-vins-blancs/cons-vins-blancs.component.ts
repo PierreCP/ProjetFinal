@@ -19,6 +19,9 @@ export class ConsVinsBlancsComponent implements OnInit {
   user: any;
   liste: any;
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getAllProduitBySousCategorie('Vins blancs');
   }
 

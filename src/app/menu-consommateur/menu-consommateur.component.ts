@@ -28,6 +28,9 @@ export class MenuConsommateurComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   doStuff():void{

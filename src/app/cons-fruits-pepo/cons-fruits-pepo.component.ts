@@ -19,6 +19,9 @@ export class ConsFruitsPepoComponent implements OnInit {
   opened: boolean = false;
   liste: any;
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getAllProduitBySousCategorie('Pepos');
   }
 

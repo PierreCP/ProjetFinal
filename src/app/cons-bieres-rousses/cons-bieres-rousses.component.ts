@@ -19,6 +19,9 @@ export class ConsBieresRoussesComponent implements OnInit {
   liste: any;
   opened: boolean = false;
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getAllProduitBySousCategorie('Bières ambrées ou rousses');
   }
 

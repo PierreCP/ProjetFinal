@@ -20,6 +20,9 @@ export class PanierComponent implements OnInit {
   constructor(public authService : AuthService, private route: Router, private http : HttpClient, private panierService : PanierService, private accessService: AccessService) { }
 
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.prixTot = 0;
     this.quantiteTot = 0;
     this.getProductOfPanier();

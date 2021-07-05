@@ -20,6 +20,9 @@ export class EtalConsComponent implements OnInit {
   user: any;
   MsgErr: any;
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
   
   toggleSidenav(): boolean {
