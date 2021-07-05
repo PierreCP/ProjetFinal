@@ -69,7 +69,7 @@
   <a class="a a1" (mouseover)='Text("Mon étal")' (click)='redirectionEtal()' (mouseout)='Text("")'>
     <div class="div div1"></div>
   </a>
-  <a class="a a2" (mouseover)='Text("Mes commandes")' (mouseout)='Text("")'>
+  <a class="a a2" (mouseover)='Text("Mes commandes")' (mouseout)='Text("")' (click)='authService.goGestionCommandesProd()'>
     <div class="div div2"></div>
   </a>
   <a class="a a3" (mouseover)='Text("Ma messagerie")' (click)='authService.goMessagerie()' (mouseout)='Text("")'>

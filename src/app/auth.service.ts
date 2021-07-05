@@ -116,6 +116,11 @@ export class AuthService {
     this.opened = false;
   }
 
+  goGestionCommandesProd(): void {
+    this.route.navigateByUrl('gestion-commandes');
+    this.opened = false;
+  }
+
   goMurProd():void {
   this.route.navigateByUrl('mur-prod');
   this.opened = false;
