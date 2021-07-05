@@ -222,15 +222,15 @@
                 <a (click)='retourBieresMenu()'> <i style="color: rgb(51, 172, 3)" class="fa fa-rotate-left fa-4x"></i></a>
             </div>
             <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#ajouter" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
+                <a (click)='this.authService.ajoutProduitDialog()'> <i style="color: rgb(51, 172, 3)"
                         class="fa fa-plus fa-4x"></i></a>
             </div>
             <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#modifier" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
+                <a (click)='this.authService.modifyProduitDialog()'> <i style="color: rgb(51, 172, 3)"
                         class="fa fa-pencil fa-4x"></i></a>
             </div>
             <div class="col-1 text-center">
-                <a data-toggle="modal" data-target="#supprimer" data-whatever="@mdo"> <i style="color: rgb(51, 172, 3)"
+                <a (click)='this.authService.supprimerProduitDialog()'> <i style="color: rgb(51, 172, 3)"
                         class="fa fa-trash fa-4x"></i></a>
             </div>
             <div class="col-4"></div>

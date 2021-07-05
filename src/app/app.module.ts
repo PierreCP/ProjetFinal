@@ -116,6 +116,8 @@ import { ModifProfProdComponent } from './modif-prof-prod/modif-prof-prod.compon
 import { DialogModifConsComponent } from './dialog-modif-cons/dialog-modif-cons.component';
 import { CommandesPersoComponent } from './commandes-perso/commandes-perso.component';
 import { RouterModule } from '@angular/router';
+import { ModifyProduitComponent } from './modify-produit/modify-produit.component';
+import { SupprimerProduitComponent } from './supprimer-produit/supprimer-produit.component';
 
 
 
@@ -221,6 +223,8 @@ import { RouterModule } from '@angular/router';
     ModifProfProdComponent,
     DialogModifConsComponent,
     CommandesPersoComponent,
+    ModifyProduitComponent,
+    SupprimerProduitComponent,
   ],
   imports: [
     BrowserModule,
