@@ -20,6 +20,9 @@ export class ConsAutresComponent implements OnInit {
   opened: boolean = false;
 
   ngOnInit(): void {
+    if (!this.authService.isCons(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getAllProduitBySousCategorie('Autres');
   }
   retourEtal(): void {

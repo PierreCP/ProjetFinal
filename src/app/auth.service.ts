@@ -18,6 +18,8 @@ export class AuthService {
   MsgErr = '';
   liste: any;
   opened: boolean = false;
+  isProducteur: boolean = false;
+  isConsommateur: boolean = false;
 
 
   constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService, private acces: AccessService) { }
@@ -77,6 +79,8 @@ export class AuthService {
 
   deconnexion(): void {
     localStorage.clear();
+    this.isConsommateur = false;
+    this.isProducteur = false;
     this.route.navigateByUrl('login');
     this.MsgErr = 'À bientôt !'
   }
@@ -153,29 +157,11 @@ export class AuthService {
   }
 
   isCons(idPerson: any): boolean{
-    var isCons: boolean = false;
-    this.http.get(this.acces.getBackURL() + 'person/type/' + idPerson).subscribe({
-      next: (data) => {
-        if (data == 'Consommateur') {
-          isCons = true
-        } 
-      },
-      error: (err) => (console.log(err))
-    })
-    return isCons;
+    return this.isConsommateur;
   }
 
   isProd(idPerson: any): boolean{
-    var isProd: boolean = false;
-    this.http.get(this.acces.getBackURL() + 'person/type/' + idPerson).subscribe({
-      next: (data) => {
-        if (data == 'Producteur') {
-          isProd = true
-        } 
-      },
-      error: (err) => (console.log(err))
-    })
-    return isProd;
+    return this.isProducteur;
   }
 
   goBack(): void {

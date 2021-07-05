@@ -43,6 +43,16 @@ export class MenuConsommateurComponent implements OnInit {
   redirectionChercherProduit(): void {
     this.route.navigateByUrl('etal-cons');
   }
+
+  contactAdmin(): void{
+    this.http.get(this.access.getBackURL() + 'person/52').subscribe({
+      next: (data) => {
+        let Admin = data
+        this.authService.setRecInLocalStorage(Admin);
+      }
+    })
+    this.authService.nouveauMessage();
+  }
   
    
 }
