@@ -20,6 +20,9 @@ export class MessagerieComponent implements OnInit {
   Selection: any;
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
   }
 
   boiteReception(): any{

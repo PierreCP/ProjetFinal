@@ -19,6 +19,9 @@ export class MenuProducteurComponent implements OnInit {
   constructor(private http: HttpClient, private route: Router, public authService: AuthService, private access: AccessService, private dialog: MatDialog, public affichageProd: AffichageProdService) { }
 
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.http.get(this.access.getBackURL() + 'producteur/person/' + this.authService.getUserInLocalStorage().id).subscribe({
       next: (data)=>{
         this.pro = data

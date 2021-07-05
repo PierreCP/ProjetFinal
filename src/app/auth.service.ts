@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AccessService } from './access.service';
 import { NouveauMessageComponent } from './nouveau-message/nouveau-message.component';
 import { ProducteurService } from './producteur.service';
 
@@ -19,7 +20,7 @@ export class AuthService {
   opened: boolean = false;
 
 
-  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService) { }
+  constructor(private route: Router, private http: HttpClient, private dialog: MatDialog, private producteurService: ProducteurService, private acces: AccessService) { }
 
   setUserInLocalStorage(u: any): void {
     localStorage.setItem('userConnect', JSON.stringify(u));
@@ -149,6 +150,32 @@ export class AuthService {
     } else {
       return true;
     }
+  }
+
+  isCons(idPerson: any): boolean{
+    var isCons: boolean = false;
+    this.http.get(this.acces.getBackURL() + 'person/type/' + idPerson).subscribe({
+      next: (data) => {
+        if (data == 'Consommateur') {
+          isCons = true
+        } 
+      },
+      error: (err) => (console.log(err))
+    })
+    return isCons;
+  }
+
+  isProd(idPerson: any): boolean{
+    var isProd: boolean = false;
+    this.http.get(this.acces.getBackURL() + 'person/type/' + idPerson).subscribe({
+      next: (data) => {
+        if (data == 'Producteur') {
+          isProd = true
+        } 
+      },
+      error: (err) => (console.log(err))
+    })
+    return isProd;
   }
 
   goBack(): void {

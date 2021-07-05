@@ -16,6 +16,9 @@ export class ProdBlanchesComponent implements OnInit {
   user: any;
   liste: any;
   ngOnInit(): void {
+    if (!this.authService.isProd(this.authService.getUserInLocalStorage().id)) {
+      this.route.navigateByUrl('accueil');
+    }
     this.getSousCategorieByProducteur('Bières blanches');
   }
 
